@@ -23,7 +23,7 @@ body {
 .Container{
     display: inline-block;
     position: absolute;
-    left:36;
+    left:36%;
     top: 50%;
     text-align: center;
 }
