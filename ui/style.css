@@ -22,6 +22,8 @@ body {
 
 .Container{
     display: inline-block;
+    position: absolute;
+    top: 30%;
     text-align: center;
 }
 
