@@ -1,5 +1,5 @@
 body {
-    font-family: Tahoma;
+    font-family: sans sherif;
     background-color: #1E73BE;
     margin-top: 75px;
 }
@@ -23,13 +23,14 @@ body {
 .Container{
     display: inline-block;
     position: absolute;
-    top: 30%;
+    padding:20px;
+    top: 50%;
     text-align: center;
 }
 
 .ghost-button{
     display: inline-block;
-    padding: 12px;
+    padding: 20px;
     color: rgba(255,255,255,0.8);
     border: 1px solid white;
     text-align: center;
