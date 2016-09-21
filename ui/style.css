@@ -1,5 +1,10 @@
+@font-face{
+    font-family:NewFont;
+    src: url(/ul/Lato-Light.ttf);
+}
+
 body {
-    font-family: sans sherif;
+    font-family: NewFont;
     background-color: #1E73BE;
     margin-top: 75px;
 }
