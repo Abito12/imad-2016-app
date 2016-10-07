@@ -29,6 +29,10 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+app.get('/ui/Lato-Light.ttf', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Lato-Light.ttf'));
+});
+
 app.get('/ui/code-in-the-flow.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'code-in-the-flow.png'));
 });
