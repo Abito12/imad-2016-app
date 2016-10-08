@@ -18,7 +18,7 @@ var icount =function(){
 	        if(request.status == 200){
 	            var count = request.responseText;
 	            var count_button = document.getElementById('count');
-	            count_button.innerHTML = count.toString()
+	            count_button.innerHTML = count.toString();
 	        }
 	    }
 	}
