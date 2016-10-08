@@ -5,7 +5,7 @@
 
 body {
     font-family: NewFont;
-    background-image: url('s0.jpg');
+    background-image: url('http://wallpapercave.com/wp/Wk00V0P.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     margin-left: 0;
@@ -38,9 +38,8 @@ body {
 
 
 .top-el{
-    margin-left: 2px;
     background: transparent;
-    margin-left: 0px;
+    margin-left: 0;
     padding: 10px;
     text-align: center;
     border-right: .1vw solid #fff;
@@ -129,4 +128,4 @@ body {
               background-color 0.3s ease-out,
               border-color 0.3s ease-out;
 }
-}
+
