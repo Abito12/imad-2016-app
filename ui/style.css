@@ -1,37 +1,113 @@
 @font-face{
     font-family:NewFont;
-    src: url(/ui/Lato-Light.ttf);
+    src: url(Lato-Light.ttf);
 }
 
 body {
-    background-image: url("http://www.tathva.org/tathva.org/tathva16/Website/Main/images/s0.jpg");
-    background-size:cover;
-    background-repeat:no-repeat;
+    font-family: NewFont;
+    background-image: url('s0.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 0;
+    color: #fff;
+    overflow: hidden;
 }
 
-.center {
+
+#Container{
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+
+
+}
+
+#Header{
+    position: absolute;
+    padding-top: 10px;
+    font-weight: bold;
+    top: 0vh;
+    left: 0;
+    width: 100%;
+    height: 5vh;
+    font-size:2vh;
+    background: transparent;
+     display: inline-block;
+}
+
+
+.top-el{
+    margin-left: 2px;
+    background: transparent;
+    margin-left: 0px;
+    padding: 10px;
     text-align: center;
+    border-right: .1vw solid #fff;
+    padding-left: 3%;
+    padding-right: 3%;
+    transition: all 0.7s;
 }
 
-.text-big {
-    font-size: 300%;
+.top-el:hover{
+     background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-0.1vh);
+    box-shadow: 0vh 0vh 2vh; 
+    border:none;
 }
 
-.bold {
+
+
+.top-er{
+    float: right;
+    margin-right: 10px;
+    background: transparent;
+    margin-left: 0px;
+    padding: 10px;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-left: .1vw dotted #fff;
+    transition: all 0.7s;
+}
+
+.top-er:hover{
+     background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-0.1vh);
+    box-shadow: 0vh 0vh 2vh; 
+    border:none;
+}
+
+#text-box{
+    padding-top: 150px;
+    padding-left: 60px;
+    padding-right: 50px;
+    margin-left: 0;
+    margin-right: 0;
+    height: 79vh;
+    background-color: rgba(25, 25, 25, 0.7);
+}
+
+
+.big-text{
+    font-size:20vh;
     font-weight: bold;
 }
 
-.img-medium {
-    height: 200px;
+#username{
+    padding-left: 70px;
+    font-size:10vh;
 }
 
-.Container{
-    display: inline-block;
-    position: absolute;
-    left:36%;
-    top: 50%;
+#footer{
+    background-color: rgba(0,0,0,0.9);
+    height: 5vh;
     text-align: center;
+    padding-top: 2vh;
+    color: #fff;
 }
+
 
 .ghost-button{
     display: inline-block;
