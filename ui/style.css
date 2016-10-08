@@ -4,8 +4,10 @@
 }
 
 body {
-    font-family: NewFont;
-    background-color: #1E73BE;
+    background-image: url("http://www.tathva.org/tathva.org/tathva16/Website/Main/images/s0.jpg");
+    background-position: center;
+    background-size:cover;
+    background-repeat:no-repeat;
     margin-top: 75px;
 }
 
