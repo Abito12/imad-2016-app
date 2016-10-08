@@ -1,4 +1,4 @@
-function NamePrompt() {
+function getName() {
     var Name, q = 'Enter Your Name';
     n = window.sessionStorage.getItem('Name');
     if (!n) {
