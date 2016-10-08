@@ -9,3 +9,20 @@ var getName= function(){
     document.getElementById('username').innerHTML = n;
     return n;
 };
+
+var icount =function(){
+	var request = XMLHttpRequest();
+	request.readystatechange = function(){
+	    if(request.readystate == XMLRequest.DONE){
+	        if(request.status == 200){
+	            var count = request.responseText;
+	            var count_button = document.getElementById('count');
+	            count_button.innerHTML = count.toString()
+	        }
+	    }
+	}
+	
+	request.open("http://abito12.imad.hasura-app.io/counter");
+	request.send(null);
+	
+};
