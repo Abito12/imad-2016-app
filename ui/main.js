@@ -11,7 +11,7 @@ var getName= function(){
 };
 
 var icount =function(){
-	var request = XMLHttpRequest();
+	var request = new XMLHttpRequest();
 	request.readystatechange = function(){
 	    if(request.readystate == XMLRequest.DONE){
 	        if(request.status == 200){
