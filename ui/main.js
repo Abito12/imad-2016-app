@@ -11,6 +11,7 @@ var getName= function(){
 };
 
 var icount =function(){
+    console.log('sda');
 	var request = new XMLHttpRequest();
 	request.readystatechange = function(){
 	    if(request.readystate == XMLRequest.DONE){
