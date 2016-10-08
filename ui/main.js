@@ -1,4 +1,4 @@
-function getName() {
+var getName= function(){
     var Name, q = 'Enter Your Name';
     n = window.sessionStorage.getItem('Name');
     if (!n) {
@@ -8,4 +8,4 @@ function getName() {
     }
     document.getElementById('username').innerHTML = n;
     return n;
-}
+};
