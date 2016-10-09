@@ -13,9 +13,11 @@ var getName= function(){
 var button = document.getElementById('count-button');
 
 button.onclick = function(){
+    console.log('funtoas');
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 	    if(request.readystate === XMLHttpRequest.DONE){
+	        consloe.log('firts jf');
 	        if(request.status === 200){
 	                console.log('okay');
 	                var count = request.responseText;
