@@ -15,6 +15,7 @@ var icount =function(){
 	request.readystatechange = function(){
 	    if(request.readystate == XMLRequest.DONE){
 	        if(request.status == 200){
+	                console.log('okay');
 	                var count = request.responseText;
 	                var count_button = document.getElementById('count');
 	                count_button.innerHTML = count.toString();
