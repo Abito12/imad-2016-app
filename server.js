@@ -9,6 +9,16 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+//Comments Section
+var comments = [];
+app.get('/submit', function(req, res){
+    var comment = req.query.comment;
+    comments.push(comment);
+    // Json
+    res.send(JSON.stringify(comments));
+});
+
+
 app.get('/article-one.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
@@ -38,14 +48,7 @@ app.get('/ui/code-in-the-flow.png', function (req, res) {
 });
 
 
-//Comments Section
-var comments = [];
-app.get('/submit', function(req, res){
-    var comment = req.query.comment;
-    comments.push(comment);
-    // Json
-    res.send(JSON.stringify(comments));
-});
+
 
 
 
