@@ -17,7 +17,7 @@ var icount = function(){
 	        if(request.status === 200){
 	                console.log('okay');
 	                var count = request.responseText;
-	                var count_button = document.getElementById('count');
+	                var count_button = document.getElementById('show-count');
 	                count_button.innerHTML = count.toString();
 	            }
 	        }
