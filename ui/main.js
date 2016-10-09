@@ -37,6 +37,9 @@ button.onclick = function(){
 
 console.log('main works');
 // Comments Section
+    var commentBtn = document.getElementById('comment-text');
+    usercomment = commentBtn.value;
+    console.log(usercomment);
 
 var submit = document.getElementById('submitBtn');
 submit.onclick = function(){
@@ -56,9 +59,8 @@ submit.onclick = function(){
             }
         }
     };
-    var comment = document.getElementById('comment-text');
-    comment = comment.value;
-    console.log('comment');
-    request.open('GET', 'http://abito12.imad.hasura-app.io/submit-btn?comment='+comment, true);
+
+    console.log('usercomment');
+    request.open('GET', 'http://abito12.imad.hasura-app.io/submit-btn?comment='+ comment , true);
     request.send(null);
 };
