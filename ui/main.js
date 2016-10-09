@@ -15,6 +15,7 @@ var getName= function(){
 
 var button = document.getElementById('count-button');
 button.onclick = function(){
+    console.log('asd');
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 	    if(request.readyState === XMLHttpRequest.DONE){
@@ -55,6 +56,6 @@ submit.onclick = function(){
     };
     var comment = document.getElementById('comment-text');
     comment = comment.value;
-    request.open('GET', 'http://abito12.imad.hasura-app.io/submit-cmnt/?comment='+comment, true);
+    request.open('GET', 'http://abito12.imad.hasura-app.io/article-three/?comment='+comment, true);
     request.send(null);
 };
