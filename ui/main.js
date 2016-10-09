@@ -17,6 +17,7 @@ var icount =function(){
 	    if(request.readystate == XMLRequest.DONE){
 	        if(request.status == 200){
 	            var count = request.responseText;
+	            console.log(count)
 	            var count_button = document.getElementById('count');
 	            count_button.innerHTML = count.toString();
 	        }
