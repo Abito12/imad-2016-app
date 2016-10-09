@@ -17,7 +17,7 @@ button.onclick = function(){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 	    console.log('check2');
-	    if(request.readystate === XMLHttpRequest.DONE){
+	    if(request.readyState === XMLHttpRequest.DONE){
 	        consloe.log('firts jf');
 	        if(request.status === 200){
 	                console.log('okay');
