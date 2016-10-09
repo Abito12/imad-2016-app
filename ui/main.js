@@ -14,7 +14,7 @@ var button = document.getElementById('ghost-button');
 button.onclick =function(){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
-	    if(request.readystate === XMLRequest.DONE){
+	    if(request.readystate === XMLHttpRequest.DONE){
 	        if(request.status === 200){
 	                console.log('okay');
 	                var count = request.responseText;
