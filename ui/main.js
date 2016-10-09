@@ -10,7 +10,9 @@ var getName= function(){
     return n;
 };
 
-var icount = function(){
+var button = document.getElementById('count-button');
+
+button.onclick() = function(){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 	    if(request.readystate === XMLHttpRequest.DONE){
