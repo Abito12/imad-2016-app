@@ -10,8 +10,7 @@ var getName= function(){
     return n;
 };
 
-var button = document.getElementById('ghost-button');
-button.onclick =function(){
+var icount = function(){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 	    if(request.readystate === XMLHttpRequest.DONE){
