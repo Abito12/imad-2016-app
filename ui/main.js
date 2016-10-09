@@ -18,7 +18,7 @@ button.onclick = function(){
 	request.onreadystatechange = function(){
 	    console.log('check2');
 	    if(request.readyState === XMLHttpRequest.DONE){
-	        consloe.log('firts jf');
+	        console.log('firts jf');
 	        if(request.status === 200){
 	                console.log('okay');
 	                var count = request.responseText;
