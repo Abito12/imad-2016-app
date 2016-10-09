@@ -40,7 +40,7 @@ app.get('/ui/code-in-the-flow.png', function (req, res) {
 
 //Comments Section
 var comments = [];
-app.get('/submit-cmnt', function(req, res){
+app.get('/submit-btn', function(req, res){
     var comment = req.query.comment;
     comments.push(comment);
     // Json
