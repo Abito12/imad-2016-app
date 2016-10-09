@@ -11,7 +11,7 @@ var getName= function(){
     return n;
 };
 
-/*Counter Button
+//Counter Button
 
 var button = document.getElementById('count-button');
 button.onclick = function(){
@@ -33,16 +33,11 @@ button.onclick = function(){
 	
 };
 
-*/
-
-console.log('main works');
+console.log('main works')
 // Comments Section
-    var commentBtn = document.getElementById('comment-text');
-    var usercomment = commentBtn.value;
-    console.log(usercomment);
 
 var submit = document.getElementById('submitBtn');
-submit.onclick = function(usercomment){
+submit.onclick = function(){
     console.log('sadasd')
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
@@ -59,8 +54,8 @@ submit.onclick = function(usercomment){
             }
         }
     };
-
-    console.log('usercomment');
-    request.open('GET', 'http://abito12.imad.hasura-app.io/submit-btn?comment='+ usercomment , true);
+    var comment = document.getElementById('comment-text');
+    comment = comment.value;
+    request.open('GET', 'http://abito12.imad.hasura-app.io/submit-btn?comment='+comment, true);
     request.send(null);
 };
