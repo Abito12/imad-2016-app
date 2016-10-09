@@ -42,7 +42,7 @@ console.log('main works');
     console.log(usercomment);
 
 var submit = document.getElementById('submitBtn');
-submit.onclick = function(){
+submit.onclick = function(usercomment){
     console.log('sadasd')
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
@@ -61,6 +61,6 @@ submit.onclick = function(){
     };
 
     console.log('usercomment');
-    request.open('GET', 'http://abito12.imad.hasura-app.io/submit-btn?comment='+ comment , true);
+    request.open('GET', 'http://abito12.imad.hasura-app.io/submit-btn?comment='+ usercomment , true);
     request.send(null);
 };
