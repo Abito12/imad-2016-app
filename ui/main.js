@@ -50,7 +50,7 @@ submit.onclick = function(){
                 comments = JSON.parse(comments);
                 var comment = '';
                 for(var i =0; i< comments.length;i++){
-                    comment = '<li>' + comments[i] + '</li>';
+                    comment += '<li>' + comments[i] + '</li>';
                 }
                 var ul = document.getElementById('comments-list');
                 ul.innerHTML = comment;
