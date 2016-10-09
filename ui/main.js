@@ -11,7 +11,7 @@ var getName= function(){
     return n;
 };
 
-//Counter Button
+/*Counter Button
 
 var button = document.getElementById('count-button');
 button.onclick = function(){
@@ -32,6 +32,9 @@ button.onclick = function(){
 	request.send(null);
 	
 };
+
+*/
+
 
 console.log('main works')
 // Comments Section
