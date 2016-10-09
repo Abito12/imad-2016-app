@@ -10,11 +10,12 @@ var getName= function(){
     return n;
 };
 
-var icount =function(){
+var button = document.getElementById('ghost-button');
+button.onclick =function(){
 	var request = new XMLHttpRequest();
-	request.readystatechange = function(){
-	    if(request.readystate == XMLRequest.DONE){
-	        if(request.status == 200){
+	request.onreadystatechange = function(){
+	    if(request.readystate === XMLRequest.DONE){
+	        if(request.status === 200){
 	                console.log('okay');
 	                var count = request.responseText;
 	                var count_button = document.getElementById('count');
