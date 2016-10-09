@@ -35,7 +35,7 @@ button.onclick = function(){
 
 // Comments Section
 
-var submit = document.getElementById('submit-btn');
+var submit = document.getElementById('submitBtn');
 submit.onclick = function(){
     console.log('sadasd')
     var request = new XMLHttpRequest();
