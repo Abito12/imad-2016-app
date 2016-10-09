@@ -38,7 +38,7 @@ button.onclick = function(){
 console.log('main works');
 // Comments Section
     var commentBtn = document.getElementById('comment-text');
-    usercomment = commentBtn.value;
+    var usercomment = commentBtn.value;
     console.log(usercomment);
 
 var submit = document.getElementById('submitBtn');
