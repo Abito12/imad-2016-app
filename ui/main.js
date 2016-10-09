@@ -13,14 +13,10 @@ var getName= function(){
 var button = document.getElementById('count-button');
 
 button.onclick = function(){
-    console.log('funtoas');
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
-	    console.log('check2');
 	    if(request.readyState === XMLHttpRequest.DONE){
-	        console.log('firts jf');
 	        if(request.status === 200){
-	                console.log('okay');
 	                var count = request.responseText;
 	                var count_button = document.getElementById('show-count');
 	                count_button.innerHTML = count.toString();
