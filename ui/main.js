@@ -11,14 +11,11 @@ var getName= function(){
 };
 
 var icount =function(){
-    console.log('sda');
 	var request = new XMLHttpRequest();
 	request.readystatechange = function(){
 	    if(request.readystate == XMLRequest.DONE){
-	        console.log("ready");
 	        if(request.status == 200){
 	            var count = request.responseText;
-	            console.log(count);
 	            var count_button = document.getElementById('count');
 	            count_button.innerHTML = count.toString();
 	            }
