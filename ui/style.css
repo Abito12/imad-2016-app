@@ -44,8 +44,8 @@ body {
     padding: 10px;
     text-align: center;
     border-right: .1vw solid #fff;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
     transition: all 0.7s;
     display:block;
 }
@@ -66,8 +66,8 @@ body {
     background: transparent;
     margin-left: 0px;
     padding: 10px;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
     border-left: .1vw dotted #fff;
     transition: all 0.7s;
 }
