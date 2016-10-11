@@ -14,7 +14,7 @@ var comments = [];
 app.get('/submit', function(req, res){
     var comment = req.query.comment;
     comments.push(comment);
-    // Json
+    // Json encoding
     res.send(JSON.stringify(comments));
 });
 
@@ -46,9 +46,6 @@ app.get('/ui/Lato-Light.ttf', function (req, res) {
 app.get('/ui/code-in-the-flow.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'code-in-the-flow.png'));
 });
-
-
-
 
 
 
