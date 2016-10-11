@@ -1,5 +1,6 @@
 // Getting the Name of the User
 var getName= function(){
+    console.log('ssda');
     var Name, q = 'Enter Your Name';
     n = window.sessionStorage.getItem('Name');
     if (!n) {
