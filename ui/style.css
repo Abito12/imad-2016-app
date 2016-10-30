@@ -10,7 +10,7 @@ body {
   color: #666666;
   font-family: 'NewFont';
   font-size: 10px;
-  overflow-x:i=hidden;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
