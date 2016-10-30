@@ -1,17 +1,14 @@
-// Getting the Name of the User
-var getName= function(){
-    console.log('ssda');
-    var Name, q = 'Enter Your Name';
-    n = window.sessionStorage.getItem('Name');
-    if (!n) {
-        n = window.prompt(q);
-        console.log(n);
-        window.sessionStorage.setItem('Name', n);
-    }
-    document.getElementById('username').innerHTML = n;
-    return n;
-};
+$('.toggle').on('click', function() {
+  $('.container').stop().addClass('active');
+});
 
+$('.close').on('click', function() {
+  $('.container').stop().removeClass('active');
+});
+
+
+
+/*
 var button = document.getElementById('count-button');
 button.onclick = function(){
     console.log('asd');
@@ -31,3 +28,5 @@ button.onclick = function(){
 	request.send(null);
 	
 };
+
+*/
