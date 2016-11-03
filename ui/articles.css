@@ -13,9 +13,7 @@ html{
   height: 100%;
   width: 100%;
   font-family: NewFont;
-  background-image: url('http://thisispaper.com/wp-content/uploads/2016/10/Ar_6026397.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color:#03A8A6;
 }
 h1{
   text-align: center;
