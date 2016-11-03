@@ -1,6 +1,6 @@
 @font-face{
     font-family:NewFont;
-    src: url(ui/Lato-Light.ttf);
+    src: url('Lato-Light.ttf');
 }
 
 *{
