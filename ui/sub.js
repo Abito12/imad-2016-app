@@ -12,22 +12,22 @@ function getAllArticles(){
             
             if(i % 4 === 0){
                 trans = "left";
-                color= "#673AB7";
+                color= "#3399FF";
                 
                 
             }
             if(i % 4 === 1){
                 trans ="right";
-                color= "#2196EA";
+                color= "#CC0033";
                 
             }
             if(i % 4 == 2){
                 trans = "top";
-                color = "#EB5848";
+                color = "#03A8A6";
             }
             if(i % 4 === 3){
                 trans = "bottom";
-                color = "#FF69B4";
+                color = "#6633CC";
             }
             
             var Box = `<div class="box" style="background-color: ${color}">
