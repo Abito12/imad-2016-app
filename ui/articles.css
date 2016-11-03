@@ -1,3 +1,7 @@
+@font-face{
+    font-family:NewFont;
+    src: url(Lato-Light.ttf);
+} 
   
 *{
   box-sizing: border-box;
@@ -15,7 +19,7 @@ html{
 h1{
   text-align: center;
   font-size: 48pt;
-  font-family: 'Lobster Two', cursive;
+  font-family: 'NewFont';
   margin-top: 75px;
   color: #fff;
   text-shadow: -1px 1px 0px #000;
