@@ -8,26 +8,28 @@ function getAllArticles(){
         for(var i = 0;i < allArticles.length; i++){
             var article = allArticles[i];
             var trans;
+            var color;
             
             if(i % 4 === 0){
                 trans = "left";
+                color = "#1C0D00";
+                
             }
             if(i % 4 === 1){
                 trans ="right";
             }
             if(i % 4 == 2){
-                trans = "top"
+                trans = "top";
             }
             if(i % 4 === 3){
-                trans = "bottom"
+                trans = "bottom";
             }
-            
-            var Box = `<div class="box">
+            var Box = `<div class="box" style="background-color: ${color}">
                             <div class="cover ${trans}">
                                 <h2 class="title">${article.title}</h2>
                                 <p class="intro">${article.content}</p>
-                            <div class="btn"><a href="#">Read more...</a></div>
-                            <p class="date">${article.date}</p>
+                                <div class="btn"><a href="#">Read more...</a></div>
+                                <p class="date">${article.date}</p>
                             </div>
                     </div>`;
             $('.container').append(Box);
