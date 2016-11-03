@@ -17,6 +17,7 @@ function getAllArticles(){
             }
             if(i % 4 === 1){
                 trans ="right";
+                color: "blue";
             }
             if(i % 4 == 2){
                 trans = "top";
@@ -24,8 +25,8 @@ function getAllArticles(){
             if(i % 4 === 3){
                 trans = "bottom";
             }
-            var Box = `<div class="box">
-                            <div class="cover ${trans}" style="background-color: ${color}">
+            var Box = `<div class="box" style="background-color: ${color}">
+                            <div class="cover ${trans}">
                                 <h2 class="title">${article.title}</h2>
                                 <p class="intro">${article.content}</p>
                                 <div class="btn"><a href="#">Read more...</a></div>
