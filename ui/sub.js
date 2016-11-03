@@ -27,7 +27,7 @@ function getAllArticles(){
             }
             if(i % 4 === 3){
                 trans = "bottom";
-                color = "#EAE2DF";
+                color = "#FF69B4";
             }
             var Box = `<div class="box" style="background-color: ${color}">
                             <div class="cover ${trans}">
