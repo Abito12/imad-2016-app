@@ -68,8 +68,9 @@ app.get('/articles.html', function (req, res){
                 for(i=0;i<4;i++){
                     var articleData = result.rows[i];
                     articlesBox = createArticleBox(articleData);
+                
                 }
-                createArticlesMainPage(articlesBox);
+                res.send(createArticlesMainPage(articlesBox));
         }
     });
 });
