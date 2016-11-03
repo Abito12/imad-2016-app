@@ -63,6 +63,7 @@ app.get('/articles.html', function (req, res){
             res.status(500).send(err.toString());
         } else
             {
+                console.log('dayyum');
                 for(i=0;i<4;i++){
                     var articleData = result.rows[i];
                     articlesBox = createArticleBox(articleData);
