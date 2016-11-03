@@ -81,7 +81,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/ui/Lato-Light.ttf', function (req, res) {
+app.get('/Lato-Light.ttf', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Lato-Light.ttf'));
 });
 
