@@ -22,56 +22,16 @@ app.get('/', function (req, res) {
 
 
 //Articles Section
-function createMainArticlesPage(articlesBox){
-    mainArticlesPageTemplate = `<!DOCTYPE html>
-        <html>
-        <head>
-            <title>Articles</title>
-            <link rel="stylesheet" type="text/css" href="main.css">
-        </head>
-        <body>
-            <div class="container">
-                ${articlesBox}
-            </div>
-        </body>
-    </html>`;
-}
-
-function createArticlesBox(data){
-    var title = data.title;
-    var content = data.content;
-    var BoxTemplate = `<div class="box">
-                            <div class="cover left">
-                                <h2 class="title">${title}</h2>
-                                <p class="intro">${content}</p>
-                                <div class="btn"><a href="#">Read more...</a></div>
-                                <p class="date">10/19/2013</p>
-                            </div>
-                        </div>`;
-}
-
-
 
 
 var pool = new Pool(config);
-var i =0;
-var articleBox = '';
-
 app.get('/articles.html', function (req, res){
-    console.log('dayeu');
     pool.query('SELECT title, content FROM article', function(err, result){
         if(err){
             res.status(500).send(err.toString());
-        } else
-            {
-                console.log('dayyum');
-                for(i=0;i<4;i++){
-                    var articleData = result.rows[i];
-                    articlesBox = createArticleBox(articleData);
-                
-                }
-                res.send(createArticlesMainPage(articlesBox));
-        }
+        } else{
+            JSON.stringify(result.rows);
+            }
     });
 });
 
