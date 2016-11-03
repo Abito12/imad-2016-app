@@ -154,6 +154,13 @@ h1{
   bottom: -200px;
   right: -250px;
 }
+
+#footer{
+    background-color:rgba(25,25,25,0.7);
+    color:#fff;
+    text-align:center;
+}
+
 /* Ordering */
   .left{order:1;}
   .right{order:2;}
