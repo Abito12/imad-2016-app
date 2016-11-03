@@ -12,21 +12,22 @@ function getAllArticles(){
             
             if(i % 4 === 0){
                 trans = "left";
-                color= "red";
+                color= "673AB7";
                 
                 
             }
             if(i % 4 === 1){
                 trans ="right";
-                color= "blue";
+                color= "#EAE2DF";
                 
             }
             if(i % 4 == 2){
                 trans = "top";
-                color = "yellow";
+                color = "#EB5848";
             }
             if(i % 4 === 3){
                 trans = "bottom";
+                color = "#EAE2DF";
             }
             var Box = `<div class="box" style="background-color: ${color}">
                             <div class="cover ${trans}">
