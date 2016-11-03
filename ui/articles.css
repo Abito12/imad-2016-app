@@ -168,12 +168,19 @@ h1{
   .bottom-left{order:7;}
   .bottom-right{order:8;}
 
+
 .link-cont {
   position: relative;
   text-align: center;
   font-size: 24px;
 }
-
+.link {
+  display: inline-block;
+  position: relative;
+  color: #020202;
+  text-decoration: none;
+  padding: 10px 0;
+}
 .link-wrapper {
   position: relative;
   display: inline-block;
@@ -183,6 +190,8 @@ h1{
   position: relative;
   display: inline-block;
 }
+/* hover styles */
+
 .wrapper-17:before {
   content: '';
   position: absolute;
