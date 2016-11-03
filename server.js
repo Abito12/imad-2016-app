@@ -36,14 +36,6 @@ app.get('/articles.html', function (req, res){
 });
 
 
-
-
-
-
-
-
-
-
 //Comments Section
 var comments = [];
 app.get('/submit', function(req, res){
