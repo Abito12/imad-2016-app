@@ -7,31 +7,12 @@ function getAllArticles(){
         console.log(allArticles);
         for(var i = 0;i < allArticles.length; i++){
             var article = allArticles[i];
-            var trans;
-            var color;
+            var trans = ["left", "right","top","bottom","bottom-right","top-left"];
+            var color = ["#3399FF", "#CC0033", "#03A8A6" , "#6633CC", "#009933", "#E25422"];
+            var rand = Math.floor((Math.random() * 6));
             
-            if(i % 4 === 0){
-                trans = "left";
-                color= "#3399FF";
-                
-                
-            }
-            if(i % 4 === 1){
-                trans ="right";
-                color= "#CC0033";
-                
-            }
-            if(i % 4 == 2){
-                trans = "top";
-                color = "#03A8A6";
-            }
-            if(i % 4 === 3){
-                trans = "bottom";
-                color = "#6633CC";
-            }
-            
-            var Box = `<div class="box" style="background-color: ${color}">
-                            <div class="cover ${trans}">
+            var Box = `<div class="box" style="background-color: ${color[rand]}">
+                            <div class="cover ${trans[rand]}">
                                 <h2 class="title">${article.title}</h2>
                                 <p class="intro">${article.content}</p>
                                 <div class="btn"><a href="#">Read more...</a></div>
