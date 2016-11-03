@@ -3,7 +3,8 @@ function getAllArticles(){
     $.ajax({
     url: "/allArticles",
     success: function(result){
-        alert(result);
+        var allArticles = JSON.parse(result);
+        console.log(allArticles);
     }
 });
 }
