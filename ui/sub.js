@@ -12,13 +12,13 @@ function getAllArticles(){
             
             if(i % 4 === 0){
                 trans = "left";
-                color= "673AB7";
+                color= "#673AB7";
                 
                 
             }
             if(i % 4 === 1){
                 trans ="right";
-                color= "#EAE2DF";
+                color= "#FF5522";
                 
             }
             if(i % 4 == 2){
