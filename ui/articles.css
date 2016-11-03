@@ -155,11 +155,8 @@ h1{
   right: -250px;
 }
 
-.footer{
-    background-color:rgba(25,25,25,0.7);
-    color:#fff;
-    text-align:center;
-}
+
+
 
 /* Ordering */
   .left{order:1;}
@@ -170,4 +167,74 @@ h1{
   .top-right{order:6;}
   .bottom-left{order:7;}
   .bottom-right{order:8;}
+
+
+
+.wrapper-17:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #e2061b;
+  transform: scaleY(0);
+  transform-origin: bottom left;
+  transition: transform 0.2s;
+}
+.wrapper-17:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #e2061b;
+  transform: scaleY(0);
+  transform-origin: top right;
+  transition: transform 0.2s 0.2s;
+}
+.wrapper-17 .hover-17 {
+  padding: 10px;
+}
+.wrapper-17 .hover-17:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #e2061b;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.2s 0.3s;
+}
+.wrapper-17 .hover-17:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #e2061b;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.2s 0.1s;
+}
+.wrapper-17:hover:before {
+  transform: scaleY(1);
+  transition: transform 0.2s 0.3s;
+}
+.wrapper-17:hover:after {
+  transform: scaleY(1);
+  transition: transform 0.2s 0.1s;
+}
+.wrapper-17:hover .hover-17:before {
+  transform: scaleX(1);
+  transition: transform 0.2s;
+}
+.wrapper-17:hover .hover-17:after {
+  transform: scaleX(1);
+  transition: transform 0.2s 0.2s;
+}
 
