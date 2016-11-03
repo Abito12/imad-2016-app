@@ -18,7 +18,7 @@ function getAllArticles(){
             }
             if(i % 4 === 1){
                 trans ="right";
-                color= "#FF5522";
+                color= "#2196EA";
                 
             }
             if(i % 4 == 2){
