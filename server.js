@@ -31,6 +31,10 @@ app.get('/articles.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
 });
 
+app.get('/sub.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'sub.js'));
+});
+
 //Comments Section
 var comments = [];
 app.get('/submit', function(req, res){
