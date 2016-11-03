@@ -36,7 +36,7 @@ app.get('/sub.js', function (req, res) {
 });
 
 
-
+var pool = new Pool(config);
 app.get('/allArticles', function (req, res) {
     
     pool.query("SELECT title, content FROM article", function(err, result){
