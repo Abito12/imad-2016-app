@@ -5,6 +5,22 @@ function getAllArticles(){
     success: function(result){
         var allArticles = JSON.parse(result);
         console.log(allArticles);
+        for(var i = 0;i < allArticles.length; i++){
+            var article = allArticles[i];
+            var Box = `<div class="box">
+                            <div class="cover left">
+                                <h2 class="title">${article.title}</h2>
+                                <p class="intro"></p>
+                            <div class="btn"><a href="#">Read more...</a></div>
+                            <p class="date">10/19/2013</p>
+                            </div>
+                    </div>`;
+            $('.container').append(Box);
+            
+            
+            
+            
+        }
     }
 });
 }
