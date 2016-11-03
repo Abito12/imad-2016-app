@@ -35,6 +35,22 @@ app.get('/sub.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'sub.js'));
 });
 
+
+
+app.get('/allArticles', function (req, res) {
+    
+    pool.query("SELECT title, content FROM article", function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else if(result.rows.length === 0){
+            res.status(404).send('Article not found');
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    })
+      
+});
+
 //Comments Section
 var comments = [];
 app.get('/submit', function(req, res){
