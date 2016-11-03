@@ -8,6 +8,11 @@ $('.close').on('click', function() {
 
 
 
+
+
+
+
+
 /*
 var button = document.getElementById('count-button');
 button.onclick = function(){
