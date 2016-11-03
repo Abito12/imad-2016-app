@@ -12,7 +12,7 @@ function getAllArticles(){
             
             if(i % 4 === 0){
                 trans = "left";
-                color = "white";
+                color = "red";
                 
             }
             if(i % 4 === 1){
