@@ -206,7 +206,7 @@ h1{
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 20vw;
   height: 3px;
   background-color: #e2061b;
   transform: scaleX(0);
