@@ -54,12 +54,20 @@ function createArticlesBox(data){
 
 
 var pool = new Pool(config);
+var i =0;
+var articleBox = '';
+
 app.get('/articles.html', function (req, res){
-    pool.query('SELECT * FROM article', function(err, result){
+    pool.query('SELECT title, content FROM article', function(err, result){
         if(err){
             res.status(500).send(err.toString());
-        } else{
-           res.send(JSON.stringify(result.rows));
+        } else
+            {
+                for(i=0;i<4;i++){
+                    var articleData = result.rows[i];
+                    articlesBox = createArticleBox(articleData);
+                }
+                createArticlesMainPage(articlesBox);
         }
     });
 });
