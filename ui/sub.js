@@ -9,12 +9,19 @@ function getAllArticles(){
             var article = allArticles[i];
             var trans;
             
-            if(i % 2 === 0){
+            if(i % 4 === 0){
                 trans = "left";
             }
-            if(i % 2 === 1){
+            if(i % 4 === 1){
                 trans ="right";
             }
+            if(i % 4 == 2){
+                trans = "top"
+            }
+            if(i % 4 === 3){
+                trans = "bottom"
+            }
+            
             var Box = `<div class="box">
                             <div class="cover ${trans}">
                                 <h2 class="title">${article.title}</h2>
