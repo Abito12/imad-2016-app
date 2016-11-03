@@ -9,7 +9,7 @@ function getAllArticles(){
             var article = allArticles[i];
             var trans = ["left", "right","top","bottom","bottom-right","top-left"];
             var color = ["#3399FF", "#CC0033", "#03A8A6" , "#6633CC", "#009933", "#E25422"];
-            var rand = Math.floor((Math.random() * 6));
+            var rand = i % 6;
             
             var Box = `<div class="box" style="background-color: ${color[rand]}">
                             <div class="cover ${trans[rand]}">
