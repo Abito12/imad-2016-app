@@ -2,8 +2,8 @@
 function getAllArticles(){
     $.ajax({
     url: "/allArticles",
-    success: function(){
-        alert('hi');
+    success: function(result){
+        alert(result);
     }
 });
 }
