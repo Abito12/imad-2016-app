@@ -23,18 +23,13 @@ app.get('/', function (req, res) {
 
 //Articles Section
 
-
-var pool = new Pool(config);
-app.get('/articles.html', function (req, res){
-    pool.query('SELECT title, content FROM article', function(err, result){
-        if(err){
-            res.status(500).send(err.toString());
-        } else{
-            JSON.stringify(result.rows);
-            }
-    });
+app.get('/articles.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
 });
 
+app.get('/articles.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
+});
 
 //Comments Section
 var comments = [];
