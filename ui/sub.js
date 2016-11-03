@@ -29,6 +29,8 @@ function getAllArticles(){
                 trans = "bottom";
                 color = "#FF69B4";
             }
+            
+            
             var Box = `<div class="box" style="background-color: ${color}">
                             <div class="cover ${trans}">
                                 <h2 class="title">${article.title}</h2>
