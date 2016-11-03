@@ -3,6 +3,8 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 
+// Database Credentials
+
 var config = {
     user : 'abito12',
     database: 'abito12',
@@ -18,7 +20,37 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
 //Articles Section
+function createMainArticlesPage(articlesBox){
+    mainArticlesPageTemplate = `<!DOCTYPE html>
+        <html>
+        <head>
+            <title>Articles</title>
+            <link rel="stylesheet" type="text/css" href="main.css">
+        </head>
+        <body>
+            <div class="container">
+                ${articlesBox}
+            </div>
+        </body>
+    </html>`;
+}
+
+function createArticlesBox(data){
+    var title = data.title;
+    var content = data.content;
+    var BoxTemplate = `<div class="box">
+                            <div class="cover left">
+                                <h2 class="title">${title}</h2>
+                                <p class="intro">${content}</p>
+                                <div class="btn"><a href="#">Read more...</a></div>
+                                <p class="date">10/19/2013</p>
+                            </div>
+                        </div>`;
+}
+
+
 
 
 var pool = new Pool(config);
