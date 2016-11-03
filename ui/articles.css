@@ -1,23 +1,20 @@
 @font-face{
     font-family:NewFont;
-    src: url('ui/Lato-Light.ttf');
+    src: url('Lato-Light.ttf');
 }
 
-body{
-    font-family:'NewFont';
-}
 html{
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: 'NewFont';
+  font-family: NewFont;
   background-color:#330066;
 }
 h1{
   text-align: center;
   font-size: 48pt;
-  font-family: 'NewFont';
+  font-family: NewFont;
   margin-top: 75px;
   color: #fff;
   text-shadow: -1px 1px 0px #000;
@@ -34,8 +31,8 @@ h1{
 
 }
 .box{
-  width: 27vw;
-  height: 43vh;
+  width: 20vw;
+  height: 30vh;
   background-size: cover;
   overflow: hidden;
   margin:0.4vw;
