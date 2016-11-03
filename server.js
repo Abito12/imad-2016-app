@@ -39,7 +39,7 @@ app.get('/sub.js', function (req, res) {
 var pool = new Pool(config);
 app.get('/allArticles', function (req, res) {
     
-    pool.query("SELECT title, content FROM article", function(err, result){
+    pool.query("SELECT title, content, date FROM article", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else if(result.rows.length === 0){
