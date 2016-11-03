@@ -10,7 +10,7 @@ function getAllArticles(){
             var Box = `<div class="box">
                             <div class="cover left">
                                 <h2 class="title">${article.title}</h2>
-                                <p class="intro"></p>
+                                <p class="intro">${article.content}</p>
                             <div class="btn"><a href="#">Read more...</a></div>
                             <p class="date">10/19/2013</p>
                             </div>
