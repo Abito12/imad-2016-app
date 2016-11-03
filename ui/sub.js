@@ -27,7 +27,7 @@ function getAllArticles(){
                                 <h2 class="title">${article.title}</h2>
                                 <p class="intro">${article.content}</p>
                             <div class="btn"><a href="#">Read more...</a></div>
-                            <p class="date"></p>
+                            <p class="date">${article.date}</p>
                             </div>
                     </div>`;
             $('.container').append(Box);
