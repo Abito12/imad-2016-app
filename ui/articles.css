@@ -3,10 +3,6 @@
     src: url('Lato-Light.ttf');
 }
 
-*{
-  box-sizing: border-box;
-
-}
 html{
   padding: 0;
   margin: 0;
