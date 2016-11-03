@@ -1,20 +1,20 @@
-@font-face{
-    font-family:NewFont;
-    src: url('Lato-Light.ttf');
-}
+  
+*{
+  box-sizing: border-box;
 
+}
 html{
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: NewFont;
-  background-color:#330066;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h1{
   text-align: center;
   font-size: 48pt;
-  font-family: NewFont;
+  font-family: 'Lobster Two', cursive;
   margin-top: 75px;
   color: #fff;
   text-shadow: -1px 1px 0px #000;
@@ -31,19 +31,19 @@ h1{
 
 }
 .box{
-  width: 20vw;
-  height: 30vh;
+  width: 30vw;
+  height: 40vh;
   background-size: cover;
   overflow: hidden;
   margin:0.4vw;
   border: 1px solid #000;
   display: inline-block;
-
+  background-color: #573393
 }
 .cover{
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.7);
   position: relative;
   -webkit-transition: all 0.4s cubic-bezier(.99,.99,0,1);
   padding: 1em;
@@ -163,5 +163,4 @@ h1{
   .top-right{order:6;}
   .bottom-left{order:7;}
   .bottom-right{order:8;}
-
 
