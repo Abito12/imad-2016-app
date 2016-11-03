@@ -58,6 +58,7 @@ var i =0;
 var articleBox = '';
 
 app.get('/articles.html', function (req, res){
+    console.log('dayeu');
     pool.query('SELECT title, content FROM article', function(err, result){
         if(err){
             res.status(500).send(err.toString());
