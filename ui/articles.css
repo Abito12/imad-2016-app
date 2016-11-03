@@ -8,8 +8,7 @@ html{
   margin: 0;
   height: 100%;
   width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgba(3,168,166, 0.7);
 }
 h1{
   text-align: center;
