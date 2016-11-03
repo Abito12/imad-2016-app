@@ -12,15 +12,18 @@ function getAllArticles(){
             
             if(i % 4 === 0){
                 trans = "left";
-                color = "red";
+                color= "red";
+                
                 
             }
             if(i % 4 === 1){
                 trans ="right";
-                color: "blue";
+                color= "blue";
+                
             }
             if(i % 4 == 2){
                 trans = "top";
+                color = "yellow";
             }
             if(i % 4 === 3){
                 trans = "bottom";
@@ -34,9 +37,6 @@ function getAllArticles(){
                             </div>
                     </div>`;
             $('.container').append(Box);
-            
-            
-            
             
         }
     }
