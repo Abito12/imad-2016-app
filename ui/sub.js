@@ -17,7 +17,7 @@ function getAllArticles(){
                                 </a>
                             </div>
                         </div>`;
-            $('.articleBox').append(Box);
+            $('.row').append(Box);
             
         }
     }
