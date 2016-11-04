@@ -1,7 +1,4 @@
- @font-face{
-    font-family:NewFont;
-    src: url('Lato-Light.ttf');
-} 
+\
 
 html{
   padding: 0;
@@ -16,7 +13,7 @@ html{
   background: -ms-linear-gradient(-45deg,  #EA5C54  0%,#bb6dec 100%); /* IE10+ */
   background: linear-gradient(135deg,  #EA5C54  0%,#bb6dec 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#330066 ', endColorstr='#bb6dec',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    font-family: 'NewFont';
+    font-family: 'Lato';
   
 }
 h1{
