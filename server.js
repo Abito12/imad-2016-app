@@ -53,7 +53,6 @@ app.get('/allArticles', function (req, res) {
 function createArticleTemplate (data){
     
     var title = data.title;
-    var content = data.content;
     
     var articleTemplate = `
     <!DOCTYPE html>
@@ -155,7 +154,7 @@ function createArticleTemplate (data){
 
 app.get('/articles/:articleID', function(req, res){
     var id = req.query.articleID;
-    pool.query("SELECT title,content FROM article WHERE id ="+id, function(err, result){
+    pool.query("SELECT titleFROM article WHERE id ="+id, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else if(result.rows.length === 0){
