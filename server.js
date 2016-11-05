@@ -61,8 +61,8 @@ app.get('/submit', function(req, res){
 });
 
 
-app.get('/article-one.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+app.get('/articlepage.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articlepage.html'));
 });
 
 app.get('/article-two.html', function (req, res) {
