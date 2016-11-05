@@ -4,21 +4,22 @@
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="articlesPage.css">
+  <script src="main.js"></script>
 </head>
 <body>
 <div id="container">
 <div class="blog">
     <div class="title-box">
       <h3>
-      SPRING FEVER
+      ${article.title}
       </h3>
       <hr/>
       <div class="intro">
-        Yllamco laboris nisi ut aliquip ex ea commodo.
+        ${article.author}
       </div>
     </div>  
     <div class="info">
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</span>
+      <span>${article.content}</span>
   </div>
   <div class="footer">
     <div class="icon-holder">
