@@ -380,6 +380,7 @@ body {
 
 .text-js{
   opacity: 0;
+  border:5px red solid;
 }
 .cursor{
   display: block;
