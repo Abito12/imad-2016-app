@@ -48,6 +48,7 @@ h1,h4{
   min-height: 1px;
   float: left;
   margin:1vw;
+  border:2px red solid;
   -webkit-backface-visibility: hidden;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
