@@ -154,7 +154,7 @@ function createArticleTemplate (data){
 
 app.get('/articles/:articleID', function(req, res){
     var id = req.query.articleID;
-    pool.query("SELECT * FROM article WHERE id ="+id, function(err, result){
+    pool.query("SELECT * FROM article WHERE id = 1", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else if(result.rows.length === 0){
