@@ -7,8 +7,8 @@ body{
   background: #fbfbfb;
   font-family: 'Merriweather', serif;
   font-size: 16px;
-  color:#777;
-  background-color: rgba(25,25,25,0.2);
+  color:rgba(255,255,255,0.8);
+  background-color: rgba(25,25,25,0.9);
 }
 
 h1,h4{
