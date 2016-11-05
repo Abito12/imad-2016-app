@@ -65,6 +65,10 @@ app.get('/articlepage.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlepage.html'));
 });
 
+app.get('/articlepage.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articlepage.css'));
+});
+
 app.get('/article-two.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 });
