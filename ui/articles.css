@@ -80,7 +80,7 @@ h1,h4{
     bottom: 0px;
     height: 2px;
     width: 0%;
-    background: red;
+    background: black;
     right: 0px;
     -webkit-transition: width 0.4s;
     transition: width 0.4s;
