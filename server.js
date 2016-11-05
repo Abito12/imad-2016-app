@@ -4,7 +4,6 @@ var path = require('path');
 var Pool = require('pg').Pool;
 
 // Database Credentials
-
 var config = {
     user : 'abito12',
     database: 'abito12',
@@ -12,6 +11,7 @@ var config = {
     port: '5432',
     password: process.env.DB_PASSWORD
 };
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -22,7 +22,6 @@ app.get('/', function (req, res) {
 
 
 //Articles Section
-
 app.get('/articles.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
 });
@@ -35,7 +34,7 @@ app.get('/sub.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'sub.js'));
 });
 
-
+//Articles Main Page
 var pool = new Pool(config);
 app.get('/allArticles', function (req, res) {
     
