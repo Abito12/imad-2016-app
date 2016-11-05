@@ -96,6 +96,7 @@ h1,h4{
    .item p{
       font-size: 12px;
       height:15px;
+      overflow-y:hidden;
     }
 
     .item a{
