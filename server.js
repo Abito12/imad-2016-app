@@ -56,7 +56,7 @@ function createArticleTemplate(data){
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" type="text/css" href="articlesPage.css">
+  <link rel="stylesheet" type="text/css" href="articlePage.css">
 </head>
 <body>
 <div id="container">
