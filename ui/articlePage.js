@@ -1,23 +1,18 @@
 
-function getAArticle(){
+function getAllComments(){
     $.ajax({
-    url: "/Articled",
+    url: "/articles/comments",
     success: function(result){
-        var allArticles = JSON.parse(result);
-        console.log(allArticles);
-        for(var i = 0;i < allArticles.length; i++){
-            var article = allArticles[i];
-            var Box = `<div class="col-md-6 item">
-                            <div class="item-in">
-                                <h4>${article.title}</h4>
-                                <div class="seperator"></div>
-                                <p>${article.content}</p>
-                                <a href="#">Read More
-                                <i class="fa fa-long-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>`;
-            $('#articleBox').append(Box);
+        var allComments = JSON.parse(result);
+        console.log(allComments);
+        for(var i = 0;i < allComments.length; i++){
+            var Comment = allComments[i];
+            var Box = `<li>
+                        <div class="commentText">
+                            <p class="">${Comment.comment}</p> <span class="date sub-text">on March 5th, 2014</span>
+                        </div>
+                    </li>`;
+            $('.commentslist').append(Box);
             
         }
     }
@@ -25,5 +20,5 @@ function getAArticle(){
 }
 
 $(document).ready(function(){
-    getAllArticles();
+    getAllComments();
 });
