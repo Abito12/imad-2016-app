@@ -180,9 +180,6 @@ app.get('/articlesPage.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlesPage.css'));
 });
 
-app.get('/articlesPage.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'articlesPage.css'));
-});
 
 app.get('/article-two.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
