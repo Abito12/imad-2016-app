@@ -172,10 +172,6 @@ app.get('/submit', function(req, res){
 });
 
 
-app.get('/articlepage.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'articlepage.html'));
-});
-
 app.get('/articles/articlepage.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlesPage.css'));
 });
