@@ -54,6 +54,10 @@ app.get('/articles/articlePage.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlepage.css'));
 });
 
+app.get('/articles/articlePage.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articlepage.js'));
+});
+
 function createArticleTemplate(data){
     var title = data.title;
     var content = data.content;
@@ -62,6 +66,7 @@ function createArticleTemplate(data){
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="articlePage.css">
+  <script src ="articlePage.js"></script>
 </head>
 <body>
 <div id="container">
@@ -106,30 +111,8 @@ function createArticleTemplate(data){
     <div class="actionBox">
         <ul class="commentList">
             <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/50/50" />
-                </div>
                 <div class="commentText">
-                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                </div>
-            </li>
-            <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/45/45" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                </div>
-            </li>
-            <li>
-                <div class="commenterImage">
-                  <img src="http://placekitten.com/40/40" />
-                </div>
-                <div class="commentText">
-                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-
+                    <p class=""></p> <span class="date sub-text">on March 5th, 2014</span>
                 </div>
             </li>
         </ul>
