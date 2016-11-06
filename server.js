@@ -172,7 +172,7 @@ app.get('/submit', function(req, res){
 });
 
 
-app.get('/articles/articlepage.css', function (req, res) {
+app.get('/articles/articlePage.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlepage.css'));
 });
 
