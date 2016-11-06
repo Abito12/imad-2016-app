@@ -1,3 +1,5 @@
+var requestURL = window.location.href;
+console.log(requestURL);
 
 function getAllComments(){
     $.ajax({
