@@ -57,7 +57,6 @@ function createArticleTemplate(data){
 <head>
   <title></title>
   <link rel="stylesheet" type="text/css" href="articlesPage.css">
-  <script src="main.js"></script>
 </head>
 <body>
 <div id="container">
@@ -175,6 +174,10 @@ app.get('/submit', function(req, res){
 
 app.get('/articlepage.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlepage.html'));
+});
+
+app.get('/articlesPage.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articlesPage.css'));
 });
 
 app.get('/articlesPage.css', function (req, res) {
