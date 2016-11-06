@@ -64,7 +64,7 @@ function createArticleTemplate(data){
     var articleTemplate = `
 <html>
 <head>
-  <title></title>
+  <title>Article</title>
   <link rel="stylesheet" type="text/css" href="articlePage.css">
   <script src ="articlePage.js"></script>
 </head>
