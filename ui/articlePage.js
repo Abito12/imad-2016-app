@@ -1,6 +1,9 @@
 var requestURL = window.location.href;
 console.log(requestURL);
 
+var articleID = requestURL.params.articleID;
+console.log(articleID);
+
 function getAllComments(){
     $.ajax({
     url: "/articles/comments",
