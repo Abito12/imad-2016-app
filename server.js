@@ -25,13 +25,13 @@ app.get('/articles.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
 });
 
+app.get('/sub.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'sub.js'));
+});
 app.get('/articles.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
 });
 
-app.get('/sub.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'sub.js'));
-});
 
 //Articles Main Page
 var pool = new Pool(config);
@@ -49,14 +49,15 @@ app.get('/allArticles', function (req, res) {
       
 });
 
+app.get('/articles/articlePage.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articlePage.js'));
+});
 
 app.get('/articles/articlePage.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlepage.css'));
 });
 
-app.get('/articles/articlePage.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'articlepage.js'));
-});
+
 
 function createArticleTemplate(data){
     var title = data.title;
