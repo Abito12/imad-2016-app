@@ -49,6 +49,11 @@ app.get('/allArticles', function (req, res) {
       
 });
 
+
+app.get('/articles/articlePage.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articlepage.css'));
+});
+
 function createArticleTemplate(data){
     var title = data.title;
     var content = data.content;
@@ -171,10 +176,6 @@ app.get('/submit', function(req, res){
     res.send(JSON.stringify(comments));
 });
 
-
-app.get('/articles/articlePage.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'articlepage.css'));
-});
 
 
 app.get('/article-two.html', function (req, res) {
