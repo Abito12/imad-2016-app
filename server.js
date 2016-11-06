@@ -176,7 +176,7 @@ app.get('/articlepage.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlepage.html'));
 });
 
-app.get('/articlesPage.css', function (req, res) {
+app.get('/ui/articlesPage.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlesPage.css'));
 });
 
