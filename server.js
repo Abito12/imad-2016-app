@@ -55,6 +55,9 @@ app.get('/articles/articlePage.css', function (req, res) {
 });
 
 
+app.get('/articles/articlePage.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'articlePage.js'));
+});
 
 function createArticleTemplate(data){
     var title = data.title;
@@ -64,36 +67,7 @@ function createArticleTemplate(data){
 <head>
   <title>Article</title>
   <link rel="stylesheet" type="text/css" href="articlePage.css">
-  <script>
-  var requestURL = window.location.href;
-console.log(requestURL);
-
-var articleID = requestURL.params.articleID;
-console.log(articleID);
-
-function getAllComments(){
-    $.ajax({
-    url: '/articles/comments',
-    success: function(result){
-        var allComments = JSON.parse(result);
-        console.log(allComments);
-        for(var i = 0;i < allComments.length; i++){
-            var Comment = allComments[i];
-            var Box = "<li>
-                        <div class="commentText">
-                            <p class="">${Comment.comment}</p> <span class='date sub-text'>on March 5th, 2014</span>
-                        </div>
-                    </li>";
-            $('.commentslist').append(Box);
-            
-        }
-    }
-});
-}
-
-$(document).ready(function(){
-    getAllComments();
-});
+  <script src="articlePage.js">
   </script>
 </head>
 <body>
