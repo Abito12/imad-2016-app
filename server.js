@@ -73,7 +73,7 @@ console.log(articleID);
 
 function getAllComments(){
     $.ajax({
-    url: "/articles/comments",
+    url: '/articles/comments',
     success: function(result){
         var allComments = JSON.parse(result);
         console.log(allComments);
