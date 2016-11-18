@@ -16,10 +16,12 @@ body {
 
 div.headercontainertop
 {
-    font-family: Raleway;
+    font: 'NewFont';
     margin: 0 auto;
-	padding: 10em 3em;
+	padding-top:3px;
+	padding-bottom:3px;
 	text-align: center;
+	
   
 }
 
@@ -27,7 +29,7 @@ div.containertop a
 {
     color: black;
     text-decoration: none;
-    font: 20px Raleway;
+    font: 'NewFont';
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;
@@ -37,7 +39,7 @@ div.containertop a
 
 .brown
 {
-    background: #795548;
+    background: rgba(25,25,25,0.9);
 }
 
 
