@@ -1,76 +1,58 @@
-<!doctype html>
-<html>
-    <head>
-        <link href="ui/style.css" rel="stylesheet" />
-        <link href="ui/madi.png"  rel="icon"/>
-        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    </head>
-    
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>#codevember Sign In / Sign Up</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" href="ui/style.css">
+
+  
+</head>
+
 <body>
+  <section class="container">
+		    <article class="half">
+			        <h1>Welcome</h1>
+			        <div class="tabs">
+				            <span class="tab signin active"><a href="#signin">Sign in</a></span>
+				            <span class="tab signup"><a href="#signup">Sign up</a></span>
+			        </div>
+			        <div class="content">
+				            <div class="signin-cont cont">
+					                <form action="#" method="post" enctype="multipart/form-data">
+						                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+						                    <label for="email">Your email</label>
+						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                						    <label for="password">Your password</label>
+						                    <div class="submit-wrap">
+							                        <input type="submit" value="Sign in" class="submit">
+							                        <a href="#" class="more">Forgot your password?</a>
+						                    </div>
+        					        </form>
+    				        </div>
+    				        <div class="signup-cont cont">
+                <form action="#" method="post" enctype="multipart/form-data">
+						                    <input type="name" name="name" id="name" class="inpt" required="required" placeholder="Your name">
+						                    <label for="name">Your name</label>
+                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your email">
+						                    <label for="email">Your email</label>
+						                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                						    <label for="password">Your password</label>
+						                    <div class="submit-wrap">
+							                        <input type="submit" value="Sign up" class="submit">
+							                        <a href="#" class="more">Terms and conditions</a>
+						                    </div>
+        					        </form>
+            </div>
+			        </div>
+		    </article>
+		    <div class="half bg"></div>
+	</section>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
+    <script src="js/index.js"></script>
 
-<div id="navbar">
-	<span class="left_el">Home</span>
-	<span class="left_el">Home</span>
-	<span class="left_el">Home</span>
-	<span class="left_el">Home</span>
-</div>
-
-<div class="container">
-    
-  <div class="card"></div>
-  <div class="card">
-    <h1 class="title">Login</h1>
-    <form>
-      <div class="input-container">
-        <input type="text" id="Username" required="required"/>
-        <label for="Username">Username</label>
-        <div class="bar"></div>
-      </div>
-      <div class="input-container">
-        <input type="password" id="Password" required="required"/>
-        <label for="Password">Password</label>
-        <div class="bar"></div>
-      </div>
-      <div class="button-container">
-        <button><span>Sign In</span></button>
-      </div>
-      <div class="footer"><a href="#">Forgot your password?</a></div>
-    </form>
-  </div>
-  <div class="card alt">
-    <div class="toggle"></div>
-    <h1 class="title">Register
-      <div class="close"></div>
-    </h1>
-    <form>
-      <div class="input-container">
-        <input type="text" id="Username" required="required"/>
-        <label for="Username">Username</label>
-        <div class="bar"></div>
-      </div>
-      <div class="input-container">
-        <input type="text" id="email" required="required"/>
-        <label for="email">Email</label>
-        <div class="bar"></div>
-      </div>
-      <div class="input-container">
-        <input type="password" id="Password" required="required"/>
-        <label for="Repeat Password">Password</label>
-        <div class="bar"></div>
-      </div>
-      <div class="button-container">
-        <button><span>Sign Up</span></button>
-      </div>
-    </form>
-  </div>
-</div>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-        <script src="ui/main.js"></script>
-
-    
-    
-  </body>
+</body>
 </html>
