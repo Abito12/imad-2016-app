@@ -3,6 +3,37 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
+		#navbar{
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 36px;
+			width: 100%;
+			padding-top: 5px;
+			z-index: 10;
+			text-align: center;
+			background-color: rgba(0,0,0,1);
+			color:#fff;
+			
+		}
+
+		.left_el{
+			height: 90%;
+			padding-left: 3%;
+			padding-right: 3%;
+			font-size: 1em;
+			transition: all 0.5s;
+			float: left;
+			margin-right: -1px;
+			border-width: 1px;
+			border-color: #333;
+			border-right-style: solid;
+			cursor: pointer;
+		}
+		.left_el:hover{
+  			box-shadow: 0px 2px 5px #fff;
+}
+
 body{
   background: #fbfbfb;
   font-family: 'Merriweather', serif;
