@@ -1,37 +1,19 @@
-$('.toggle').on('click', function() {
-  $('.container').stop().addClass('active');
+$('.tabs .tab').click(function(){
+    if ($(this).hasClass('signin')) {
+        $('.tabs .tab').removeClass('active');
+        $(this).addClass('active');
+        $('.cont').hide();
+        $('.signin-cont').show();
+    } 
+    if ($(this).hasClass('signup')) {
+        $('.tabs .tab').removeClass('active');
+        $(this).addClass('active');
+        $('.cont').hide();
+        $('.signup-cont').show();
+    }
 });
-
-$('.close').on('click', function() {
-  $('.container').stop().removeClass('active');
+$('.container .bg').mousemove(function(e){
+    var amountMovedX = (e.pageX * -1 / 30);
+    var amountMovedY = (e.pageY * -1 / 9);
+    $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
 });
-
-
-
-
-
-
-
-
-/*
-var button = document.getElementById('count-button');
-button.onclick = function(){
-    console.log('asd');
-	var request = new XMLHttpRequest();
-	request.onreadystatechange = function(){
-	    if(request.readyState === XMLHttpRequest.DONE){
-	        if(request.status === 200){
-	                var count = request.responseText;
-	                var count_button = document.getElementById('show-count');
-	                count_button.innerHTML = count.toString();
-	            }
-	        }
-	    };
-
-	
-	request.open('GET', "http://abito12.imad.hasura-app.io/counter", true);
-	request.send(null);
-	
-};
-
-*/
