@@ -60,7 +60,8 @@ p {
   color: #f0f0e6; }
 
 body > .container-fluid {
-  padding: 0; }
+  padding: 0;
+  width:100%;}
 
 .container-fluid .text-muted {
   margin: 20px 0; }
