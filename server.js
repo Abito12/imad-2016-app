@@ -187,6 +187,14 @@ app.get('/ui/code-in-the-flow.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'code-in-the-flow.png'));
 });
 
+app.get('/ui/about.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
+});
+
+app.get('/ui/about.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'about.css'));
+});
+
 
 
 //Count Button
