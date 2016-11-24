@@ -13,9 +13,8 @@
 }
 
 .Headcontainer{
-    position:fixed;
-    top:0;
-  height: 6vh;
+    margin-top:0;
+    height: 6vh;
    background: #202734;
   
 }
