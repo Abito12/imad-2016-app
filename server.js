@@ -139,7 +139,7 @@ return articleTemplate;
 
 app.get('/articles/:articleID', function(req, res){
     
-    pool.query("SELECT title, content FROM article WHERE id = " + req.params.articleID, function(err, result){
+    pool.query("SELECT id, title, content FROM article WHERE id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
