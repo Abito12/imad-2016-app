@@ -15,6 +15,7 @@
 .Headcontainer{
     margin-top:0;
     height: 6vh;
+      font-family: 'Merriweather', serif;
    background: rgba(25,25,25,0.8);
   
 }
@@ -72,7 +73,7 @@
   line-height: 50px !important;
 }
 .header .inner {
-  width: 60%;
+  width: 80%;
   margin-top: 3px;
   position: relative;
 }
@@ -114,7 +115,7 @@
 }
 .header .user-ui .user-menu {
   width: 300px;
-  background: #f9f9f9;
+  background: rgba(25,25,25,0.7);
   position: absolute;
   right: 40%;
   border: 1px solid #f2f2f2;
