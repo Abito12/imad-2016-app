@@ -13,8 +13,11 @@
 }
 
 .Headcontainer{
+    position:fixed;
+    top:0;
   height: 6vh;
    background: #202734;
+  
 }
 
 .Headcontainer .left_el{
