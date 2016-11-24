@@ -1,6 +1,6 @@
 $(function () {
 
-	var isopen_usermenu = false;
+	var isopen_usermenu = true;
 
 
 	$(".header .user-menu-toggle").on("click", function () {
