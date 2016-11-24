@@ -37,7 +37,7 @@ app.get('/articles.css', function (req, res) {
 var pool = new Pool(config);
 app.get('/allArticles', function (req, res) {
     
-    pool.query("SELECT id, title, content, date FROM article", function(err, result){
+    pool.query("SELECT * FROM article", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else if(result.rows.length === 0){
