@@ -32,7 +32,7 @@ app.get('/articles.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
 });
 
-app.get('/about.html', function (req, res) {
+app.get('/ui/about.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
