@@ -44,7 +44,7 @@ function getAllArticles(){
                                 <h4>${article.title}</h4>
                                 <div class="seperator"></div>
                                 <p>${article.content}</p>
-                                <a href = "http://abito12.imad.hasura-app.io/articles/"+ ${article.id}>Read More
+                                <a href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
                                 <i class="fa fa-long-arrow-right"></i>
                                 </a>
                             </div>
