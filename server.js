@@ -32,6 +32,13 @@ app.get('/articles.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
 });
 
+app.get('/ui/about.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
+});
+
+app.get('/ui/about.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'about.css'));
+});
 
 //Articles Main Page
 var pool = new Pool(config);
@@ -186,15 +193,6 @@ app.get('/ui/Lato-Light.ttf', function (req, res) {
 app.get('/ui/code-in-the-flow.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'code-in-the-flow.png'));
 });
-
-app.get('/ui/about.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
-});
-
-app.get('/ui/about.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'about.css'));
-});
-
 
 
 //Count Button
