@@ -232,8 +232,8 @@ return articleTemplate;
 }
 
 app.get('/articles/:articleID', function(req, res){
-    
-    pool.query("SELECT id, title, content FROM article WHERE id = " + req.params.articleID, function(err, result){
+    if(req.session && req.session.auth && req.session.auth.userId){
+        pool.query("SELECT id, title, content FROM article WHERE id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
@@ -242,7 +242,11 @@ app.get('/articles/:articleID', function(req, res){
             var articleData = result.rows[0];
             res.send(createArticleTemplate(articleData));
             }
+    } else{
+           res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+    }
     });
+    
 });
 
 
