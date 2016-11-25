@@ -4,6 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool;
 const crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 // Database Credentials
 var config = {
@@ -17,6 +18,13 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret: 'randomsecretvalue',
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
+}));
+
+
+
 
 //Creating DB
 var pool = new Pool(config);
@@ -85,6 +93,10 @@ app.post('/login', function(req, res){
                 var salt = dbString.split('$')[2];
                 var hashedPassword = hash(password, salt);
                 if(hashedPassword === dbString){
+                    //Set the session
+                    
+                    req.session.auth = {userId: result.rows[0].id};
+                    
                     res.send('Credentials Correct');
                 } else {
                     res.send(403).send('Invalid Login');
@@ -94,7 +106,13 @@ app.post('/login', function(req, res){
 });
 
 
-
+app.get('/check-login', function(req, res){
+   if(req.session && req.session.auth && req.session.auth.userId){
+       res.send('You are logged in:' + req.session.auth.userId.toString());
+   } else{
+       res.send('You are not logged in');
+   }
+});
 
 
 //Articles Main Page
