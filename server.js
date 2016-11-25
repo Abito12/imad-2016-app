@@ -108,7 +108,7 @@ app.post('/login', function(req, res){
 
 app.get('/check-login', function(req, res){
    if(req.session && req.session.auth && req.session.auth.userId){
-        res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+        res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
    } else{
      res.sendFile(path.join(__dirname, 'ui', 'index.html'));
    }
