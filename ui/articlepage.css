@@ -8,6 +8,8 @@
 }
 
 .ghost-button {
+    width:7vw;
+    height:3vw;
   color: #fff;
   border: 1px solid #fff;
   border-radius: 5px;
