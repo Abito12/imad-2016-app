@@ -220,6 +220,9 @@ function createArticleTemplate(data){
     </div>
 </div>
 </div>
+<div class = "ghost">
+  <a class = "ghost-button" href = "http://abito12.imad.hasura-app.io/articles">Home</a>  
+</div>
 </div>
 
 </body>
