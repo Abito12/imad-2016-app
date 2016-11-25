@@ -51,33 +51,6 @@ submit.onclick = function(){
 };
 
 
-var signup = document.getElementById('signup-btn');
-submit.onclick = function(){
-  var request = new XMLHttpRequest();
-  
-  
-  request.onreadystatechange = function(){
-      if(request.readyState === XMLHttpRequest.DONE){
-          if(request.status === 200){
-              window.location.href='http://abito12.imad.hasura-app.io/articles';
-              console.log("Successful Login");
-          }
-
-          else if(request.status ===500){
-              alert('Internal Error');
-          }
-      }
-  };
-  
-  var username = document.getElementById('username2').value;
-  var password = document.getElementById('password2').value;
-  console.log(username);
-  console.log(password);
-  request.open('POST', 'http://abito12.imad.hasura-app.io/create-user', true);
-  request.setRequestHeader('Content-Type', 'application/json');
-  request.send(JSON.stringify({username: username, password: password}));
-  
-};
 
 
 
