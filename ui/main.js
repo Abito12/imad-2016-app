@@ -64,7 +64,7 @@ signup.onclick = function(){
                 request.send(JSON.stringify({username: username2, password: password2}));
           }
           else if(request.status ===500){
-              alert('Invalid Login');
+              alert('Sign In Error');
           }
       }
   };
