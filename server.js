@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 const crypto = require('crypto');
-
+var bodyParser = require('body-parser');
 
 // Database Credentials
 var config = {
@@ -18,7 +18,7 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
-//Creating DB POOL
+//Creating DB
 var pool = new Pool(config);
 
 app.get('/', function (req, res) {
