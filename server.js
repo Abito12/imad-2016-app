@@ -38,7 +38,11 @@ app.get('/', function (req, res) {
 
 //Articles Section
 app.get('/articles.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
+       if(req.session && req.session.auth && req.session.auth.userId){
+        res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
+   } else{
+     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+   }
 });
 
 app.get('/sub.js', function (req, res) {
