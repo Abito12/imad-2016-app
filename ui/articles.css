@@ -65,7 +65,7 @@
   float: right;
   display: inline-block;
   height: 100%;
-  background: rgba(25,25,25,0.7);
+  background: #1C1C1C;
   line-height: 50px !important;
 }
 .header .inner {
