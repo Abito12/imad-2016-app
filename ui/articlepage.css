@@ -1,7 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
 @import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 
+.ghost{
+    position:fixed;
+    top:80%;
+    left:80%;
+}
 
+.ghost-button {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-bottom: 1.25em; }
+  
+  .ghost-button:hover {
+    background: rgba(255,255,255,0.7);
+    color: #000; }
 
 body{
   background: #323c3f;
