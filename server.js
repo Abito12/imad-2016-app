@@ -24,9 +24,7 @@ app.use(session({
 }));
 
 
-
-
-//Creating DB
+//Creating DB Pool
 var pool = new Pool(config);
 
 app.get('/', function (req, res) {
@@ -46,7 +44,7 @@ app.get('/articles.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
 });
 
-app.get('/about.html', function (req, res) {
+app.get('/about', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
