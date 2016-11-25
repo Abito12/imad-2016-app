@@ -59,9 +59,7 @@ signup.onclick = function(){
   request.onreadystatechange = function(){
       if(request.readyState === XMLHttpRequest.DONE){
           if(request.status === 200){
-                request.open('POST', 'http://abito12.imad.hasura-app.io/login', true);
-                request.setRequestHeader('Content-Type', 'application/json');
-                request.send(JSON.stringify({username: username2, password: password2}));
+              alert('Sign In Successful, Please Log In with your username and password')
           }
           else if(request.status ===500){
               alert('Sign In Error');
@@ -76,6 +74,7 @@ signup.onclick = function(){
   request.open('POST', 'http://abito12.imad.hasura-app.io/create-user', true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify({username: username2, password: password2}));
+  
   
 };
 
