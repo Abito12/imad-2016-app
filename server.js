@@ -37,7 +37,7 @@ app.get('/', function (req, res) {
 
 
 //Articles Section
-app.get('/articles.html', function (req, res) {
+app.get('/articles', function (req, res) {
        if(req.session && req.session.auth && req.session.auth.userId){
         res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
    } else{
