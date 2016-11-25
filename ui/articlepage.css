@@ -7,6 +7,7 @@
     left:80%;
         width:7vw;
     height:3vh;
+    border:2px red solid;
 }
 
 .ghost-button {
