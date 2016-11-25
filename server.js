@@ -28,7 +28,11 @@ app.use(session({
 var pool = new Pool(config);
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+     if(req.session && req.session.auth && req.session.auth.userId){
+        res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
+   } else{
+     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+   }
 });
 
 
@@ -104,13 +108,6 @@ app.post('/login', function(req, res){
 });
 
 
-app.get('/check-login', function(req, res){
-   if(req.session && req.session.auth && req.session.auth.userId){
-        res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
-   } else{
-     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-   }
-});
 
 app.get('/logout', function(req, res){
     delete req.session.auth;
