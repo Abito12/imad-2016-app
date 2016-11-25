@@ -135,7 +135,7 @@ app.get('/allArticles', function (req, res) {
         }else{
             res.send(JSON.stringify(result.rows));
         }
-    })
+    });
       
 });
 
