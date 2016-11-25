@@ -322,9 +322,13 @@ body > .container-fluid {
   h2,
   h3 {
     page-break-after: avoid; } }
+
+#mail-link{
+    color:#25b79f;
+}
     
 #mail-link:hover{
     color:#fff;
     text-decoration:none;
 }
-}
+
