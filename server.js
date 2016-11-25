@@ -149,6 +149,17 @@ app.get('/articles/articlePage.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlePage.js'));
 });
 
+app.get('/articles/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
+
+
+app.get('/articles/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
+
+
 function createArticleTemplate(data){
     var title = data.title;
     var content = data.content;
