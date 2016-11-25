@@ -35,7 +35,7 @@ submit.onclick = function(){
               alert('Incorrect username and password');
           }
           else if(request.status ===503){
-              alert('Internal Error');
+              alert('Internxal Error');
           }
       }
   };
