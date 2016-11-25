@@ -232,21 +232,21 @@ return articleTemplate;
 }
 
 app.get('/articles/:articleID', function(req, res){
-    if(req.session && req.session.auth && req.session.auth.userId){
-        pool.query("SELECT id, title, content FROM article WHERE id = " + req.params.articleID, function(err, result){
+    
+    pool.query("SELECT id, title, content FROM article WHERE id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
             res.status(404).send('Article Not Found');
         } else{
             var articleData = result.rows[0];
-            res.send(createArticleTemplate(articleData));
+            if(req.session && req.session.auth && req.session.auth.userId){
+                res.send(createArticleTemplate(articleData));
+            }else{
+                  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
             }
-    } else{
-           res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-    }
+            }
     });
-    
 });
 
 
@@ -261,13 +261,6 @@ app.get('/submit', function(req, res){
 
 
 
-app.get('/article-two.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
