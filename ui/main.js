@@ -28,7 +28,7 @@ submit.onclick = function(){
   request.onreadystatechange = function(){
       if(request.readyState === XMLHttpRequest.DONE){
           if(request.status === 200){
-              window.location.href='http://abito12.imad.hasura-app.io/about';
+              window.location.href='http://abito12.imad.hasura-app.io/articles';
               console.log("Successful Login");
           }
           else if(request.status === 403){
