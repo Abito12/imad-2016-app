@@ -50,9 +50,9 @@ app.get('/articles.css', function (req, res) {
 
 app.get('/about', function (req, res) {
        if(req.session && req.session.auth && req.session.auth.userId){
-        res.sendFile(path.join(__dirname, 'ui', 'articles.html'));
+        res.sendFile(path.join(__dirname, 'ui', 'about.html'));
    } else{
-     res.sendFile(path.join(__dirname, 'ui', 'about.html'));
+     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
    }
 });
 
