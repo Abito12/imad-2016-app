@@ -59,7 +59,8 @@ signup.onclick = function(){
   request.onreadystatechange = function(){
       if(request.readyState === XMLHttpRequest.DONE){
           if(request.status === 200){
-              alert('Sign In Successful, Please Log In with your username and password')
+              window.location.href='http://abito12.imad.hasura-app.io/articles';
+              console.log("New user created");
           }
           else if(request.status ===500){
               alert('Sign In Error');
