@@ -51,6 +51,7 @@ submit.onclick = function(){
 };
 
 
-
+var signup = document.getElementById('signup-btn');
+signup.onclick = alert('Clicked Da');
 
 
