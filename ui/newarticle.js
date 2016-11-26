@@ -7,6 +7,11 @@ function lettersOnly(input){
     input.value = input.value.replace(regex, " ");
 }
 
+function lettersOnly2(input){
+    var regex = /[^a-z-]/gi;
+    input.value = input.value.replace(regex, " ");
+}
+
 
 var submit = document.getElementById('submit-btn');
 submit.onclick = function(){
