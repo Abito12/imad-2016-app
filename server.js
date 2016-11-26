@@ -198,7 +198,7 @@ function createArticleTemplate(data){
     var articleTemplate = `
 <html>
 <head>
-  <title>Article</title>
+  <title>Blog | Web App</title>
   <link rel="stylesheet" type="text/css" href="articlePage.css">
   <link rel="icon" href="https://juststickers.in/wp-content/uploads/2016/09/lamda.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
