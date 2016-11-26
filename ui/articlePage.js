@@ -10,7 +10,7 @@ function getComments(){
             var comment = allComments[i];
             var Box = `<li>
                     <div class="commentText">
-                         <p class="">${comment.body}</p> <span class="date sub-text">${comment.writer}</span>
+                         <p class="">${comment.body}</p> <span class="date sub-text">${comment.username}</span>
                     </div>
                     </li>`;
             $('#commentBox').append(Box);
