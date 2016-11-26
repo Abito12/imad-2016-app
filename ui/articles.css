@@ -349,7 +349,7 @@ h1,h4{
       font-family: 'Montserrat', sans-serif;
       font-size: 12px;
       text-transform: uppercase;
-      color: #fc3565;
+      color: rgba(252,53,101,0.7);
       margin-top: 10px;
         }
     .item a:hover{
