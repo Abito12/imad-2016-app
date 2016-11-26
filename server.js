@@ -217,14 +217,12 @@ function createArticleTemplate(data){
     </div>
     <div class="commentBox">
         
-        <p class="taskDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p class="taskDescription">Leave your comments here </p>
     </div>
     <div class="actionBox">
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class="">Helo this is a text comment</p> <span class="date sub-text">on March 5th, 2014</span>
-                    <p class="">Helo this is a text2 comment</p> <span class="date sub-text">on March 5th, 2014</span>
                 </div>
             </li>
         </ul>
