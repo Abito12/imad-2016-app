@@ -65,8 +65,8 @@
   float: right;
   display: inline-block;
   height: 100%;
-  background: #1C1C1C;
-  line-height: 50px !important;
+  background: transparent;
+  line-height: 50px ;
 }
 .header .inner {
   width: 80%;
