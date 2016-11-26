@@ -1,5 +1,6 @@
 var id = document.getElementById('articleID').value;
-
+console.log('script works');
+console.log(articleID);
 
 
 
