@@ -188,8 +188,8 @@ function createArticleTemplate(data){
       ${title}
       </h3>
       <hr/>
-      <div class="intro" id="articleID">
-        Article ID: + ${id}
+      <div class="intro">
+        Author Name
       </div>
     </div>  
     <div class="info">
@@ -199,10 +199,10 @@ function createArticleTemplate(data){
     <div class="icon-holder">
       <span>
     <i class="fa fa-comment-o"></i>
-      <span>12</span>
-      <space>12</space>
+      <span id ="articleID">${id}</span>
+      <space> </space>
       <i class="fa fa-calendar"></i>
-      <span>03.12.2015</span>
+      <span>Date</span>
       </span>
     </div>
   </div>
