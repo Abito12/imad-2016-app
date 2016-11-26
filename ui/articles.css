@@ -310,7 +310,7 @@ h1,h4{
   }
 
   .item .item-in:hover {
-    background: rgba(252,53,101,0.4);
+    background: rgba(25,25,25,0.1);
   }
 
     
@@ -351,6 +351,10 @@ h1,h4{
       color: #666666;
       margin-top: 10px;
         }
+    .item a:hover{
+      color: #fff;
+        }
+
 
       .item a i {
         opacity: 0;
