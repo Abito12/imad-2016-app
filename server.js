@@ -251,7 +251,7 @@ return articleTemplate;
 
 app.get('/articles/:articleID', function(req, res){
     
-    pool.query("SELECT id, title, content, date FROM article WHERE article.id = " + req.params.articleID, function(err, result){
+    pool.query("select article.id,article.title,article.date,article.content,user_info.username from article, user_info where user_info.id = article.author_id and article.id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
