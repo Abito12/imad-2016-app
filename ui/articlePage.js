@@ -1,8 +1,3 @@
-var key = document.getElementById('key').innerHTML.toString();
-console.log('script works');
-console.log(key);
-
-
 
 function getAllComments(){
     $.ajax({
@@ -26,4 +21,7 @@ function getAllComments(){
 
 $(document).ready(function(){
     getAllComments();
+    var key = document.getElementById('key').innerHTML.toString();
+console.log('script works');
+console.log(key);
 });
