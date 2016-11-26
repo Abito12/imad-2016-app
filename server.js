@@ -172,6 +172,7 @@ function createArticleTemplate(data){
     var title = data.title;
     var content = data.content;
     var date = data.date;
+    var author = data.username;
     var articleTemplate = `
 <html>
 <head>
@@ -192,7 +193,7 @@ function createArticleTemplate(data){
       </h3>
       <hr/>
       <div class="intro">
-        Author Name
+        ${author}
       </div>
     </div>  
     <div class="info">
@@ -268,7 +269,7 @@ app.get('/articles/:articleID', function(req, res){
 
 app.get('/comments/:articleID', function(req, res){
     
-    pool.query("SELECT * FROM article_comments WHERE article_id = " + req.params.articleID, function(err, result){
+    pool.query("SELECT id, title,content, date,username FROM article_comments, user WHERE author_id = user.id AND article_id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
