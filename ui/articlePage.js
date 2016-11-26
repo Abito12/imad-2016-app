@@ -1,4 +1,4 @@
-console.log(document.getElementById('articleID'));
+var id = document.getElementById('articleID').value;
 
 
 
