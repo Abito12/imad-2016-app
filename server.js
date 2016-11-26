@@ -146,27 +146,6 @@ app.get('/allArticles', function (req, res) {
       
 });
 
-app.post('/add-comment/:articleID', function(req, res){
-    var comment = req.body.comment;
-    var article_id = req.params.articleID;
-    var id = req.session.auth.userId.toString();
-    pool.query('SELECT username FROM user_info WHERE id =' + id, function(err, result){
-        if(err){
-            res.status(500).send(err.toString());
-        }else{
-            var username = result.rows[0].username;
-        }
-    });
-    pool.query('INSERT INTO "article_comments" (article_id, username, body) VALUES ($1, $2, $3)', [article_id, username, comment], function(err, result){
-            if(err){
-                res.status(500).send(err.toString());
-            } else {
-                res.send('Comment Added!' + article_id);
-            }
-    });
-});
-
-
 
 
 
@@ -292,7 +271,7 @@ app.get('/articles/:articleID', function(req, res){
 
 app.get('/comments/:articleID', function(req, res){
     
-    pool.query("SELECT * FROM article_comments WHERE article_id = " + req.params.articleID, function(err, result){
+    pool.query("SELECT article_comments.body,user_info.username FROM article_comments,user_info WHERE article_comments.user_id = user_info.id AND article_comments.article_id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
