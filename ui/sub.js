@@ -39,7 +39,7 @@ function getUsername(){
             console.log(userDetails);
             var name = userDetails[0].username;
             console.log(name);
-            $('#displayname').html(username); 
+            $('#displayname').html(name); 
         }
     });
 }
