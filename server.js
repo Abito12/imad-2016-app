@@ -98,13 +98,6 @@ app.post('/create-user', function(req, res){
             if(err){
                 res.status(500).send(err.toString());
             } else {
-                pool.query('SELECT id FROM user_info where username = '+ username, function(err, result){
-                    if(err){
-                        res.send('Could not create session ID, please do manual login');
-                    }else{
-                        req.session.auth = {userId: result.rows[0].id};
-                    }
-                });
                 res.send('User Created!' + username);
             }
     });
