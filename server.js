@@ -267,7 +267,7 @@ app.get('/articles/:articleID', function(req, res){
 
 app.get('/comments/:articleID', function(req, res){
     
-    pool.query("SELECT * FROM article_comments WHERE articleID = " + req.params.articleID, function(err, result){
+    pool.query("SELECT * FROM article_comments WHERE article_ic = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
