@@ -3,11 +3,13 @@
 $(document).ready(function(){
 
 function lettersOnly(input){
+    console.log('hyehye');
     var regex = /[^a-z-]/gi;
     input.value = input.value.replace(regex, " ");
 }
 
 function lettersOnly2(input){
+    console.log('hyehye');
     var regex = /[^a-z-]/gi;
     input.value = input.value.replace(regex, " ");
 }
