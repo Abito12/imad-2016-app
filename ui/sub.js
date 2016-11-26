@@ -50,7 +50,7 @@ function getUserName(){
             var userDetails = JSON.parse(result);
             var username = userDetails.username;
             console.log(username);
-            $('#displayname').html(username); 
+            $('#displayname').html('Abito'); 
         }
     });
 }
