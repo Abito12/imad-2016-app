@@ -2,7 +2,7 @@ function getComments(){
     var key = document.getElementById('key').innerHTML.toString();
     console.log(key)
     $.ajax({
-    url: "/Comments/" + key,
+    url: "/comments/" + key,
     success: function(result){
         var allComments = JSON.parse(result);
         console.log(allComments);
