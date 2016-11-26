@@ -52,6 +52,14 @@ app.get('/articles.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
 });
 
+app.get('/newarticle', function (req, res) {
+       if(req.session && req.session.auth && req.session.auth.userId){
+        res.sendFile(path.join(__dirname, 'ui', 'create.html'));
+   } else{
+     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+   }
+});
+
 app.get('/about', function (req, res) {
        if(req.session && req.session.auth && req.session.auth.userId){
         res.sendFile(path.join(__dirname, 'ui', 'about.html'));
@@ -74,6 +82,7 @@ app.get('/hash/:input', function(req, res){
     var hashedString = hash(req.params.input,'this-is-some-random-string');
     res.send(hashedString); 
 });
+
 
 
 app.post('/create-user', function(req, res){
