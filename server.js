@@ -202,10 +202,10 @@ function createArticleTemplate(data){
     <div class="icon-holder">
       <span>
     <i class="fa fa-comment-o"></i>
-      <span id ="key">${id}</span>
+      <span id ="key">Date: </span>
       <space> </space>
       <i class="fa fa-calendar"></i>
-      <span>${date.toString().slice(0,16)}</span>
+      <span>${date.toString().slice(4,16)}</span>
       </span>
     </div>
   </div>
