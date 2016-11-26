@@ -205,7 +205,7 @@ function createArticleTemplate(data){
       <span id ="key">${id}</span>
       <space> </space>
       <i class="fa fa-calendar"></i>
-      <span>${date}</span>
+      <span>${date.toString().slice(0,16)}</span>
       </span>
     </div>
   </div>
