@@ -312,7 +312,7 @@ app.post('/add-comment/:articleID', function(req, res){
 
 app.post('/add-article', function(req, res){
     var title =req.body.title;
-    var comment = req.body.content;
+    var content = req.body.content;
     var author_id = req.session.auth.userId;
     pool.query('INSERT INTO "article" (title,content,author_id) VALUES ($1, $2, $3)', [title, content, author_id], function(err, result){
             if(err){
