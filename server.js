@@ -146,6 +146,29 @@ app.get('/allArticles', function (req, res) {
       
 });
 
+app.post('/add-comment/:articleID', function(req, res){
+    var comment = req.body.comment;
+    var article_id = req.params.articleID;
+    var id = req.sessio.auth.userId.toString();
+    pool.query('SELECT username FROM user_info WHERE id =' + id, function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            var username = result.rows[0].username;
+        }
+    })
+    pool.query('INSERT INTO "article_comments" (article_id, username, body) VALUES ($1, $2, $3)', [article_id, username, comment], function(err, result){
+            if(err){
+                res.status(500).send(err.toString());
+            } else {
+                res.send('Comment Added!' + article_id);
+            }
+    });
+});
+
+
+
+
 
 app.get('/articles/articlePage.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articlepage.css'));
@@ -229,10 +252,10 @@ function createArticleTemplate(data){
         </ul>
         <form class="form-inline" role="form">
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Your comments" />
+                <input class="form-control" type="text" placeholder="Your comments" id="commentInpt"/>
             </div>
             <div class="form-group">
-                <button class="btn btn-default">Add</button>
+                <button class="btn btn-default" id="addBtn">Add</button>
             </div>
         </form>
     </div>
