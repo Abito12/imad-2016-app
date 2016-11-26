@@ -305,7 +305,7 @@ h1,h4{
   
   .item .item-in {
     background: #fff;
-    padding: 3.4vw;
+    padding: 3vw;
     position: relative;
   }
 
@@ -341,6 +341,7 @@ h1,h4{
       font-size: 12px;
       height:15px;
       overflow-y:hidden;
+      overflow-x:hidden;
     }
 
     .item a{
