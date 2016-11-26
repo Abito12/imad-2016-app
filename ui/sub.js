@@ -30,18 +30,6 @@ $(function () {
 
 });
 
-function getUsername(){
-    $.ajax({
-    url: "/check-login",
-    success: function(result){
-        var userDetails = JSON.parse(result);
-        console.log(userDetails);
-            $('#displayname').html(userDetails.username);
-            
-    }
-    });
-}
-
 
 function getUserName(){
     $.ajax({
@@ -50,7 +38,7 @@ function getUserName(){
             var userDetails = JSON.parse(result);
             var username = userDetails.username;
             console.log(username);
-            $('#displayname').html('Abito'); 
+            $('#displayname').html(username); 
         }
     });
 }
