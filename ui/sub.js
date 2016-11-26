@@ -37,8 +37,8 @@ function getUsername(){
         success: function(result){
             var userDetails = JSON.parse(result);
             console.log(userDetails);
-            var username = userDetails.username;
-            console.log(username);
+            var name = userDetails["username"];
+            console.log(name);
             $('#displayname').html(username); 
         }
     });
