@@ -11,6 +11,7 @@ function getComments(){
     $.ajax({
     url: "/comments/" + key,
     success: function(result){
+        $('#commentBox').html("");
         var allComments = JSON.parse(result);
         console.log(allComments);
         for(var i = 0;i < allComments.length; i++){
@@ -42,6 +43,7 @@ addBtn.onclick = function(){
           }
           else {
               console.log('Comment added');
+              getComments();
               document.getElementById('commentInpt').value = "";
           }
       }
