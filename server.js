@@ -242,7 +242,8 @@ function createArticleTemplate(data){
   <a class = "ghost-button" href = "http://abito12.imad.hasura-app.io/articles">Home</a>  
 </div>
 </div>
-
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://raw.githubusercontent.com/julianshapiro/velocity/master/velocity.min.js'></script>
 </body>
 </html>`;
 
