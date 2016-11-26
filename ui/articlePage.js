@@ -21,5 +21,5 @@ function getComments(){
 }
 
 $(document).ready(function(){
-    getAllComments();
+    getComments();
 });
