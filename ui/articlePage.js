@@ -22,12 +22,13 @@ function getComments(){
 
 $(document).ready(function(){
     getComments();
-});
-
-
+    
 var addBtn = document.getElementById('addBtn');
 addBtn.onclick = function(){
 
   console.log('this works');
 };
+
+});
+
 
