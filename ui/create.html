@@ -125,7 +125,7 @@ button:hover {
 }
 </style>
   
-  
+      <script src="articlePage.js"></script>
 </head>
 
 <body>
@@ -133,14 +133,14 @@ button:hover {
     <h1>Write an Article</h1>
     <p>Your article will be featured in the main page</p>
       <div class="field">
-        <input type="text" name="filename" id="filename" placeholder="Title">
+        <input type="text" id="title" placeholder="Title">
       </div>
       <div class="field">
-        <textarea name="content" id="content" placeholder="Content goes here ...."></textarea>
+        <textarea id="content" placeholder="Content goes here ...."></textarea>
       </div>
       <div class="field">
-        <button type="submit">Submit</button>
-        <button type="submit" style="margin-left: 20vw">Home</button>
+        <button id="submit-btn">Submit</button>
+        <button onclick="window.location.href='http://abito12.imad.hasura-app.io/articles'" style="margin-left: 20vw">Home</button>
         <div id="messages"></div>
       </div>
 
