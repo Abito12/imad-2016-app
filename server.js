@@ -122,7 +122,7 @@ app.get('/logout', function(req, res){
 });
 
 app.get('/login-id', function(req, res){
-    res.send(req.session.auth.id.toString());
+    res.send(req.session.auth.userId.toString());
 });
 
 
