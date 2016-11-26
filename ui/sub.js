@@ -59,3 +59,5 @@ function getAllArticles(){
 $(document).ready(function(){
     getAllArticles();
 });
+
+
