@@ -19,7 +19,7 @@ submit.onclick = function(){
   var content = document.getElementById('content').value;
   console.log(content);
   console.log(title);
-  request.open('POST', 'http://abito12.imad.hasura-app.io/add-article' + id , true);
+  request.open('POST', 'http://abito12.imad.hasura-app.io/add-article', true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify({title:title, content:content}));
   
