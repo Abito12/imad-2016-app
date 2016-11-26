@@ -1,3 +1,10 @@
+function lettersOnly(input){
+    var regex = /[^a-z-]/gi;
+    input.value = input.value.replace(regex, "");
+}
+
+
+
 function getComments(){
     var key = document.getElementById('key').innerHTML.toString();
     console.log(key)
