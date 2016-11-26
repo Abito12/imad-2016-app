@@ -81,7 +81,7 @@ app.post('/create-user', function(req, res){
     var password = req.body.password;
     var salt = crypto.randomBytes(128).toString('hex');
     var dbString = hash(password, salt);
-    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function(err, result){
+    pool.query('INSERT INTO "user_info" (username, password) VALUES ($1, $2)', [username, dbString], function(err, result){
             if(err){
                 res.status(500).send(err.toString());
             } else {
@@ -93,7 +93,7 @@ app.post('/create-user', function(req, res){
 app.post('/login', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
-    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(err, result){
+    pool.query('SELECT * FROM "user_info" WHERE username = $1', [username], function(err, result){
             if(err){
                 res.status(500).send(err.toString());
             } else if(result.rows.length === 0){
@@ -251,7 +251,7 @@ return articleTemplate;
 
 app.get('/articles/:articleID', function(req, res){
     
-    pool.query("SELECT id, title, content, date, username FROM article INNER JOIN user ON user.id = article.author_id AND article.id = " + req.params.articleID, function(err, result){
+    pool.query("SELECT id, title, content, date FROM article WHERE article.id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
