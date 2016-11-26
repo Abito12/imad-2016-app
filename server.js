@@ -223,7 +223,8 @@ function createArticleTemplate(data){
         <ul class="commentList">
             <li>
                 <div class="commentText">
-                    <p class=""></p> <span class="date sub-text">on March 5th, 2014</span>
+                    <p class="">Helo this is a text comment</p> <span class="date sub-text">on March 5th, 2014</span>
+                    <p class="">Helo this is a text2 comment</p> <span class="date sub-text">on March 5th, 2014</span>
                 </div>
             </li>
         </ul>
