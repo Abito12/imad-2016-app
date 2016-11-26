@@ -311,6 +311,7 @@ h1,h4{
 
   .item .item-in:hover {
     background: rgba(25,25,25,0.1);
+    color:#fff;
   }
 
     
@@ -348,7 +349,7 @@ h1,h4{
       font-family: 'Montserrat', sans-serif;
       font-size: 12px;
       text-transform: uppercase;
-      color: #666666;
+      color: rgba(255,255,255,0.6);
       margin-top: 10px;
         }
     .item a:hover{
