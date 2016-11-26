@@ -31,7 +31,7 @@ $(function () {
 });
 
 
-function getUserName(){
+function getUsername(){
     $.ajax({
         url: "/check-login",
         success: function(result){
