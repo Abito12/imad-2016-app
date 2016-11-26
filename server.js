@@ -200,6 +200,7 @@ function createArticleTemplate(data){
 <head>
   <title>Article</title>
   <link rel="stylesheet" type="text/css" href="articlePage.css">
+  <link rel="icon" href="https://juststickers.in/wp-content/uploads/2016/09/lamda.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
       <script src="articlePage.js"></script>
