@@ -36,6 +36,7 @@ function getUsername(){
         url: "/check-login",
         success: function(result){
             var userDetails = JSON.parse(result);
+            console.log(userDetails);
             var username = userDetails.username;
             console.log(username);
             $('#displayname').html(username); 
