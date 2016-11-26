@@ -42,7 +42,6 @@ addBtn.onclick = function(){
           }
           else {
               console.log('Comment added');
-              getComments();
               document.getElementById('commentInpt').value = "";
           }
       }
