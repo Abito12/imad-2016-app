@@ -41,7 +41,7 @@ addBtn.onclick = function(){
   };
   
   var comment = document.getElementById('commentInpt').value;
-  var id = document.getElementById('key');
+  var id = document.getElementById('key').innerHTML.toString();
   console.log(comment);
   request.open('POST', 'http://abito12.imad.hasura-app.io/add-comment/' + id , true);
   request.setRequestHeader('Content-Type', 'application/json');
