@@ -156,7 +156,7 @@ app.post('/add-comment/:articleID', function(req, res){
         }else{
             var username = result.rows[0].username;
         }
-    })
+    });
     pool.query('INSERT INTO "article_comments" (article_id, username, body) VALUES ($1, $2, $3)', [article_id, username, comment], function(err, result){
             if(err){
                 res.status(500).send(err.toString());
