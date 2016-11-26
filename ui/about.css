@@ -332,3 +332,8 @@ body > .container-fluid {
     text-decoration:none;
 }
 
+#resume-link:hover{
+    color:#fff;
+    text-decoration:none;
+}
+
