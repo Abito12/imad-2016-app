@@ -27,27 +27,7 @@ $(document).ready(function(){
 
 var addBtn = document.getElementById('addBtn');
 addBtn.onclick = function(){
-      var request = new XMLHttpRequest();
-  
-  
-  request.onreadystatechange = function(){
-      if(request.readyState === XMLHttpRequest.DONE){
-          if(request.status === 200){
-              console.log('Comment was added successfully');
-              getComments();
-          }
-          else if(request.status ===500){
-              alert('Comment could not be added');
-          }
-      }
-  };
-  
-  var comment = document.getElementById('commentInpt').value;
-  console.log(comment);
-  request.open('POST', 'http://abito12.imad.hasura-app.io/add-comment', true);
-  request.setRequestHeader('Content-Type', 'application/json');
-  request.send(JSON.stringify({comment:comment}));
-  
-  
+
+  console.log('this works');
 };
 
