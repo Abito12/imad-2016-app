@@ -223,11 +223,7 @@ function createArticleTemplate(data){
         <p class="taskDescription">Leave your comments here </p>
     </div>
     <div class="actionBox">
-        <ul class="commentList">
-            <li>
-                <div class="commentText">
-                </div>
-            </li>
+        <ul class="commentList" id="commentBox">
         </ul>
         <form class="form-inline" role="form">
             <div class="form-group">
@@ -268,6 +264,21 @@ app.get('/articles/:articleID', function(req, res){
             }
     });
 });
+
+app.get('/comments/:articleID', function(req, res){
+    
+    pool.query("SELECT * FROM article_comments WHERE articleID = " + req.params.articleID, function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        } else if(result.rows.length === 0){
+            res.status(404).send('No Comments');
+        } else{
+            res.send(JSON.stringify(result.rows))
+        }
+    });
+});
+
+
 
 
 //Comments Section
