@@ -48,8 +48,9 @@ function getUserName(){
         url: "/check-login",
         success: function(result){
             var userDetails = JSON.parse(result);
-            console.log(userDetails);
-            $('#displayname').html(userDetails.username); 
+            var username = userDetails.username;
+            console.log(username);
+            $('#displayname').html(username); 
         }
     });
 }
