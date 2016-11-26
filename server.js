@@ -251,7 +251,7 @@ function createArticleTemplate(data){
         </ul>
         <div class="form-inline" role="form">
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Your comments" id="commentInpt"/>
+                <input class="form-control" type="text" placeholder="Your comments" id="commentInpt" onkeyup="lettersOnly(this)"/>
             </div>
             <div class="form-group">
                 <button class="btn btn-default" id="addBtn">Add</button>
