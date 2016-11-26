@@ -121,6 +121,10 @@ app.get('/logout', function(req, res){
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/login-id', function(req, res){
+    res.send(req.session.auth.id.toString());
+});
+
 
 //Articles Main Page
 
