@@ -1,8 +1,3 @@
-var requestURL = window.location.href;
-console.log(requestURL);
-
-var articleID = requestURL.params.articleID;
-console.log(articleID);
 
 function getAllComments(){
     $.ajax({
@@ -14,7 +9,7 @@ function getAllComments(){
             var Comment = allComments[i];
             var Box = `<li>
                         <div class="commentText">
-                            <p class="">${Comment.comment}</p> <span class="date sub-text">on March 5th, 2014</span>
+                            <p class="">${Comment.comment}</p> <span class="date sub-text">${Comment.author}</span>
                         </div>
                     </li>`;
             $('.commentslist').append(Box);
