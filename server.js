@@ -250,14 +250,14 @@ function createArticleTemplate(data){
     <div class="actionBox">
         <ul class="commentList" id="commentBox">
         </ul>
-        <form class="form-inline" role="form">
+        <div class="form-inline" role="form">
             <div class="form-group">
                 <input class="form-control" type="text" placeholder="Your comments" id="commentInpt"/>
             </div>
             <div class="form-group">
                 <button class="btn btn-default" id="addBtn">Add</button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 </div>
