@@ -227,7 +227,7 @@ function createArticleTemplate(data){
       <span>
     <i class="fa fa-comment-o"></i>
       <span id ="key">${id}</span>
-      <space>Date: </space>
+      <space>Published On </space>
       <i class="fa fa-calendar"></i>
       <span>${date.toString().slice(4,16)}</span>
       </span>
