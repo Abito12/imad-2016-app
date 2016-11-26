@@ -1,4 +1,4 @@
-var key = document.getElementById('key').value;
+var key = document.getElementById('key').innerHTML.toString();
 console.log('script works');
 console.log(key);
 
