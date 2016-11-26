@@ -168,6 +168,7 @@ app.get('/articles/ui/main.js', function (req, res) {
 
 
 function createArticleTemplate(data){
+    var id = data.id;
     var title = data.title;
     var content = data.content;
     var articleTemplate = `
@@ -187,12 +188,12 @@ function createArticleTemplate(data){
       ${title}
       </h3>
       <hr/>
-      <div class="intro">
-        ${content}
+      <div class="intro" id="articleID">
+        Article ID: + ${id}
       </div>
     </div>  
     <div class="info">
-      <span>article content</span>
+      <span>${content}</span>
   </div>
   <div class="footer">
     <div class="icon-holder">
