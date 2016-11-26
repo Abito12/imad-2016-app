@@ -149,7 +149,7 @@ app.get('/allArticles', function (req, res) {
 app.post('/add-comment/:articleID', function(req, res){
     var comment = req.body.comment;
     var article_id = req.params.articleID;
-    var id = req.sessio.auth.userId.toString();
+    var id = req.session.auth.userId.toString();
     pool.query('SELECT username FROM user_info WHERE id =' + id, function(err, result){
         if(err){
             res.status(500).send(err.toString());
