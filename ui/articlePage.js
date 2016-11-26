@@ -1,6 +1,6 @@
-var id = document.getElementById('articleID').value;
+var key = document.getElementById('key').value;
 console.log('script works');
-console.log(articleID);
+console.log(key);
 
 
 
