@@ -37,7 +37,9 @@ submit.onclick = function(){
               console.log("Successful Login");
           }
           else if(request.status === 403){
-              alert('Incorrect username and password');
+              alert('Incorrect username or password');
+              document.getElementById('username').value="";
+              document.getElementById('password').value="";
           }
           else if(request.status ===503){
               alert('Internal Error');
