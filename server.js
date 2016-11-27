@@ -455,7 +455,7 @@ button {
 }
 
 #messages{
-    visibilty:hidden;
+    visibility:hidden;
 }
 button:hover {
   opacity: 0.75;
@@ -486,14 +486,20 @@ button:hover {
 </head>
 
 <body>
+  <script type="text/javascript">
+      function lettersOnly(input){
+      var regex = /[^a-z-^0-9,#\n]/gi;
+    input.value = input.value.replace(regex, " ");
+}
+  </script>
   <div id="page-wrapper" class="clearfix">
     <h1>Write an Article</h1>
     <p>Your article will be featured in the main page</p>
       <div class="field">
-        <input type="text" id="title" value="${title}"  onkeyup="lettersOnly(this)"/>
+        <input type="text" id="title" value="${title}" onkeyup="lettersOnly(this)"/>
       </div>
       <div class="field">
-        <textarea id="content" value="${content}" onkeyup="lettersOnly(this)"></textarea>
+        <textarea id="content" onkeyup="lettersOnly(this)">${content}</textarea>
       </div>
       <div class="field">
         <button id="save-btn">Save Changes</button>
@@ -502,12 +508,7 @@ button:hover {
       </div>
 
   </div>
-  <script type="text/javascript">
-      function lettersOnly(input){
-      var regex = /[^a-z-^0-9,#\n]/gi;
-    input.value = input.value.replace(regex, " ");
-}
-  </script>
+
   
 </body>
 </html>
