@@ -85,7 +85,7 @@ signup.onclick = function(){
   var cpassword2 = password2.replace(" ", "");
   if (cpassword2.length < password2.length){
       alert('Password cannot contain spaces');
-  }else if(password.length <4){
+  }else if(password2.length <4){
       alert("Password must contain atleast 4 charecters");
   }
   else{
