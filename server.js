@@ -542,7 +542,6 @@ return articleTemplate2;
 
 
 app.get('/editArticle/:articleID', function(req, res){
-    var user_id = req.session.auth.userId;
     var article_id = req.params.articleID;
     pool.query("select article.id,article.title,article.content, author_id from article where article.id = " + article_id, function(err, result){
         if(err){
@@ -551,7 +550,7 @@ app.get('/editArticle/:articleID', function(req, res){
             res.status(404).send('Article Not Found');
         } else{
             var articleData = result.rows[0];
-            if(req.session && req.session.auth && req.session.auth.userId && user_id === author_id){
+            if(req.session && req.session.auth && req.session.auth.userId){
                 res.send(createArticleTemplate2(articleData));
             }else{
                   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
