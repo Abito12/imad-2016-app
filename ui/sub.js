@@ -77,6 +77,7 @@ $(document).ready(function(){
     myarticles.onclick = function(){
         var name = document.getElementById('displayname').innerHTML.toString();
         document.getElementById('main-header').innerHTML = name +" \'s Articles ";
+        document.getElementById('sub-header')
     }
 });
 
