@@ -47,8 +47,13 @@ submit.onclick = function(){
   
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
-  console.log(username);
-  console.log(password);
+  if(username.length === 0 || password.length ===0){
+      alert('Invalid Username or Password');
+  }
+  cUsername = username.replace(" ", "");
+  cPassword = password.replace(" ", "");
+  console.log(cUsername);
+  console.log(cPassword);
   request.open('POST', 'http://abito12.imad.hasura-app.io/login', true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify({username: username, password: password}));
