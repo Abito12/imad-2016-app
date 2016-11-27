@@ -521,7 +521,7 @@ app.get('/editArticle/:articleID', function(req, res){
     
     var user_id = req.session.auth.userId;
     var article_id = req.params.articleID;
-    pool.query("select article.id,article.title,article.content from article where and article.id = " + article_id, function(err, result){
+    pool.query("select article.id,article.title,article.content from article where article.id = " + article_id, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
