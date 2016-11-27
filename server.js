@@ -53,6 +53,15 @@ app.get('/newarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'newarticle.js'));
 });
 
+app.get('/contact', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
+});
+
+app.get('/contact/contact.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'contact.css'));
+});
+
+
 app.get('/editArticle/editarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'editarticle.js'));
 });
