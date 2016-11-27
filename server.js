@@ -171,7 +171,7 @@ app.get('/MyArticles', function (req, res) {
     pool.query("SELECT * FROM article WHERE author_id = " + user_id, function(err, result){
         if(err){
             res.status(500).send(err.toString());
-        }
+        }else{
             res.send(JSON.stringify(result.rows));
         }
     });
