@@ -50,7 +50,6 @@ function getAllArticles(){
     url: "/allArticles",
     success: function(result){
         var allArticles = JSON.parse(result);
-        console.log(allArticles);
         for(var i = 0;i < allArticles.length; i++){
             var article = allArticles[i];
             var Box = `<div class="col-md-6 item">
@@ -70,6 +69,32 @@ function getAllArticles(){
 });
 }
 
+
+function getMyArticles(){
+    $.ajax({
+    url: "/MyArticles",
+    success: function(result){
+        $('#articleBox').html("");
+        var myArticles = JSON.parse(result);
+        console.log(myArticles);
+        for(var i = 0;i < myArticles.length; i++){
+            var article = myArticles[i];
+            var Box = `<div class="col-md-6 item">
+                            <div class="item-in">
+                                <h4>${article.title}</h4>
+                                <div class="seperator"></div>
+                                <p>${article.content}</p>
+                                <a href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
+                                <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>`;
+            $('#articleBox').append(Box);
+            
+        }
+    }
+});
+}
 $(document).ready(function(){
     getAllArticles();
     getUsername();
@@ -77,8 +102,8 @@ $(document).ready(function(){
     myarticles.onclick = function(){
         var name = document.getElementById('displayname').innerHTML.toString();
         document.getElementById('main-header').innerHTML = name +" \'s Articles ";
-        document.getElementById('sub-header')
-    }
+        getMyArticles();
+    };
 });
 
 
