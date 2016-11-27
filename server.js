@@ -110,7 +110,7 @@ app.post('/login', function(req, res){
             if(err){
                 res.status(500).send(err.toString());
             } else if(result.rows.length === 0){
-                res.send(403).send('Username/Password is invalid');
+                res.status(403).send('Username/Password is invalid');
             }else{
                 var dbString = result.rows[0].password;
                 var salt = dbString.split('$')[2];
@@ -122,7 +122,7 @@ app.post('/login', function(req, res){
                     
                     res.send('Credentials Correct');
                 } else {
-                    res.send(403).send('Invalid Login');
+                    res.status(403).send('Invalid Login');
                 }
             }
     });
