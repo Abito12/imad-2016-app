@@ -343,9 +343,199 @@ app.post('/add-article', function(req, res){
     });
 });
 
+//Edit a specific article
+
+function createArticleTemplate2(data){
+    var title = data.title;
+    var content = data.title;
+    var id = data.id;
+    var articleTemplate2 = `<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Article | Blog App</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <link rel="icon" href="https://juststickers.in/wp-content/uploads/2016/09/lamda.png">
+  <style type="text/css">
+  *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  background: #333;
+  color: #33383D;
+  -webkit-font-smoothing: antialiased;
+}
+
+#page-wrapper {
+  width: 50vw;
+  background: #FFF;
+  padding: 1.25rem;
+  margin-top: 10vh;
+  margin-left: 25vw;
+  min-height: 300px;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+}
+
+p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+a,
+a:visited {
+  color: #08C;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #69c773;
+  cursor: pointer;
+}
+
+a.delete-file,
+a.delete-file:visited {
+  color: #CC0000;
+  margin-left: 0.5rem;
+}
+
+#file-form {
+  width: 650px;
+  float: left;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  width: 47vw;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  min-height: 300px;
+}
+
+button {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.6rem 1em;
+  background: rgba(25,25,25,0.9);
+  border-bottom: 1px solid #5d7d1f;
+  color: white;
+  margin: 0 0.25rem;
+  text-align: center;
+}
+
+#messages{
+    visibilty:hidden;
+}
+button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+
+}
 
 
+/* Clearfix Utils */
 
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+</style>
+  
+      <script src="newarticle.js"></script>
+</head>
+
+<body>
+  <div id="page-wrapper" class="clearfix">
+    <h1>Write an Article</h1>
+    <p>Your article will be featured in the main page</p>
+      <div class="field">
+        <input type="text" id="title" value="${title}"  onkeyup="lettersOnly(this)"/>
+      </div>
+      <div class="field">
+        <textarea id="content" value="${content}" onkeyup="lettersOnly(this)"></textarea>
+      </div>
+      <div class="field">
+        <button id="save-btn">Save Changes</button>
+        <button onclick="window.location.href='http://abito12.imad.hasura-app.io/articles'" style="margin-left: 20vw">Home</button>
+        <div id="messages">${id}</div>
+      </div>
+
+  </div>
+  <script type="text/javascript">
+      function lettersOnly(input){
+      var regex = /[^a-z-^0-9,#\n]/gi;
+    input.value = input.value.replace(regex, " ");
+}
+  </script>
+  
+</body>
+</html>
+`;
+
+return articleTemplate2;
+}
+
+
+app.get('/editArticle/:articleID', function(req, res){
+    
+    var user_id = req.session.auth.userId;
+    var article_id = req.params.articleID;
+    pool.query("select article.id,article.title,article.content from article where and article.id = " + article_id, function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        } else if(result.rows.length === 0){
+            res.status(404).send('Article Not Found');
+        } else{
+            var articleData = result.rows[0];
+            if(req.session && req.session.auth && req.session.auth.userId){
+                res.send(createArticleTemplate2(articleData));
+            }else{
+                  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+            }
+            }
+    });
+});
 
 
 
