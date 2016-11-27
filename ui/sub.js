@@ -77,6 +77,7 @@ function getMyArticles(){
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
         console.log(myArticles);
+        $('#sub-header').html("You have published " +myArticles.length + " articles");
         for(var i = 0;i < myArticles.length; i++){
             var article = myArticles[i];
             var Box = `<div class="col-md-6 item">
