@@ -18,6 +18,7 @@ submit.onclick = function(){
   
   var title = document.getElementById('title').value;
   var content = document.getElementById('content').value;
+  content = content.replace(/(?:\r\n|\r|\n)/g, '<br />');
   console.log(content);
   console.log(title);
   request.open('POST', 'http://abito12.imad.hasura-app.io/add-article', true);
