@@ -73,6 +73,10 @@ function getAllArticles(){
 $(document).ready(function(){
     getAllArticles();
     getUsername();
+    var myarticles = document.getElementById('myarticles-btn');
+    myarticles.onclick = function(){
+        alert('Im clicked');
+    }
 });
 
 
