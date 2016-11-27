@@ -347,7 +347,8 @@ app.post('/add-article', function(req, res){
 
 function createArticleTemplate2(data){
     var title = data.title;
-    var content = data.content.replace('</ br>', '\n');
+    var regex = /<br\s*[\/]?>/gi;
+    var content = data.content.replace(regex, "\n");
     var id = data.id;
     var articleTemplate2 = `<!DOCTYPE html>
 <html >
