@@ -1,5 +1,5 @@
 function lettersOnly(input){
-     var regex = /[^a-z-^0-9,#]/gi;
+     var regex = /[^a-z-^0-9,#\n]/gi;
     input.value = input.value.replace(regex, " ");
 }
 
