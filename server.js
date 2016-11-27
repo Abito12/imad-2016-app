@@ -483,7 +483,7 @@ button:hover {
 }
 </style>
   
-      <script src="newarticle.js"></script>
+      <script src="editarticle.js"></script>
 </head>
 
 <body>
