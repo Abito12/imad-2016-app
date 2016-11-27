@@ -57,7 +57,7 @@ app.get('/contact', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
 });
 
-app.get('/contact/contact.css', function (req, res) {
+app.get('/contact.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contact.css'));
 });
 
