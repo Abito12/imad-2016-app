@@ -75,7 +75,7 @@ $(document).ready(function(){
     getUsername();
     var myarticles = document.getElementById('myarticles-btn');
     myarticles.onclick = function(){
-        alert('Im clicked');
+        document.getElementById('main-header').innerHTML = username +" \'s Articles ";
     }
 });
 
