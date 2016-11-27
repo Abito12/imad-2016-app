@@ -353,6 +353,20 @@ app.post('/add-article', function(req, res){
 
 //Edit a specific article
 
+app.post('/savearticle', function(req, res){
+    var title =req.body.title;
+    var content = req.body.content;
+    var article_id = req.body.id;
+    pool.query('UPDATE "article" SET title ='+ title +',content = '+ content + 'WHERE id ='+ article_id,  function(err, result){
+            if(err){
+                res.status(500).send(err.toString());
+            } else {
+                res.send('Article edited successfully');
+            }
+    });
+});
+
+
 function createArticleTemplate2(data){
     var title = data.title;
     var regex = /<br\s*[\/]?>/gi;
@@ -531,14 +545,14 @@ app.get('/editArticle/:articleID', function(req, res){
     
     var user_id = req.session.auth.userId;
     var article_id = req.params.articleID;
-    pool.query("select article.id,article.title,article.content from article where article.id = " + article_id, function(err, result){
+    pool.query("select article.id,article.title,article.content, author_id from article where article.id = " + article_id, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
             res.status(404).send('Article Not Found');
         } else{
             var articleData = result.rows[0];
-            if(req.session && req.session.auth && req.session.auth.userId){
+            if(req.session && req.session.auth && req.session.auth.userId && user_id === author_id){
                 res.send(createArticleTemplate2(articleData));
             }else{
                   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
