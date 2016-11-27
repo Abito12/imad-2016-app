@@ -547,10 +547,11 @@ app.get('/editArticle/:articleID', function(req, res){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
-            res.status(404).send('Article Not Found');
+            res.status(404).send('Article Cannot be Edited');
         } else{
             var articleData = result.rows[0];
-            if(req.session && req.session.auth && req.session.auth.userId){
+            if(articleData.author_id === req.session.auth.userId){
+                if(req.session && req.session.auth && req.session.auth.userId){
                 res.send(createArticleTemplate2(articleData));
             }else{
                   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -558,7 +559,7 @@ app.get('/editArticle/:articleID', function(req, res){
             }
     });
 });
-
+}
 
 
 
