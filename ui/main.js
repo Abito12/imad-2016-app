@@ -1,3 +1,8 @@
+function lettersOnly(input){
+     var regex = /[^a-z-^0-9,#]/gi;
+    input.value = input.value.replace(regex, " ");
+}
+
 $('.tabs .tab').click(function(){
     if ($(this).hasClass('signin')) {
         $('.tabs .tab').removeClass('active');
