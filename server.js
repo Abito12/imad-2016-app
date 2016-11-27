@@ -357,7 +357,7 @@ app.post('/savearticle', function(req, res){
     var title =req.body.title;
     var content = req.body.content;
     var article_id = req.body.id;
-    pool.query('UPDATE "article" SET title ='+ title +',content = '+ content + 'WHERE id ='+ article_id,  function(err, result){
+    pool.query('UPDATE "article" SET title= $1, content = $2 WHERE id = $3)', [title, content, article_id],  function(err, result){
             if(err){
                 res.status(500).send(err.toString());
             } else {
