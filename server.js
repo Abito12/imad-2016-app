@@ -166,6 +166,22 @@ app.get('/allArticles', function (req, res) {
       
 });
 
+//User Specific Articles
+
+app.get('/MyArticles', function (req, res) {
+    var user_id = req.session.auth.userId;
+    pool.query("SELECT * FROM article WHERE author_id = " + user_id, function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else if(result.rows.length === 0){
+            res.status(404).send('Article not found');
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+      
+});
+
 
 
 
