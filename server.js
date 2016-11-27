@@ -57,6 +57,9 @@ app.get('/editArticle/editarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'editarticle.js'));
 });
 
+app.get('/editarticle.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'editarticle.js'));
+});
 app.get('/articles.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'articles.css'));
 });
