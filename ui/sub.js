@@ -88,7 +88,7 @@ function getMyArticles(){
                                 <a href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
                                 <i class="fa fa-long-arrow-right"></i>
                                 </a>
-                                 <a id="edit-link" href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
+                                 <a id="edit-link" href = "http://abito12.imad.hasura-app.io/editArticle/${article.id}">Read More
                                 <i class="fa fa-long-arrow-right"></i>
                                 </a>
                             </div>
