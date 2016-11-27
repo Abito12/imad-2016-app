@@ -489,7 +489,7 @@ button:hover {
 <body>
   <script type="text/javascript">
       function lettersOnly(input){
-      var regex = /[^a-z-^0-9,#\n]/gi;
+      var regex = /[^a-z-^0-9,#\\n]/gi;
     input.value = input.value.replace(regex, " ");
 }
   </script>
