@@ -53,8 +53,8 @@ app.get('/newarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'newarticle.js'));
 });
 
-app.get('/editArticle/newarticle.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'newarticle.js'));
+app.get('/editArticle/editarticle.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'editarticle.js'));
 });
 
 app.get('/editarticle.js', function (req, res) {
@@ -491,7 +491,7 @@ button:hover {
 }
 </style>
   
-      <script src="newarticle.js"></script>
+      <script src="editarticle.js"></script>
 </head>
 
 <body>
