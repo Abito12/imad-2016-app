@@ -49,17 +49,19 @@ submit.onclick = function(){
   
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
+  var cPassword = password.replace(" ", "");
   if(username.length === 0 || password.length ===0){
       alert('Invalid Username or Password');
   }
-  cUsername = username.replace(" ", "");
-  cPassword = password.replace(" ", "");
-  console.log(cUsername);
-  console.log(cPassword);
+  else if(cPassword.length < password.length){
+      alert('Password cannot contain spaces');
+  }else if(password.length <4){
+      alert("Password must contain atleast 4 charecters");
+  }else{
   request.open('POST', 'http://abito12.imad.hasura-app.io/login', true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify({username: username, password: password}));
-  
+  }
 };
 
 
@@ -82,12 +84,15 @@ signup.onclick = function(){
   
   var username2 = document.getElementById('username2').value;
   var password2 = document.getElementById('password2').value;
-  console.log(username2);
-  console.log(password2);
+  var cpassword2 = password2.replace(" ", "");
+  if (cpassword2.length < password2.length){
+      alert('Password cannot contain spaces');
+  }
+  else{
   request.open('POST', 'http://abito12.imad.hasura-app.io/create-user', true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify({username: username2, password: password2}));
-  
+  }
   
 };
 
