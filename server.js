@@ -347,7 +347,7 @@ app.post('/add-article', function(req, res){
 
 function createArticleTemplate2(data){
     var title = data.title;
-    var content = data.title;
+    var content = data.content;
     var id = data.id;
     var articleTemplate2 = `<!DOCTYPE html>
 <html >
