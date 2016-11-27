@@ -204,7 +204,7 @@ app.get('/articles/ui/main.js', function (req, res) {
 function createArticleTemplate(data){
     var id = data.id;
     var title = data.title;
-    var content = data.content;
+    var content = data.content.replace('</ br>', '\n');
     var date = data.date;
     var author = data.username;
     var articleTemplate = `
