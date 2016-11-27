@@ -204,7 +204,7 @@ app.get('/articles/ui/main.js', function (req, res) {
 function createArticleTemplate(data){
     var id = data.id;
     var title = data.title;
-    var content = data.content.replace('</ br>', '\n');
+    var content = data.content;
     var date = data.date;
     var author = data.username;
     var articleTemplate = `
@@ -347,7 +347,7 @@ app.post('/add-article', function(req, res){
 
 function createArticleTemplate2(data){
     var title = data.title;
-    var content = data.content;
+    var content = data.content.replace('</ br>', '\n');
     var id = data.id;
     var articleTemplate2 = `<!DOCTYPE html>
 <html >
