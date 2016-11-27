@@ -55,8 +55,6 @@ submit.onclick = function(){
   }
   else if(cPassword.length < password.length){
       alert('Password cannot contain spaces');
-  }else if(password.length <4){
-      alert("Password must contain atleast 4 charecters");
   }else{
   request.open('POST', 'http://abito12.imad.hasura-app.io/login', true);
   request.setRequestHeader('Content-Type', 'application/json');
@@ -87,6 +85,8 @@ signup.onclick = function(){
   var cpassword2 = password2.replace(" ", "");
   if (cpassword2.length < password2.length){
       alert('Password cannot contain spaces');
+  }else if(password.length <4){
+      alert("Password must contain atleast 4 charecters");
   }
   else{
   request.open('POST', 'http://abito12.imad.hasura-app.io/create-user', true);
