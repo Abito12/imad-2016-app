@@ -346,3 +346,7 @@ a.animated-button.thar-three:before {
 #key{
     visibility:hidden;
 }
+
+#homeBtn{
+    float:right;
+}
