@@ -252,7 +252,7 @@ function createArticleTemplate(data){
       </h3>
       <hr/>
       <div class="intro">
-        ${author}
+        Written By ${author}
       </div>
     </div>  
     <div class="info">
