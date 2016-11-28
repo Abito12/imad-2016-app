@@ -11,17 +11,20 @@ function getComments(){
     $.ajax({
     url: "/comments/" + key,
     success: function(result){
-        $('#commentBox').html("");
+        $('#comments-container').html("");
         var allComments = JSON.parse(result);
         console.log(allComments);
         for(var i = 0;i < allComments.length; i++){
             var comment = allComments[i];
-            var Box = `<li>
-                    <div class="commentText">
-                         <p class="">${comment.body}</p> <span class="date sub-text">${comment.username}</span>
-                    </div>
-                    </li>`;
-            $('#commentBox').append(Box);
+            var Box = `<div class="comment">
+        <div class="comment-user">
+      <span class="user-details"><span class="username">${comment.username} </span><span>on </span><span>Date</span></span>
+        </div>
+        <div class="comment-text">
+            ${comment.body}
+        </div>
+      </div>`;
+            $('#comments-container').append(Box);
             
         }
     }
@@ -44,12 +47,12 @@ addBtn.onclick = function(){
           else {
               console.log('Comment added');
               getComments();
-              document.getElementById('commentInpt').value = "";
+              document.getElementById('textarea').value = "";
           }
       }
   };
   
-  var comment = document.getElementById('commentInpt').value;
+  var comment = document.getElementById('textarea').value;
   var id = document.getElementById('key').innerHTML.toString();
   console.log(comment);
   request.open('POST', 'http://abito12.imad.hasura-app.io/add-comment/' + id , true);
