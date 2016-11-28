@@ -268,6 +268,7 @@ function createArticleTemplate(data){
 </div> 
 </div>
 </div>
+<span id ="key">${id}</span>
 </body>
 </html>
 `;
