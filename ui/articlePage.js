@@ -56,6 +56,7 @@ addBtn.onclick = function(){
   var Vcomment = comment.trim();
   if(Vcomment.length === 0){
       alert('Comment body cannot be empty');
+      document.getElementById('textarea').value ="";
   }
   else{
   var id = document.getElementById('key').innerHTML.toString();
