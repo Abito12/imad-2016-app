@@ -242,12 +242,11 @@ h3{
 
 
 .basicBox{
-  position:absolute;
-  left:90%;
-  top:90%;
+  float:right;
+  margin-right:5vw;
   width: 130px;
   height: 65px;
-  margin: 15px auto;
+  margin-bottom:7vh;
   color: #4274D3;
   font-family:  'Montserrat', sans-serif;
   font-size: 1.15rem;
