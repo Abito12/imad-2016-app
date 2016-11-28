@@ -39,10 +39,16 @@ function getUsername(){
             console.log(userDetails);
             var name = userDetails[0].username;
             console.log(name);
+            var firstLetter = name[0];
+            $('#user-image').html(firstLetter);
             $('#displayname').html(name); 
         }
     });
 }
+
+
+
+
 
 
 function getAllArticles(){
