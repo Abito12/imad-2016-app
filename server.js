@@ -298,7 +298,7 @@ function createArticleTemplate(data){
 </div>
 </div>
 <div id = "home-link-button">
-<a href="#" class="btn btn-sm animated-button thar-three">Register</a> </div>
+<a href="http://abito12.imad.hasura-app.io/articles" class="btn btn-sm animated-button thar-three">Home</a> </div>
 </div>
 </div>
 
