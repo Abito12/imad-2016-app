@@ -236,6 +236,8 @@ function createArticleTemplate(data){
 <head>
   <meta charset="UTF-8">
   <title>Article | Blog App</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>  
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
