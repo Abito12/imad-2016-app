@@ -234,76 +234,41 @@ function createArticleTemplate(data){
     var articleTemplate = `
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Article | Blog App</title>
-  <link rel="stylesheet" type="text/css" href="articlePage.css">
-  <link rel="icon" href="https://juststickers.in/wp-content/uploads/2016/09/lamda.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-      <script src="articlePage.js"></script>
-  </script>
-</head>
-<body>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>  
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+<link rel="stylesheet" href="css/style.css">
 
-<div id="container">
-<div class="blog">
-    <div class="title-box">
-      <h3>
-      ${title}
-      </h3>
-      <hr/>
-      <div class="intro">
-        Written By ${author}
-      </div>
-    </div>  
-    <div class="info">
-      <span>${content}</span>
-  </div>
-  <div class="footer">
-    <div class="icon-holder">
-      <span>
-    <i class="fa fa-comment-o"></i>
-      <span id ="key">${id}</span>
-      <space>Published On </space>
-      <i class="fa fa-calendar"></i>
-      <span>${date.toString().slice(4,16)}</span>
-      </span>
-    </div>
-  </div>
   
- <div class="color-overlay"></div>
-</div>
+</head>
 
-<div id="comment-box">
-<div class="detailBox">
-    <div class="titleBox">
-      <label>Comment Box</label>
-        <button type="button" class="close" aria-hidden="true">&times;</button>
+<body>
+ <div class="container">
+ <div class="content">
+	<h1>${title}</h1>
+	<h6>Written By ${author}
+    <span>${date}</span></h6>
+	<p>${content}</p>
+</div>
+	<div class="comments-section">
+  		<div class="comments">
+    	<h4>COMMENTS</h4>
+    	<div id="comments-container">
+  		</div>
+  <div class="comment-editor">
+    <h4>LEAVE A COMMENT</h4>
+    <div id="comment-form">
+       <textarea cols="72" rows="8" name="textarea" id="textarea" style="min-height: 12vh; min-width: 27vw;"></textarea>
     </div>
-    <div class="commentBox">
-        
-        <p class="taskDescription">Leave your comments here </p>
-    </div>
-    <div class="actionBox">
-        <ul class="commentList" id="commentBox">
-        </ul>
-        <div class="form-inline" role="form">
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Your comments" id="commentInpt" onkeyup="lettersOnly(this)"/>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-default" id="addBtn">Add</button>
-            </div>
-        </div>
-    </div>
+  </div>
+</div> 
 </div>
 </div>
-<div id = "home-link-button">
-<a href="http://abito12.imad.hasura-app.io/articles" class="btn btn-sm animated-button thar-three">Home</a> </div>
-</div>
-</div>
-
 </body>
-</html>`;
+</html>
+`;
 
 return articleTemplate;
 }
