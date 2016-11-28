@@ -342,3 +342,7 @@ a.animated-button.thar-three:before {
     top:76%;
     left:76%;
 }
+
+#key{
+    visibility:hidden;
+}
