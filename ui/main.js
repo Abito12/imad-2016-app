@@ -1,6 +1,6 @@
 function lettersOnly(input){
      var regex = /[^a-z-^0-9,#]/gi;
-    input.value = input.value.replace(regex, " ");
+    input.value = input.value.replace(regex, "");
 }
 
 $('.tabs .tab').click(function(){
@@ -82,11 +82,24 @@ signup.onclick = function(){
   
   var username2 = document.getElementById('username2').value;
   var password2 = document.getElementById('password2').value;
-  var cpassword2 = password2.replace(" ", "");
-  if (cpassword2.length < password2.length){
+  var cpassword =  document.getElementById('cpassword2').value;
+  var Vpassword = password2.replace(" ", "");
+  if (Vpassword.length < password2.length){
       alert('Password cannot contain spaces');
+      document.getElementById('username2').value = "";
+      document.getElementById('password2').value = "";
+      document.getElementById('cpassword2').value = "";
   }else if(password2.length <4){
       alert("Password must contain atleast 4 charecters");
+      document.getElementById('username2').value = "";
+      document.getElementById('password2').value = "";
+      document.getElementById('cpassword2').value = "";
+  }
+  else if(Vpassword != password2){
+      alert("The passwords don't match, Please try again");
+      document.getElementById('username2').value = "";
+      document.getElementById('password2').value = "";
+      document.getElementById('cpassword2').value = "";
   }
   else{
   request.open('POST', 'http://abito12.imad.hasura-app.io/create-user', true);
