@@ -95,7 +95,7 @@ signup.onclick = function(){
       document.getElementById('password2').value = "";
       document.getElementById('cpassword2').value = "";
   }
-  else if(Vpassword != password2){
+  else if(cpassword != password2){
       alert("The passwords don't match, Please try again");
       document.getElementById('username2').value = "";
       document.getElementById('password2').value = "";
