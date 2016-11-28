@@ -264,7 +264,7 @@ function createArticleTemplate(data){
     <h4>LEAVE A COMMENT</h4>
     <div id="comment-form">
        <textarea cols="72" rows="8" name="textarea" id="textarea" style="min-height: 12vh; min-width: 27vw;" onkeyup="lettersOnly(this)"></textarea>
-       <a id="addBtn" href="#" class="btn btn-sm animated-button thar-three">Register</a>
+       <a id="addBtn" href="#" class="btn btn-sm animated-button thar-three">Add Comment</a>
        <a id="HomeBtn" href="http://abito12.imad.hasura-app.io/articles" class="btn btn-sm animated-button thar-three">Home</a></div>
     </div>
   </div>
