@@ -387,7 +387,7 @@ app.post('/send-message', function(req, res){
     var email = req.body.email;
     var message = req.body.message;
     var sender_id = req.session.auth.userId;
-    pool.query('INSERT INTO "message" (id,name,email,message) VALUES ($1, $2, $3, $4)', [sender_id, name, email, message], function(err, result){
+    pool.query('INSERT INTO "messages" (id,name,email,message) VALUES ($1, $2, $3, $4)', [sender_id, name, email, message], function(err, result){
             if(err){
                 res.status(500).send(err.toString());
             } else {
