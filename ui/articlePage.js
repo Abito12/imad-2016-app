@@ -18,7 +18,7 @@ function getComments(){
             var comment = allComments[i];
             var Box = `<div class="comment">
         <div class="comment-user">
-      <span class="user-details"><span class="username">${comment.username} </span><span>on </span><span>${date.toString().slice(4,16)}</span></span>
+      <span class="user-details"><span class="username">${comment.username} </span><span>on </span><span>${comment.date.toString().slice(4,16)}</span></span>
         </div>
         <div class="comment-text">
             ${comment.body}
