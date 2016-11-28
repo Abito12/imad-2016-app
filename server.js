@@ -263,6 +263,7 @@ function createArticleTemplate(data){
     <h4>LEAVE A COMMENT</h4>
     <div id="comment-form">
        <textarea cols="72" rows="8" name="textarea" id="textarea" style="min-height: 12vh; min-width: 27vw;" onkeyup="lettersOnly(this)"></textarea>
+      <button id="addBtn">Add</buton>
     </div>
   </div>
 </div> 
