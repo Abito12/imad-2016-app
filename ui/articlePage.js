@@ -53,12 +53,17 @@ addBtn.onclick = function(){
   };
   
   var comment = document.getElementById('textarea').value;
+  var Vcomment = comment.trim();
+  if(Vcomment.length === 0){
+      alert('Comment body cannot be empty');
+  }
+  else{
   var id = document.getElementById('key').innerHTML.toString();
   console.log(comment);
   request.open('POST', 'http://abito12.imad.hasura-app.io/add-comment/' + id , true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify({comment:comment}));
-  
+  }
 
 
 
