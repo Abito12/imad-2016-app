@@ -18,7 +18,7 @@ function getComments(){
             var comment = allComments[i];
             var Box = `<div class="comment">
         <div class="comment-user">
-      <div class="avatar"><img src="https://www.google.co.in/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj77d7HmMzQAhXGP48KHcw_DoMQjRwIBQ&url=https%3A%2F%2Fwww.pinterest.com%2Fjuliedoroski%2Fminions%2F&psig=AFQjCNFo0ihAKUgJXTcXk8ug0jBwI_joHA&ust=1480447960787891"/></div><span class="user-details"><span class="username">${comment.username} </span><span>on </span><span>${comment.date.toString().slice(0,10)}</span></span>
+      <div class="avatar"><img src="http://www.cleverfiles.com/howto/wp-content/uploads/2016/08/mini.jpg"/></div><span class="user-details"><span class="username">${comment.username} </span><span>on </span><span>${comment.date.toString().slice(0,10)}</span></span>
         </div>
         <div class="comment-text">
             ${comment.body}
