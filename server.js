@@ -236,6 +236,7 @@ function createArticleTemplate(data){
 <head>
   <meta charset="UTF-8">
   <title>Article | Blog App</title>
+     <link rel="icon" href="https://juststickers.in/wp-content/uploads/2016/09/lamda.png">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
