@@ -53,10 +53,6 @@ app.get('/newarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'newarticle.js'));
 });
 
-app.get('/contact', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
-});
-
 app.get('/contact.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contact.css'));
 });
@@ -81,6 +77,13 @@ app.get('/newarticle', function (req, res) {
    }
 });
 
+app.get('/contact', function (req, res) {
+       if(req.session && req.session.auth && req.session.auth.userId){
+        res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
+   } else{
+     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+   }
+});
 app.get('/about', function (req, res) {
        if(req.session && req.session.auth && req.session.auth.userId){
         res.sendFile(path.join(__dirname, 'ui', 'about.html'));
