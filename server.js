@@ -378,6 +378,20 @@ app.post('/savearticle', function(req, res){
     });
 });
 
+app.post('/send-message', function(req, res){
+    var name =req.body.name;
+    var email = req.body.email;
+    var message = req.body.message;
+    var sender_id = req.session.auth.userId;
+    pool.query('INSERT INTO "message" (id,name,email,message) VALUES ($1, $2, $3)', [sender_id, name, email, message], function(err, result){
+            if(err){
+                res.status(500).send(err.toString());
+            } else {
+                res.send('Message Sent');
+            }
+    });
+});
+
 
 function createArticleTemplate2(data){
     var title = data.title;
