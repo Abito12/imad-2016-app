@@ -297,13 +297,9 @@ function createArticleTemplate(data){
     </div>
 </div>
 </div>
-<div class="basicBox" onclick="window.location.href('http://abito12.imad.hasura-app.io/articles')">
-  HOME
-  <svg width="130" height="65" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
-    <rect x='0' y='0' fill='none' width='130' height='65'/>
-  </svg>
+<div id = "home-link-button">
+<a href="#" class="btn btn-sm animated-button thar-three">Register</a> </div>
 </div>
-
 </div>
 
 </body>
