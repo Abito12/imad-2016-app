@@ -43,7 +43,9 @@ function getlikes(){
     success: function(result){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
+        console.log(likes);
         var count = likes.count;
+        console.log(count);
         $('#counterLikes').html(count);
     }
 });
