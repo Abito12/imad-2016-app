@@ -42,7 +42,7 @@ function checklike(){
           var request = new XMLHttpRequest();
      request.onreadystatechange = function(){
       if(request.readyState === XMLHttpRequest.DONE){
-          if(request.status === 403){
+          if(request.status === 404){
               var liked = 0;
               document.getElementById('hidden-text').className = "hidden";
           }
