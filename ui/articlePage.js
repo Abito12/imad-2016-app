@@ -3,7 +3,7 @@ function lettersOnly(input){
     input.value = input.value.replace(regex, " ");
 }
 
-var likedFlag;
+var likedFlag = 0;
 var clickcount = 0;
 var likes;
 $(function(){
@@ -83,13 +83,11 @@ function checklike(){
         var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
-          if(request.status === 404){
-              likedflag = 0;
-          }
-          else {
+          if(request.status === 200){
               document.getElementById('hidden-text').className = "";
               likedFlag = 1;
           }
+          
       }
   };
   var id = document.getElementById('key').innerHTML.toString();
