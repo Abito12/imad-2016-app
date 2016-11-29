@@ -44,7 +44,7 @@ function getlikes(){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
         var count = likes.count;
-        $('$counterLikes').html(count);
+        $('#counterLikes').html(count);
     }
 });
 }
