@@ -4,9 +4,17 @@ function lettersOnly(input){
 }
 
 var likedFlag;
+var clickcount = 0;
 
 $(function(){
   $('.like-toggle').click(function(){
+      clickcount += 1;
+      if(clickcount % 2 ===1 && likedFlag ===1){
+          document.getElementById('counterLikes').innerHTML -= 1; 
+      }
+      if(clickcount % 2 ===1 && likedFlag ===0){
+          document.getElementById('counterLikes').innerHTML += 1;    
+      }
     $(this).toggleClass('like-active');
     $(this).next().toggleClass('hidden');
   });
@@ -43,9 +51,7 @@ function getlikes(){
     success: function(result){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
-        console.log(likes);
         var count = likes[0].count;
-        console.log(count);
         $('#counterLikes').html(count);
     }
 });
