@@ -66,6 +66,7 @@ function getlikes(){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
         var count = likes[0].count;
+        console.log(count);
         if (count === 0){
         $('#counterLikes').html("0");
         }else{
