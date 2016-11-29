@@ -103,6 +103,6 @@ $(document).ready(function(){
 
 });
 
-$(document).unload(function(){
+$(window).onbeforeunload(function(){
    alert('You are leaving'); 
 });
