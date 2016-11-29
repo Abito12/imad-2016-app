@@ -256,6 +256,7 @@ function createArticleTemplate(data){
 	<h6>Written By ${author}
     <span>${date}</span></h6>
 	<p>${content}</p>
+	<div id='likes-count'><span id='counterLikes'>0</span> Likes </div> 
 	<div class='like'>
   <button class='like-toggle basic2' id='like-button'><i class="em em-heart"></i></button>
   <span class='hidden' id='hidden-text'>I like this</span>
