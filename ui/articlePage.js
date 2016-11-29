@@ -8,26 +8,21 @@ var clickcount = 0;
 var likes;
 $(function(){
   $('.like-toggle').click(function(){
-      console.log(likedFlag);
       clickcount += 1;
       if(clickcount % 2 ===1 && likedFlag ===1){
           likes = Number(document.getElementById('counterLikes').innerHTML) - 1;
-          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString(); 
       }
       if(clickcount % 2 ===0 && likedFlag ===1){
           likes = Number(document.getElementById('counterLikes').innerHTML) + 1;
-          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString();    
       }
       if(clickcount % 2 ===1 && likedFlag ===0){
           likes = Number(document.getElementById('counterLikes').innerHTML) + 1;
-          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString();    
       }
       if(clickcount % 2 ===0 && likedFlag ===0){
           likes = Number(document.getElementById('counterLikes').innerHTML) - 1;
-          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString();    
       }
     $(this).toggleClass('like-active');
@@ -67,12 +62,8 @@ function getlikes(){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
         var count = likes[0].count;
-        console.log(count);
-        if (count === 0){
-        $('#counterLikes').html("0");
-        }else{
             $('#counterLikes').html(count);
-        }
+        
     }
 });
 }
