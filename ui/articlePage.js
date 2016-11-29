@@ -66,7 +66,11 @@ function getlikes(){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
         var count = likes[0].count;
-        $('#counterLikes').html(count.toString());
+        if (count === 0){
+        $('#counterLikes').html("0");
+        }else{
+            $('#counterLikes').html(count);
+        }
     }
 });
 }
