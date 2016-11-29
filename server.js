@@ -347,6 +347,12 @@ app.get('/check-like/:articleID', function(req, res){
 
 app.post('/add-comment/:articleID', function(req, res){
     var comment = req.body.comment;
+    var str1 = comment.trim();
+    var regex2 = /[^a-z-^0-9,#!@#$%&*()*_+=/]/gi;
+    var str2 = comment.replace(regex2, "");
+    if(str2.length != comment.length || str1.length ===0){
+        res.status(500).send('Comment could not be added');
+    }else{
     var article_id = req.params.articleID;
     var user_id = req.session.auth.userId;
     var date =  new Date;
@@ -358,6 +364,7 @@ app.post('/add-comment/:articleID', function(req, res){
                 res.send('Comment Added!' + comment);
             }
     });
+    }
 });
 
 
