@@ -3,6 +3,7 @@ function lettersOnly(input){
     input.value = input.value.replace(regex, " ");
 }
 
+var likedFlag;
 
 $(function(){
   $('.like-toggle').click(function(){
@@ -50,20 +51,21 @@ function getlikes(){
 
 
 
-function getlikes(){
+function checklike(){
         var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
-          if(request.status === 500){
-              console.log('Could not load likes');
+          if(request.status === 404){
+              likedflag = 0;
           }
           else {
               document.getElementById('hidden-text').className = "";
+              likedFlag = 1;
           }
       }
   };
   var id = document.getElementById('key').innerHTML.toString();
-  request.open('GET', 'http://abito12.imad.hasura-app.io/getslike/' + id , true);
+  request.open('GET', 'http://abito12.imad.hasura-app.io/check-like/' + id , true);
   request.send(null);
 
 }
