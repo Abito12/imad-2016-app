@@ -116,6 +116,9 @@ app.get('/hash/:input', function(req, res){
 app.post('/create-user', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
+    if(username.length === 0 || password.length === 0){
+        res.status(403).send('Username or password cannot be empty');
+    }else{
     var salt = crypto.randomBytes(128).toString('hex');
     var dbString = hash(password, salt);
     pool.query('INSERT INTO "user_info" (username, password) VALUES ($1, $2)', [username, dbString], function(err, result){
@@ -124,7 +127,9 @@ app.post('/create-user', function(req, res){
             } else {
                 res.send('User Created!' + username);
             }
-    });
+    
+        });
+    }
 });
 
 app.post('/login', function(req, res){
