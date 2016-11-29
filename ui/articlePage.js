@@ -103,9 +103,7 @@ $(document).ready(function(){
 
 });
 
-window.addEventListener("beforeunload", function (e) {
-  console.log('Before leaving');
-
-  (e || window.event).returnValue = null;
-  return null;
-});
+window.onbeforeunload = function() {
+    console.log('worked');
+    return null;
+}
