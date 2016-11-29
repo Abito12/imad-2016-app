@@ -10,19 +10,23 @@ $(function(){
   $('.like-toggle').click(function(){
       clickcount += 1;
       if(clickcount % 2 ===1 && likedFlag ===1){
-          likes = Number(document.getElementById('counterLikes').innerHTML) - 1; 
+          likes = Number(document.getElementById('counterLikes').innerHTML) - 1;
+          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString(); 
       }
       if(clickcount % 2 ===0 && likedFlag ===1){
           likes = Number(document.getElementById('counterLikes').innerHTML) + 1;
+          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString();    
       }
       if(clickcount % 2 ===1 && likedFlag ===0){
           likes = Number(document.getElementById('counterLikes').innerHTML) + 1;
+          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString();    
       }
       if(clickcount % 2 ===0 && likedFlag ===0){
           likes = Number(document.getElementById('counterLikes').innerHTML) - 1;
+          console.log(likes);
           document.getElementById('counterLikes').innerHTML = likes.toString();    
       }
     $(this).toggleClass('like-active');
