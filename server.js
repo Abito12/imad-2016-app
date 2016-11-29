@@ -319,7 +319,7 @@ app.get('/comments/:articleID', function(req, res){
 
 //Likes Of an Article
 
-app.get('/check-user/:articleID', function(req, res){
+app.get('/check-like/:articleID', function(req, res){
     var user_id = req.session.auth.userId;
     var article_id = req.params.articleID;
     pool.query("SELECT * FROM article_likes WHERE article_likes.user_id = user_id AND article_likes.article_id = " + article_id, function(err, result){
