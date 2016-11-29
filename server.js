@@ -316,7 +316,9 @@ app.post('/add-comment/:articleID', function(req, res){
     var comment = req.body.comment;
     var article_id = req.params.articleID;
     var user_id = req.session.auth.userId;
-    pool.query('INSERT INTO "article_comments" (article_id,user_id, body) VALUES ($1, $2, $3)', [article_id, user_id, comment], function(err, result){
+    var date =  new Date;
+    date = date.toDateString();
+    pool.query('INSERT INTO "article_comments" (article_id,user_id, body,date) VALUES ($1, $2, $3, $4)', [article_id, user_id, comment, date], function(err, result){
             if(err){
                 res.status(500).send(err.toString());
             } else {
