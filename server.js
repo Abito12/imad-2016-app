@@ -120,7 +120,7 @@ app.post('/create-user', function(req, res){
     var str2 = password.trim();
     var regex = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
     var str3 = username.replace(regex, "");
-    if(username.length === 0 || password.length === 0 || str1.length ===0 || str2.length ===0 || str1.length != username.length || str2.length != password.length || str1.length != str3.length){
+    if(username.length === 0 || password.length === 0 || str1.length ===0 || str2.length ===0 || str1.length != username.length || str2.length != password.length || str1.length != str3.length || username.length >14 || password.length < 4){
         res.status(403).send('Forbidden Request');
     }else{
     var salt = crypto.randomBytes(128).toString('hex');
