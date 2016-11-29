@@ -255,6 +255,10 @@ function createArticleTemplate(data){
 	<h6>Written By ${author}
     <span>${date}</span></h6>
 	<p>${content}</p>
+	<div class='like'>
+  <button class='like-toggle basic2'></button>
+  <span class='hidden'>I like this</span>
+</div>
 </div>
 	<div class="comments-section">
   		<div class="comments">
