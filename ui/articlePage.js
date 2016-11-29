@@ -13,13 +13,11 @@ $(function(){
 
 function getComments(){
     var key = document.getElementById('key').innerHTML.toString();
-    console.log(key)
     $.ajax({
     url: "/comments/" + key,
     success: function(result){
         $('#comments-container').html("");
         var allComments = JSON.parse(result);
-        console.log(allComments);
         for(var i = 0;i < allComments.length; i++){
             var comment = allComments[i];
             var Box = `<div class="comment">
@@ -37,17 +35,29 @@ function getComments(){
 });
 }
 
+function getlikes(){
+    var key = document.getElementById('key').innerHTML.toString();
+    $.ajax({
+    url: "/getlikes/" + key,
+    success: function(result){
+        $('#counterLikes').html("");
+        var likes = JSON.parse(result);
+        var count = likes.count;
+        $('$counterLikes').html(count);
+    }
+});
+}
 
-function checklike(){
-          var request = new XMLHttpRequest();
-     request.onreadystatechange = function(){
-      if(request.readyState === XMLHttpRequest.DONE){
-          if(request.status === 404){
-              var liked = 0;
-              document.getElementById('hidden-text').className = "hidden";
+
+
+function getlikes(){
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+          if(request.status === 500){
+              console.log('Could not load likes');
           }
           else {
-              var liked = 1;
               document.getElementById('hidden-text').className = "";
           }
       }
@@ -62,8 +72,10 @@ function checklike(){
 
 
 
+
 $(document).ready(function(){
     checklike();
+    getlikes();
     getComments();
     
     var addBtn = document.getElementById('addBtn');
