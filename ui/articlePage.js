@@ -37,7 +37,34 @@ function getComments(){
 });
 }
 
+
+function checklike(){
+          var request = new XMLHttpRequest();
+     request.onreadystatechange = function(){
+      if(request.readyState === XMLHttpRequest.DONE){
+          if(request.status === 403){
+              var liked = 0;
+              document.getElementById('hidden-text').className = "hidden";
+          }
+          else {
+              var liked = 1;
+              document.getElementById('hidden-text').className = "";
+          }
+      }
+  };
+  var id = document.getElementById('key').innerHTML.toString();
+  request.open('GET', 'http://abito12.imad.hasura-app.io/check-like' + id , true);
+  request.send(null);
+
+}
+
+
+
+
+
 $(document).ready(function(){
+    getLikes();
+    checklike();
     getComments();
     
     var addBtn = document.getElementById('addBtn');
@@ -73,9 +100,10 @@ $(document).ready(function(){
   }
 
 
-
 };
 
 });
+
+// Likes Section
 
 
