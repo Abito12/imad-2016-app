@@ -66,7 +66,7 @@ function getlikes(){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
         var count = likes[0].count;
-        $('#counterLikes').html(count);
+        $('#counterLikes').html(count.toString());
     }
 });
 }
