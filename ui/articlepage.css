@@ -399,3 +399,12 @@ a.animated-button.thar-three:before {
 color:#fff;
 margin-left:1vw;
 }
+
+#likes-count{
+color:#fff;
+float:right;
+}
+
+#counterLikes{
+	font-size:20px;
+}
