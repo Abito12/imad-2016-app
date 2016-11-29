@@ -8,6 +8,7 @@ var clickcount = 0;
 var likes;
 $(function(){
   $('.like-toggle').click(function(){
+      console.log(likedFlag);
       clickcount += 1;
       if(clickcount % 2 ===1 && likedFlag ===1){
           likes = Number(document.getElementById('counterLikes').innerHTML) - 1;
