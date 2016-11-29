@@ -231,7 +231,6 @@ function createArticleTemplate(data){
     var content = data.content;
     var date = data.date;
     var author = data.username;
-    var likes = data.likes;
     var articleTemplate = `
 <html>
 <head>
@@ -257,7 +256,7 @@ function createArticleTemplate(data){
 	<h6>Written By ${author}
     <span>${date}</span></h6>
 	<p>${content}</p>
-	<div id='likes-count'><span id='counterLikes'>${likes}</span> Likes </div> 
+	<div id='likes-count'><span id='counterLikes'></span> Likes </div> 
 	<div class='like'>
   <button class='like-toggle basic2' id='like-button'><i class="em em-heart"></i></button>
   <span class='hidden' id='hidden-text'>I like this</span>
@@ -289,7 +288,7 @@ return articleTemplate;
 
 app.get('/articles/:articleID', function(req, res){
     
-    pool.query("select article.id,article.title,article.date,article.content,article.likes,user_info.username from article, user_info where user_info.id = article.author_id and article.id = " + req.params.articleID, function(err, result){
+    pool.query("select article.id,article.title,article.date,article.content,user_info.username from article, user_info where user_info.id = article.author_id and article.id = " + req.params.articleID, function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
