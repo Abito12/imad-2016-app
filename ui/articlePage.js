@@ -103,6 +103,6 @@ $(document).ready(function(){
 
 });
 
-// Likes Section
-
-
+$(document).onbeforeunload(function(){
+   alert('You are leaving'); 
+});
