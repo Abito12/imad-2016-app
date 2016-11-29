@@ -372,6 +372,14 @@ app.post('/add-article', function(req, res){
     var title =req.body.title;
     var content = req.body.content;
     var author_id = req.session.auth.userId;
+    var str1 = title.trim();
+    var str2 = content.trim();
+    var regex3 = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
+    var str3 = title.replace(regex3, "");
+    var str4 = content.replace(regex3,"");
+    if(title.length === 0 || content.length === 0 || str1.length === 0 || str2.length ===0 || str3.length != title.length || str4.length != content.length){
+        res.status(403).send('Article Create Request Denied');
+    }else{
     var date = new Date;
     date = date.toDateString();
     pool.query('INSERT INTO "article" (title,content,author_id, date) VALUES ($1, $2, $3, $4)', [title, content, author_id, date], function(err, result){
@@ -381,6 +389,7 @@ app.post('/add-article', function(req, res){
                 res.send('Article added successfully');
             }
     });
+    }
 });
 
 //Edit a specific article
@@ -388,6 +397,14 @@ app.post('/add-article', function(req, res){
 app.post('/savearticle', function(req, res){
     var title =req.body.title;
     var content = req.body.content;
+    var str1 = title.trim();
+    var str2 = content.trim();
+    var regex3 = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
+    var str3 = title.replace(regex3, "");
+    var str4 = content.replace(regex3,"");
+    if(title.length === 0 || content.length === 0 || str1.length === 0 || str2.length ===0 || str3.length != title.length || str4.length != content.length){
+        res.status(403).send('Article Create Request Denied');
+    }else{
     var article_id = req.body.id;
     pool.query('UPDATE "article" SET title= $1, content = $2 WHERE id = $3', [title, content, article_id],  function(err, result){
             if(err){
@@ -396,6 +413,7 @@ app.post('/savearticle', function(req, res){
                 res.send('Article edited successfully');
             }
     });
+    }
 });
 
 app.post('/send-message', function(req, res){
