@@ -63,7 +63,7 @@ function getlikes(){
       }
   };
   var id = document.getElementById('key').innerHTML.toString();
-  request.open('GET', 'http://abito12.imad.hasura-app.io/check-like/' + id , true);
+  request.open('GET', 'http://abito12.imad.hasura-app.io/getslike/' + id , true);
   request.send(null);
 
 }
