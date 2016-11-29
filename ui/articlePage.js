@@ -63,7 +63,6 @@ function checklike(){
 
 
 $(document).ready(function(){
-    getLikes();
     checklike();
     getComments();
     
