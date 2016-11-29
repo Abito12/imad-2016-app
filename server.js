@@ -253,7 +253,7 @@ function createArticleTemplate(data){
  <div class="content">
 	<h1>${title}</h1>
 	<h6>Written By ${author}
-    <span>${date.toString().slice(4,16)}</span></h6>
+    <span>${date}</span></h6>
 	<p>${content}</p>
 </div>
 	<div class="comments-section">
