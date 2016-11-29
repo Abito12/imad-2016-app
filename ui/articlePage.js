@@ -4,6 +4,12 @@ function lettersOnly(input){
 }
 
 
+$(function(){
+  $('.like-toggle').click(function(){
+    $(this).toggleClass('like-active');
+    $(this).next().toggleClass('hidden');
+  });
+});
 
 function getComments(){
     var key = document.getElementById('key').innerHTML.toString();
