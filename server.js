@@ -317,6 +317,24 @@ app.get('/comments/:articleID', function(req, res){
     });
 });
 
+//Likes Of an Article
+
+app.get('/check-user/:articleID', function(req, res){
+    var user_id = req.session.auth.userId;
+    var article_id = req.params.articleID;
+    pool.query("SELECT * FROM article_likes WHERE article_likes.user_id = user_id AND article_likes.article_id = " + article_id, function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        } else if(result.rows.length === 0){
+            res.status(404).send('No Comments');
+        } else{
+            res.send(JSON.stringify(result.rows))
+        }
+    });
+});
+
+
+
 
 app.post('/add-comment/:articleID', function(req, res){
     var comment = req.body.comment;
