@@ -12,8 +12,14 @@ $(function(){
       if(clickcount % 2 ===1 && likedFlag ===1){
           document.getElementById('counterLikes').innerHTML -= 1; 
       }
+      if(clickcount % 2 ===0 && likedFlag ===1){
+          document.getElementById('counterLikes').innerHTML += 1;    
+      }
       if(clickcount % 2 ===1 && likedFlag ===0){
           document.getElementById('counterLikes').innerHTML += 1;    
+      }
+      if(clickcount % 2 ===0 && likedFlag ===0){
+          document.getElementById('counterLikes').innerHTML -= 1;    
       }
     $(this).toggleClass('like-active');
     $(this).next().toggleClass('hidden');
