@@ -103,6 +103,9 @@ $(document).ready(function(){
 
 });
 
-$(window).onbeforeunload(function(){
-   alert('You are leaving'); 
+window.addEventListener("beforeunload", function (e) {
+  console.log('Before leaving');
+
+  (e || window.event).returnValue = null;
+  return null;
 });
