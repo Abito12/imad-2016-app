@@ -342,6 +342,17 @@ app.get('/check-like/:articleID', function(req, res){
     });
 });
 
+app.get('/getlikes/:articleID', function(req, res){
+    var user_id = req.session.auth.userId;
+    var article_id = req.params.articleID;
+    pool.query("SELECT COUNT(*) FROM article_likes WHERE article_likes.article_id = " + article_id, function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result.rows))
+        }
+    });
+});
 
 
 
