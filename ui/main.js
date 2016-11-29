@@ -74,6 +74,9 @@ signup.onclick = function(){
               alert('Sign Up Successful, Please login with your credentials');
               window.location.href='http://abito12.imad.hasura-app.io/articles';
           }
+          else if(request.status === 403){
+              alert('Invalid Sign up attempt');
+          }
           else if(request.status ===500){
               alert('Sign In Error');
           }
