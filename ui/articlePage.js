@@ -44,7 +44,7 @@ function getlikes(){
         $('#counterLikes').html("");
         var likes = JSON.parse(result);
         console.log(likes);
-        var count = likes.count;
+        var count = likes[0].count;
         console.log(count);
         $('#counterLikes').html(count);
     }
