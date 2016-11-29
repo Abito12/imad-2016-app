@@ -116,8 +116,12 @@ app.get('/hash/:input', function(req, res){
 app.post('/create-user', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
-    if(username.length === 0 || password.length === 0){
-        res.status(403).send('Username or password cannot be empty');
+    var str1 = username.trim();
+    var str2 = password.trim();
+    var regex = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
+    var str3 = username.replace(regex, "");
+    if(username.length === 0 || password.length === 0 || str1.length ===0 || str2.length ===0 || str1.length != username.length || str2.length != password.length || str1.length != str3.length){
+        res.status(403).send('Forbidden Request');
     }else{
     var salt = crypto.randomBytes(128).toString('hex');
     var dbString = hash(password, salt);
