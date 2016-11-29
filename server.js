@@ -243,6 +243,7 @@ function createArticleTemplate(data){
 <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>  
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
 <link rel="stylesheet" href="articlePage.css">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 <script src="articlePage.js"></script>
 
   
