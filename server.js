@@ -256,7 +256,7 @@ function createArticleTemplate(data){
     <span>${date}</span></h6>
 	<p>${content}</p>
 	<div class='like'>
-  <button class='like-toggle basic2' id='like-button'></button>
+  <button class='like-toggle basic2' id='like-button'>Like</button>
   <span class='hidden' id='hidden-text'>I like this</span>
 </div>
 </div>
