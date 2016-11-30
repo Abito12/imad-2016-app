@@ -57,7 +57,6 @@ function selectoption(){
         $('div.select-styled.active').not(this).each(function(){
             $(this).removeClass('active').next('ul.select-options').hide();
         });
-        $(this).toggleClass('active').next('ul.select-options').toggle();
     });
   
     $listItems.click(function(e) {
@@ -69,6 +68,7 @@ function selectoption(){
     });
   
     $(document).click(function() {
+        $styledSelect.removeClass('active');
         $list.hide();
     });
 
