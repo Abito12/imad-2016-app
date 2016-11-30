@@ -78,16 +78,42 @@ function checklike(){
               document.getElementById('hidden-text').className = "";
               likedFlag = 1;
           }
-          
       }
   };
   var id = document.getElementById('key').innerHTML.toString();
   request.open('GET', 'http://abito12.imad.hasura-app.io/check-like/' + id , true);
   request.send(null);
-
 }
 
+//Add a like
+function addlike(){
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+          if(request.status === 500){
+              console.log('Could not update like count');
+          }
+      }
+  };
+  var id = document.getElementById('key').innerHTML.toString();
+  request.open('GET', 'http://abito12.imad.hasura-app.io/add-like/' + id , true);
+  request.send(null);
+}
 
+//Delete the like
+function deletelike(){
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+          if(request.status === 500){
+             console.log('Could not update like count');
+          }
+      }
+  };
+  var id = document.getElementById('key').innerHTML.toString();
+  request.open('GET', 'http://abito12.imad.hasura-app.io/delete-like/' + id , true);
+  request.send(null);
+}
 
 
 
@@ -136,15 +162,12 @@ $(document).ready(function(){
 
 window.onbeforeunload = function(count) {
     var newcount = document.getElementById('counterLikes');
-    if(count === newcount){
-        console.log('No need to update');
+    if(count < newcount){
+        addlike();
+    }else if (count > newcount){
+        deletelike();
+    }else{
+        console.log('No need to update likes');
     }
-    else if(count < newcount){
-        console.log('Add like');
-    }
-    else{
-        console.log('Remove Like');
-    }
-    
     return null;
 };
