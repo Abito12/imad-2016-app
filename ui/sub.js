@@ -28,7 +28,8 @@ $(function () {
 
 });
 
-$('select').each(function(){
+function selectoption(){
+    $('select').each(function(){
     var $this = $(this), numberOfOptions = $(this).children('option').length;
   
     $this.addClass('select-hidden'); 
@@ -73,6 +74,8 @@ $('select').each(function(){
     });
 
 });
+
+}
 
 function getUsername(){
     $.ajax({
@@ -149,6 +152,7 @@ function getMyArticles(){
 });
 }
 $(document).ready(function(){
+    selectoption();
     getAllArticles();
     getUsername();
     var myarticles = document.getElementById('myarticles-btn');
