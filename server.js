@@ -354,8 +354,32 @@ app.get('/getlikes/:articleID', function(req, res){
     });
 });
 
+app.get('/add-like/:articleID', function(req, res){
+    var user_id = req.session.auth.userId;
+    var article_id = req.params.articleID;
+    pool.query('INSERT INTO "article_likes" VALUES ($1, $2)',[user_id, article_id], function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send('Like added successfully');
+        }
+    });
+});
+
+app.get('/delete-like/:articleID', function(req, res){
+    var user_id = req.session.auth.userId;
+    var article_id = req.params.articleID;
+    pool.query('DELETE FROM "article_likes" WHERE user_id = $1 AND article_id = $2',[user_id, article_id], function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send('Like deleted successfully');
+        }
+    });
+});
 
 
+//Comment Section
 app.post('/add-comment/:articleID', function(req, res){
     var comment = req.body.comment;
     var str1 = comment.trim();
@@ -641,48 +665,13 @@ app.get('/editArticle/:articleID', function(req, res){
 
 
 
-
-
-
-
-
-//Comments Section
-var comments = [];
-app.get('/submit', function(req, res){
-    var comment = req.query.comment;
-    comments.push(comment);
-    // Json encoding
-    res.send(JSON.stringify(comments));
-});
-
-
-
-
-
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
 app.get('/ui/Lato-Light.ttf', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Lato-Light.ttf'));
 });
-
-app.get('/ui/code-in-the-flow.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'code-in-the-flow.png'));
-});
-
-
-//Count Button
-var counter = 0;
-app.get('/counter', function (req, res) {
-    counter += 1;
-  res.send(counter.toString());
-});
-
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
