@@ -137,13 +137,13 @@ $(document).ready(function(){
 window.onbeforeunload = function() {
     var newcount = document.getElementById('counterLikes');
     if(count === newcount){
-        console.log('No need to update');
+        alert('No need to update');
     }
     else if(count < newcount){
-        console.log('Add like');
+        alert('Add like');
     }
     else{
-        console.log('Remove Like');
+        alert('Remove Like');
     }
     
     return null;
