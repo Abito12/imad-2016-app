@@ -161,18 +161,12 @@ $(document).ready(function(){
 });
 
 window.onbeforeunload = function(count) {
-    var newcount = document.getElementById('counterLikes');
-    if(newcount < count){
-        console.log(count);
-        console.log(newcount);
+    var likestatus = document.getElementById('hidden-text');
+    if(likestatus.className ==="hidden" && likedFlag ===1){
         deletelike();
-    }else if (newcount > count){
-            console.log(count);
-        console.log(newcount);
+    }
+    else if(likestatus.className ==="" && likedFlag === 0){
         addlike();
-        
-    }else{
-        console.log('No need to update likes');
     }
     return null;
 };
