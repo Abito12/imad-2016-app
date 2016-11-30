@@ -523,6 +523,7 @@ h1,h4{
 }
 
 #select-options .select {
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   display: inline-block;
   position: relative;
