@@ -135,6 +135,16 @@ $(document).ready(function(){
 });
 
 window.onbeforeunload = function() {
-    console.log('worked');
+    var newcount = document.getElementById('counterLikes');
+    if(count === newcount){
+        console.log('No need to update');
+    }
+    else if(count < newcount){
+        console.log('Add like');
+    }
+    else{
+        console.log('Remove Like');
+    }
+    
     return null;
-}
+};
