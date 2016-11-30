@@ -123,6 +123,9 @@ function getAllArticles(){
 
 
 function getMyArticles(){
+    var name = document.getElementById('displayname').innerHTML.toString();
+    document.getElementById('main-header').innerHTML = name +" \'s Articles ";
+    document.getElementById('new-link').innerHTML = "Write a new article";
     $.ajax({
     url: "/MyArticles",
     success: function(result){
@@ -156,12 +159,7 @@ $(document).ready(function(){
     getAllArticles();
     getUsername();
     var myarticles = document.getElementById('myarticles-btn');
-    myarticles.onclick = function(){
-        var name = document.getElementById('displayname').innerHTML.toString();
-        document.getElementById('main-header').innerHTML = name +" \'s Articles ";
-        document.getElementById('new-link').innerHTML = "Write a new article";
-        getMyArticles();
-    };
+    myarticles.onclick = getMyArticles();
 });
 
 
