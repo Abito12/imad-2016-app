@@ -335,7 +335,7 @@ app.get('/check-like/:articleID', function(req, res){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
-            res.status(404).send('No Comments');
+            res.status(404).send('No likes');
         } else{
             res.send(JSON.stringify(result.rows))
         }
