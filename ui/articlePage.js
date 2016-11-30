@@ -134,16 +134,16 @@ $(document).ready(function(){
 
 });
 
-window.onbeforeunload = function() {
+window.onbeforeunload = function(count) {
     var newcount = document.getElementById('counterLikes');
     if(count === newcount){
-        alert('No need to update');
+        console.log('No need to update');
     }
     else if(count < newcount){
-        alert('Add like');
+        console.log('Add like');
     }
     else{
-        alert('Remove Like');
+        console.log('Remove Like');
     }
     
     return null;
