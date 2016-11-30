@@ -163,11 +163,9 @@ $(document).ready(function(){
 window.onbeforeunload = function(count) {
     var newcount = document.getElementById('counterLikes');
     if(count < newcount){
-        addlike();
-        alert('like added')
-    }else if (count > newcount){
         deletelike();
-        alert('like deleted')
+    }else if (count > newcount){
+        addlike();
     }else{
         console.log('No need to update likes');
     }
