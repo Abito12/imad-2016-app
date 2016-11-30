@@ -162,9 +162,9 @@ $(document).ready(function(){
 
 window.onbeforeunload = function(count) {
     var newcount = document.getElementById('counterLikes');
-    if(count < newcount){
+    if(newcount < count){
         deletelike();
-    }else if (count > newcount){
+    }else if (newcount > count){
         addlike();
     }else{
         console.log('No need to update likes');
