@@ -69,7 +69,6 @@ function selectoption(){
     });
   
     $(document).click(function() {
-        $styledSelect.removeClass('active');
         $list.hide();
     });
 
