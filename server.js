@@ -49,6 +49,12 @@ app.get('/sub.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'sub.js'));
 });
 
+app.get('/wish.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'wish.html'));
+});
+app.get('/wish.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'wish.css'));
+});
 app.get('/newarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'newarticle.js'));
 });
