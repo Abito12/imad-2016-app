@@ -144,6 +144,8 @@ $(document).ready(function(){
         getMyArticles();
     };
     
+    var btn1 = document.getElementById('opt2');
+    btn1.onclick = getArticlesByLike();
 
 });
 
