@@ -34,7 +34,7 @@ function selectoption(){
   
     $this.addClass('select-hidden'); 
     $this.wrap('<div class="select"></div>');
-    $this.after('<div class="select-styled"></div>');
+    $this.after('<div class="select-styled" id = "selectoption"></div>');
 
     var $styledSelect = $this.next('div.select-styled');
     $styledSelect.text($this.children('option').eq(0).text());
@@ -181,6 +181,7 @@ function getArticlesByLike(){
 });
 }
 
+$('#selectoption').on('OptionChanged', getArticlesByLike());
 
 
 $(document).ready(function(){
@@ -194,10 +195,8 @@ $(document).ready(function(){
         document.getElementById('new-link').innerHTML = "Write a new article";
         getMyArticles();
     };
-    var likedArticles = document.getElementById('likedArticles-btn');
-    likedArticles.onclick = function(){
-        getArticlesByLike();
-    };
+    
+    $("#selectoption").html('Likes').trigger('OptionChanged');
 });
 
 
