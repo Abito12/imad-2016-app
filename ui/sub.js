@@ -74,6 +74,7 @@ function getAllArticles(){
 }
 
 
+
 function getMyArticles(){
     $.ajax({
     url: "/MyArticles",
@@ -103,6 +104,7 @@ function getMyArticles(){
 });
 }
 
+var noclicks = 0;
 function getArticlesByLike(){
     $.ajax({
     url: "/LikedArticles",
@@ -128,7 +130,14 @@ function getArticlesByLike(){
                         </div>`;
             $('#articleBox').append(Box);
         }
-    $('#options').css("visibility","hidden")
+    noclicks += 1;
+    if(noclicks % 2 ===1){
+    $('#options').css("visibility","hidden");
+    $('#options').html("Sort by likes");
+    }else{
+        $('#options').css("visibility","visible");
+        $('#options').html("Sort articles by");
+    }
     }
 });
 }
