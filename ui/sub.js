@@ -47,7 +47,6 @@ function selectoption(){
         $('<li />', {
             text: $this.children('option').eq(i).text(),
             rel: $this.children('option').eq(i).val(),
-            id: $this.childer('option').eq(i).id
         }).appendTo($list);
     }
   
