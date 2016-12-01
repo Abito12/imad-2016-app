@@ -134,7 +134,6 @@ function getArticlesByLike(){
 }
 
 $(document).ready(function(){
-    selectoption();
     getAllArticles();
     getUsername();
     var myarticles = document.getElementById('myarticles-btn');
