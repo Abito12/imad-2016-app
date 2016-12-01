@@ -127,8 +127,8 @@ function getArticlesByLike(){
                             </div>
                         </div>`;
             $('#articleBox').append(Box);
-            
         }
+    $('options').css("visiblity","hidden")
     }
 });
 }
