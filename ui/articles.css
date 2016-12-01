@@ -261,7 +261,7 @@ h1,h4{
   font-family: 'Montserrat', sans-serif;
 }
 .row{
-  padding:50px 0;
+  padding:0;
   display: inline-block;
   padding-left: 5vw;
 }
@@ -495,11 +495,10 @@ h1,h4{
   margin: 20px 0;
 }
 
-
-
 .fa{
    padding: 0;
   margin: 0;
+  color:#fff;
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
  font-size: .8em;
@@ -515,26 +514,30 @@ dropdown{
 }
 dropdown label, dropdown ul li{
    padding: 0;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  box-sizing: border-box;
-  display: block;
-  width: 200px;
-  background: #ECF0F1;
-  padding: 15px 20px;
+   margin: 0;
+   font-family: 'Lato', sans-serif;
+   box-sizing: border-box;
+   display: block;
+   width: 200px;
+   background: rgba(255,255,255,0.2);
+   padding: 15px 20px;
 }
 dropdown label:hover, dropdown ul li:hover{
-  background: #1ABC9C;
+  background: rgba(255,255,255,0.3);
   color: white;
   cursor: pointer;
 }
 dropdown label{
 
-  color: #1ABC9C;
-  border-left: 4px solid #1ABC9C;
-  border-radius: 0 5px 0 0; 
-  position: relative;
-  z-index: 2;
+color: #fff;
+
+border-left: 4px solid #1ABC9C;
+
+border-radius: 0 5px 0 0;
+
+position: relative;
+
+z-index: 2;
 }
 dropdown input{
   display: none;
@@ -542,7 +545,7 @@ dropdown input{
 dropdown input ~ ul{
    padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   position: relative;
   visibility: hidden;
@@ -551,8 +554,8 @@ dropdown input ~ ul{
   z-index: 1;
 }
 dropdown input:checked + label{
-  background: #1ABC9C;
-  color: white;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
 }
 
 dropdown input:checked ~ ul{
@@ -572,4 +575,11 @@ dropdown input:checked ~ ul{
   -webkit-backface-visibility:hidden; /* Chrome and Safari */
   -moz-backface-visibility:hidden; /* Firefox */
   -ms-backface-visibility:hidden; /* Internet Explorer */
+}
+
+#dropdown{
+  width:94%;
+  padding:0;
+  margin:auto;
+  border-bottom:0;
 }
