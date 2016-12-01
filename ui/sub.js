@@ -128,7 +128,6 @@ function getMyArticles(){
     success: function(result){
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
-        console.log(myArticles);
         $('#sub-header').html("You have published " +myArticles.length + " articles");
         for(var i = 0;i < myArticles.length; i++){
             var article = myArticles[i];
@@ -151,6 +150,47 @@ function getMyArticles(){
     }
 });
 }
+
+function getArticlesByLike(){
+    $.ajax({
+    url: "/LikedArticles",
+    success: function(result){
+        $('#articleBox').html("");
+        var myArticles = JSON.parse(result);
+        console.log(myArticles);
+        $('#sub-header').html("The most liked " +myArticles.length + " articles");
+        for(var i = 0;i < myArticles.length; i++){
+            var article = myArticles[i];
+            var Box = `<div class="col-md-6 item">
+                            <div class="item-in">
+                                <h4>${article.title}</h4>
+                                <div class="seperator"></div>
+                                <p>${article.content}</p>
+                                <a href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
+                                <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                                 <a id="edit-link" href = "http://abito12.imad.hasura-app.io/articles/${article.id}">${article.likes} Likes
+                                <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>`;
+            $('#articleBox').append(Box);
+            
+        }
+    }
+});
+}
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
     selectoption();
     getAllArticles();
