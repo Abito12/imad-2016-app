@@ -141,11 +141,9 @@ $(document).ready(function(){
         var name = document.getElementById('displayname').innerHTML.toString();
         document.getElementById('main-header').innerHTML = name +" \'s Articles ";
         document.getElementById('new-link').innerHTML = "Write a new article";
-        getMyArticles();
+        getArticlesByLike();
     };
-    
-    var btn1 = document.getElementById('opt2');
-    btn1.onclick = getArticlesByLike();
+
 
 });
 
