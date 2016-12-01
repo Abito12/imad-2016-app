@@ -181,9 +181,6 @@ function getArticlesByLike(){
 });
 }
 
-$('#selectoption').on('OptionChanged', getArticlesByLike());
-
-
 $(document).ready(function(){
     selectoption();
     getAllArticles();
@@ -196,7 +193,7 @@ $(document).ready(function(){
         getMyArticles();
     };
     
-    $("#selectoption").html('Likes').trigger('OptionChanged');
+
 });
 
 
