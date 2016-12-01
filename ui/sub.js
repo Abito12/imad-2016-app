@@ -128,7 +128,7 @@ function getArticlesByLike(){
                         </div>`;
             $('#articleBox').append(Box);
         }
-    $('options').css("visiblity","hidden")
+    $('#options').css("visiblity","hidden")
     }
 });
 }
