@@ -46,7 +46,7 @@ function selectoption(){
     for (var i = 0; i < numberOfOptions; i++) {
         $('<li />', {
             text: $this.children('option').eq(i).text(),
-            rel: $this.children('option').eq(i).val()
+            rel: $this.children('option').eq(i).val(),
         }).appendTo($list);
     }
   
