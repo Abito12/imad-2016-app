@@ -183,14 +183,6 @@ function getArticlesByLike(){
 
 
 
-
-
-
-
-
-
-
-
 $(document).ready(function(){
     selectoption();
     getAllArticles();
@@ -201,6 +193,10 @@ $(document).ready(function(){
         document.getElementById('main-header').innerHTML = name +" \'s Articles ";
         document.getElementById('new-link').innerHTML = "Write a new article";
         getMyArticles();
+    };
+    var likedArticles = document.getElementById('likedArticles-btn');
+    likedArticles.onclick = function(){
+        getArticlesByLike();
     };
 });
 
