@@ -143,8 +143,6 @@ $(document).ready(function(){
         document.getElementById('new-link').innerHTML = "Write a new article";
         getMyArticles();
     };
-    var likedarticles = document.getElementById('orderlikes');
-    likedarticles.onclick = getArticlesByLike();
 });
 
 
