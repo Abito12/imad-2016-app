@@ -133,10 +133,10 @@ function getArticlesByLike(){
     noclicks += 1;
     if(noclicks % 2 ===1){
     $('#options').css("visibility","hidden");
-    $('#options').html("Sort by likes");
+    $('#optionsbar').html("Sort by likes");
     }else{
         $('#options').css("visibility","visible");
-        $('#options').html("Sort articles by");
+        $('#optionsbar').html("Sort articles by");
     }
     }
 });
