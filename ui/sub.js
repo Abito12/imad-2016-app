@@ -116,8 +116,7 @@ function getArticlesByLike(){
     success: function(result){
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
-        console.log(myArticles);
-        $('#sub-header').html("The most liked " +myArticles.length + " articles");
+        $('#sub-header').html("The most liked " + myArticles.length + " articles");
         for(var i = 0;i < myArticles.length; i++){
             var article = myArticles[i];
             var Box = `<div class="col-md-6 item">
@@ -163,7 +162,6 @@ function getArticlesNew(){
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
         console.log(myArticles);
-        $('#sub-header').html("The most liked " +myArticles.length + " articles");
         for(var i = 0;i < myArticles.length; i++){
             var article = myArticles[i];
             var Box = `<div class="col-md-6 item">
