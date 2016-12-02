@@ -69,6 +69,7 @@ function getAllArticles(){
             $('#articleBox').append(Box);
             
         }
+        noclicks += 1;
     }
 });
 }
@@ -132,6 +133,8 @@ function getArticlesByLike(){
         }
         $('#options').css("visibility","hidden");
         noclicks +=1;
+        document.getElementById('orderlikes').innerHTML = "Show All";
+        document.getElementById('orderlikes').onclick = getAllArticles;
     }
 });
 }
@@ -156,8 +159,6 @@ $(document).ready(function(){
     if(noclicks % 2 ===1) {
         $('#options').css("visibility","visible");
         document.getElementById("toggle2").checked = false;
-        document.getElementById('orderlikes').innerHTML = "Show All";
-        document.getElementById('orderlikes').onclick = getAllArticles;
         
     }
     };
