@@ -135,7 +135,7 @@ function getArticlesByLike(){
         noclicks +=1;
         document.getElementById('optionsbar').innerHTML = "Likes";
         document.getElementById('orderlikes').innerHTML = "Show All";
-        document.getElementById('orderlikes').onclick = getAllArticles2(likes);
+        document.getElementById('orderlikes').onclick = getAllArticles2("likes");
     }
 });
 }
