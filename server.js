@@ -402,7 +402,7 @@ app.post('/add-comment/:articleID', function(req, res){
     var comment = req.body.comment;
     var str1 = comment.trim();
     var regex2 = /[^a-z-^0-9,#!@#$%&*()*_+=/]/gi;
-    var str2 = comment.replace(regex2, "");
+    var str2 = comment.replace(regex2, " ");
     if(str2.length != comment.length || str1.length ===0){
         res.status(500).send('Comment could not be added');
     }else{
@@ -455,8 +455,8 @@ app.post('/savearticle', function(req, res){
     var str1 = title.trim();
     var str2 = content.trim();
     var regex3 = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
-    var str3 = title.replace(regex3, "");
-    var str4 = content.replace(regex3,"");
+    var str3 = title.replace(regex3, " ");
+    var str4 = content.replace(regex3," ");
     if(title.length === 0 || content.length === 0 || str1.length === 0 || str2.length ===0 || str3.length != title.length || str4.length != content.length){
         res.status(403).send('Article Create Request Denied');
     }else{
