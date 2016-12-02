@@ -131,6 +131,7 @@ function getArticlesByLike(){
             $('#articleBox').append(Box);
         }
         $('#options').css("visibility","hidden");
+        noclicks +=1;
     }
 });
 }
