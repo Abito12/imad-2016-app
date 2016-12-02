@@ -130,13 +130,10 @@ function getArticlesByLike(){
                         </div>`;
             $('#articleBox').append(Box);
         }
-    noclicks += 1;
     if(noclicks % 2 ===1){
     $('#options').css("visibility","hidden");
-    $('#optionsbar').html("Sort by likes");
     }else{
         $('#options').css("visibility","visible");
-        $('#optionsbar').html("Sort articles by");
     }
     }
 });
@@ -151,6 +148,10 @@ $(document).ready(function(){
         document.getElementById('main-header').innerHTML = name +" \'s Articles ";
         document.getElementById('new-link').innerHTML = "Write a new article";
         getMyArticles();
+    };
+    var optionsbar = document.getElementById('optionsbar');
+    optionsbar.onclick =  function(){
+        noclicks += 1;
     };
 });
 
