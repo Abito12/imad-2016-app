@@ -146,6 +146,7 @@ function getAllArticles2(option){
     var element = "order" + option;
     console.log(element);
     if(element === "orderlikes"){
+        console.log('here');
         document.getElementById('orderlikes').onclick = getArticlesByLike;
     }
     else if(element === "ordernew"){
