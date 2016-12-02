@@ -135,15 +135,25 @@ function getArticlesByLike(){
         noclicks +=1;
         document.getElementById('optionsbar').innerHTML = "Likes";
         document.getElementById('orderlikes').innerHTML = "Show All";
-        document.getElementById('orderlikes').onclick = getAllArticles2;
+        document.getElementById('orderlikes').onclick = getAllArticles2(likes);
     }
 });
 }
 
-function getAllArticles2(){
+function getAllArticles2(option){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
-    document.getElementById('orderlikes').onclick = getArticlesByLike;
+    var element = "order" + option;
+    console.log(element);
+    if(element === "orderlikes"){
+        document.getElementById('orderlikes').onclick = getArticlesByLike;
+    }
+    else if(element === "ordernew"){
+        document.getElementById('ordernew').onclick = getArticlesNew;
+    }
+    else{
+        document.getElementById('orderold').onclick = getArticleOld;
+    }
     $('#options').css("visibility","hidden");
     getAllArticles();
     noclicks += 1;
