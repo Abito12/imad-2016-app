@@ -149,11 +149,11 @@ $(document).ready(function(){
     optionsbar.onclick =  function(){
         noclicks += 1;
         console.log(noclicks);
-            if(noclicks % 2 ===1){
+            if(noclicks % 2 ===0){
     $('#options').css("visibility","hidden");
     console.log('hide');
     }
-    if(noclicks % 2 ===0) {
+    if(noclicks % 2 ===1) {
         $('#options').css("visibility","visible");
         document.getElementById("toggle2").checked = false;
         console.log('show');
