@@ -159,6 +159,7 @@ function getArticlesNew(){
     $.ajax({
     url: "/NewArticles",
     success: function(result){
+        $('#sub-header').html("The most recent articles");
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
         console.log(myArticles);
@@ -186,6 +187,7 @@ function getArticlesNew(){
 }
 
 function getAllArticles3(){
+    document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
     document.getElementById('orderlikes').innerHTML = "Likes";
     document.getElementById('orderlikes').onclick = getArticlesNew;
