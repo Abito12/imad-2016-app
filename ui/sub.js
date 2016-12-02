@@ -143,6 +143,7 @@ function getArticlesByLike(){
 function getAllArticles2(){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
+    document.getElementById('orderlikes').innerHTML = "Likes";
     document.getElementById('orderlikes').onclick = getArticlesByLike;
     $('#options').css("visibility","hidden");
     getAllArticles();
