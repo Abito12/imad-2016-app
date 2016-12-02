@@ -152,6 +152,7 @@ $(document).ready(function(){
     var optionsbar = document.getElementById('optionsbar');
     optionsbar.onclick =  function(){
         noclicks += 1;
+        console.log(noclicks);
     };
 });
 
