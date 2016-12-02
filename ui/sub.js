@@ -132,8 +132,11 @@ function getArticlesByLike(){
         }
     if(noclicks % 2 ===1){
     $('#options').css("visibility","hidden");
+    console.log('hide');
     }else{
         $('#options').css("visibility","visible");
+        document.getElementById("toggle2").checked = false;
+        console.log('show');
     }
     }
 });
