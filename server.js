@@ -232,7 +232,7 @@ app.get('/LikedArticles', function (req, res) {
 //Articles sorted by date, descending
 
 app.get('/NewArticles', function (req, res) {
-    pool.query("SELECT article.id, article.title, article.content FROM article ORDER BY date DESC", function(err, result){
+    pool.query("SELECT article.id, article.title, article.content FROM article ORDER BY article.id DESC", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else{
