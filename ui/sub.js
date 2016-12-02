@@ -53,6 +53,7 @@ function getAllArticles(){
     $.ajax({
     url: "/allArticles",
     success: function(result){
+        $('#articleBox').html("");
         var allArticles = JSON.parse(result);
         for(var i = 0;i < allArticles.length; i++){
             var article = allArticles[i];
@@ -140,6 +141,7 @@ function getArticlesByLike(){
 }
 
 function getAllArticles2(){
+    document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     getAllArticles();
     noclicks += 1;
 }
