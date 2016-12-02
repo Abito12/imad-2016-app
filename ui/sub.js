@@ -69,7 +69,6 @@ function getAllArticles(){
             $('#articleBox').append(Box);
             
         }
-        noclicks += 1;
     }
 });
 }
@@ -133,10 +132,16 @@ function getArticlesByLike(){
         }
         $('#options').css("visibility","hidden");
         noclicks +=1;
+        document.getElementById('optionsbar').innerHTML = "Likes";
         document.getElementById('orderlikes').innerHTML = "Show All";
-        document.getElementById('orderlikes').onclick = getAllArticles;
+        document.getElementById('orderlikes').onclick = getAllArticles2;
     }
 });
+}
+
+function getAllArticles2(){
+    getAllArticles();
+    noclicks += 1;
 }
 
 $(document).ready(function(){
