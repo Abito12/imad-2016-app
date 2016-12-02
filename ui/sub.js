@@ -174,27 +174,23 @@ function getArticlesNew(){
                                 <a href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
                                 <i class="fa fa-long-arrow-right"></i>
                                 </a>
-                                 <a id="edit-link" href = "http://abito12.imad.hasura-app.io/articles/${article.id}" style="text-decoration:none;">${article.likes} Likes
-                                <i class="fa fa-long-arrow-right"></i>
-                                </a>
                             </div>
                         </div>`;
             $('#articleBox').append(Box);
         }
         $('#options').css("visibility","hidden");
         noclicks +=1;
-        document.getElementById('optionsbar').innerHTML = "Likes";
-        document.getElementById('orderlikes').innerHTML = "Show All";
-        document.getElementById('orderlikes').onclick = getAllArticles2;
+        document.getElementById('optionsbar').innerHTML = "Newest First";
+        document.getElementById('ordernew').innerHTML = "Show All";
+        document.getElementById('orderlikes').onclick = getAllArticles3;
     }
 });
 }
 
-function getAllArticles2(){
-    document.getElementById('sub-header').innerHTML = "Have a look at our articles";
+function getAllArticles3(){
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
     document.getElementById('orderlikes').innerHTML = "Likes";
-    document.getElementById('orderlikes').onclick = getArticlesByLike;
+    document.getElementById('orderlikes').onclick = getArticlesNew;
     $('#options').css("visibility","hidden");
     getAllArticles();
     noclicks += 1;
