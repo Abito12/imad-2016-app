@@ -130,6 +130,7 @@ function getArticlesByLike(){
                         </div>`;
             $('#articleBox').append(Box);
         }
+        $('#options').css("visibility","hidden");
     }
 });
 }
