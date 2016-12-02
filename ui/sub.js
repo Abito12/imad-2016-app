@@ -153,7 +153,7 @@ function getAllArticles2(){
     noclicks += 1;
 }
 
-// Sort By Date Desc
+// Sort By id desc
 
 function getArticlesNew(){
     $.ajax({
@@ -181,7 +181,7 @@ function getArticlesNew(){
         noclicks +=1;
         document.getElementById('optionsbar').innerHTML = "Newest First";
         document.getElementById('ordernew').innerHTML = "Show All";
-        document.getElementById('orderlikes').onclick = getAllArticles3;
+        document.getElementById('ordernew').onclick = getAllArticles3;
     }
 });
 }
@@ -189,13 +189,53 @@ function getArticlesNew(){
 function getAllArticles3(){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
-    document.getElementById('orderlikes').innerHTML = "Likes";
+    document.getElementById('ordernew').innerHTML = "Newest first";
     document.getElementById('orderlikes').onclick = getArticlesNew;
     $('#options').css("visibility","hidden");
     getAllArticles();
     noclicks += 1;
 }
 
+// 2. Sort By id
+
+function getArticlesOld(){
+    $.ajax({
+    url: "/OldArticles",
+    success: function(result){
+        $('#articleBox').html("");
+        var myArticles = JSON.parse(result);
+        console.log(myArticles);
+        for(var i = 0;i < myArticles.length; i++){
+            var article = myArticles[i];
+            var Box = `<div class="col-md-6 item">
+                            <div class="item-in">
+                                <h4>${article.title}</h4>
+                                <div class="seperator"></div>
+                                <p>${article.content}</p>
+                                <a href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
+                                <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>`;
+            $('#articleBox').append(Box);
+        }
+        $('#options').css("visibility","hidden");
+        noclicks +=1;
+        document.getElementById('optionsbar').innerHTML = "Oldest First";
+        document.getElementById('orderold').innerHTML = "Show All";
+        document.getElementById('orderold').onclick = getAllArticles4;
+    }
+});
+}
+
+function getAllArticles4(){
+    document.getElementById('optionsbar').innerHTML = "Sort articles by";
+    document.getElementById('orderold').innerHTML = "Likes";
+    document.getElementById('orderold').onclick = getArticlesOld;
+    $('#options').css("visibility","hidden");
+    getAllArticles();
+    noclicks += 1;
+}
 
 $(document).ready(function(){
     getAllArticles();
