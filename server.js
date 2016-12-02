@@ -430,7 +430,8 @@ app.post('/add-article', function(req, res){
     var regex3 = /[^a-z-^0-9,#!@#$%&*()*._+=/]/gi;
     var str3 = title.replace(regex3, "");
     var str4 = content.replace(regex3,"");
-    console.log(str3 + str4)
+    console.log(str4);
+    console.log(content);
     if(title.length === 0 || content.length === 0 || str1.length === 0 || str2.length ===0 || str3.length != title.length || str4.length != content.length){
         res.status(403).send('Article Create Request Denied');
     }else{
