@@ -104,8 +104,12 @@ function getMyArticles(){
     }
 });
 }
+// Sort Section
 
 var noclicks = 0;
+
+// 1. Sort by likes
+
 function getArticlesByLike(){
     $.ajax({
     url: "/LikedArticles",
@@ -149,6 +153,53 @@ function getAllArticles2(){
     getAllArticles();
     noclicks += 1;
 }
+
+// Sort By Date Desc
+
+function getArticlesNew(){
+    $.ajax({
+    url: "/NewArticles",
+    success: function(result){
+        $('#articleBox').html("");
+        var myArticles = JSON.parse(result);
+        console.log(myArticles);
+        $('#sub-header').html("The most liked " +myArticles.length + " articles");
+        for(var i = 0;i < myArticles.length; i++){
+            var article = myArticles[i];
+            var Box = `<div class="col-md-6 item">
+                            <div class="item-in">
+                                <h4>${article.title}</h4>
+                                <div class="seperator"></div>
+                                <p>${article.content}</p>
+                                <a href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read More
+                                <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                                 <a id="edit-link" href = "http://abito12.imad.hasura-app.io/articles/${article.id}" style="text-decoration:none;">${article.likes} Likes
+                                <i class="fa fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>`;
+            $('#articleBox').append(Box);
+        }
+        $('#options').css("visibility","hidden");
+        noclicks +=1;
+        document.getElementById('optionsbar').innerHTML = "Likes";
+        document.getElementById('orderlikes').innerHTML = "Show All";
+        document.getElementById('orderlikes').onclick = getAllArticles2;
+    }
+});
+}
+
+function getAllArticles2(){
+    document.getElementById('sub-header').innerHTML = "Have a look at our articles";
+    document.getElementById('optionsbar').innerHTML = "Sort articles by";
+    document.getElementById('orderlikes').innerHTML = "Likes";
+    document.getElementById('orderlikes').onclick = getArticlesByLike;
+    $('#options').css("visibility","hidden");
+    getAllArticles();
+    noclicks += 1;
+}
+
 
 $(document).ready(function(){
     getAllArticles();
