@@ -242,6 +242,18 @@ app.get('/NewArticles', function (req, res) {
       
 });
 
+//Articles sorted by date, ascending
+
+app.get('/OldArticles', function (req, res) {
+    pool.query("SELECT article.id, article.title, article.content FROM article ORDER BY article.id", function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+      
+});
 
 
 app.get('/articles/articlePage.css', function (req, res) {
