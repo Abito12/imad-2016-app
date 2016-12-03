@@ -151,6 +151,8 @@ function getAllArticles2(){
     document.getElementById('orderlikes').innerHTML = "Likes";
     document.getElementById('orderlikes').onclick = getArticlesByLike;
     $('#options').css("visibility","hidden");
+    document.getElementById('ordernew').onclick = getArticlesNew;
+    document.getElementById('orderold').onclick = getArticlesOld;
     getAllArticles();
     noclicks += 1;
 }
@@ -194,8 +196,10 @@ function getAllArticles3(){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
     document.getElementById('ordernew').innerHTML = "Newest first";
-    document.getElementById('orderlikes').onclick = getArticlesNew;
+    document.getElementById('ordernew').onclick = getArticlesNew;
     $('#options').css("visibility","hidden");
+    document.getElementById('orderlikes').onclick = getArticlesByLike;
+    document.getElementById('orderold').onclick = getArticlesOld;
     getAllArticles();
     noclicks += 1;
 }
@@ -241,6 +245,8 @@ function getAllArticles4(){
     document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderold').onclick = getArticlesOld;
     $('#options').css("visibility","hidden");
+    document.getElementById('orderlikes').onclick = getArticlesByLike;
+    document.getElementById('orderlikes').onclick = getArticlesNew;
     getAllArticles();
     noclicks += 1;
 }
