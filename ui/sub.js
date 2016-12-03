@@ -147,6 +147,8 @@ function getAllArticles2(){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
     document.getElementById('orderlikes').innerHTML = "Likes";
+    document.getElementById('ordernew').innerHTML = "Newest first";
+    document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderlikes').onclick = getArticlesByLike;
     $('#options').css("visibility","hidden");
     getAllArticles();
@@ -189,7 +191,9 @@ function getArticlesNew(){
 function getAllArticles3(){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
+    document.getElementById('orderlikes').innerHTML = "Likes";
     document.getElementById('ordernew').innerHTML = "Newest first";
+    document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderlikes').onclick = getArticlesNew;
     $('#options').css("visibility","hidden");
     getAllArticles();
@@ -230,6 +234,8 @@ function getArticlesOld(){
 
 function getAllArticles4(){
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
+    document.getElementById('orderlikes').innerHTML = "Likes";
+    document.getElementById('ordernew').innerHTML = "Newest first";
     document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderold').onclick = getArticlesOld;
     $('#options').css("visibility","hidden");
