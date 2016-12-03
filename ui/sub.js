@@ -137,6 +137,8 @@ function getArticlesByLike(){
         $('#options').css("visibility","hidden");
         noclicks +=1;
         document.getElementById('optionsbar').innerHTML = "Likes";
+        document.getElementById('ordernew').innerHTML = "Newest first";
+        document.getElementById('orderold').innerHTML = "Oldest first";
         document.getElementById('orderlikes').innerHTML = "Show All";
         document.getElementById('orderlikes').onclick = getAllArticles2;
     }
@@ -147,8 +149,6 @@ function getAllArticles2(){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
     document.getElementById('orderlikes').innerHTML = "Likes";
-    document.getElementById('ordernew').innerHTML = "Newest first";
-    document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderlikes').onclick = getArticlesByLike;
     $('#options').css("visibility","hidden");
     getAllArticles();
@@ -183,6 +183,8 @@ function getArticlesNew(){
         noclicks +=1;
         document.getElementById('optionsbar').innerHTML = "Newest First";
         document.getElementById('ordernew').innerHTML = "Show All";
+        document.getElementById('orderlikes').innerHTML = "Likes";
+        document.getElementById('orderold').innerHTML = "Oldest first"
         document.getElementById('ordernew').onclick = getAllArticles3;
     }
 });
@@ -191,9 +193,7 @@ function getArticlesNew(){
 function getAllArticles3(){
     document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
-    document.getElementById('orderlikes').innerHTML = "Likes";
     document.getElementById('ordernew').innerHTML = "Newest first";
-    document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderlikes').onclick = getArticlesNew;
     $('#options').css("visibility","hidden");
     getAllArticles();
@@ -206,6 +206,7 @@ function getArticlesOld(){
     $.ajax({
     url: "/OldArticles",
     success: function(result){
+        $('#sub-header').html("The most aged articles");
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
         console.log(myArticles);
@@ -226,6 +227,8 @@ function getArticlesOld(){
         $('#options').css("visibility","hidden");
         noclicks +=1;
         document.getElementById('optionsbar').innerHTML = "Oldest First";
+        document.getElementById('orderlikes').innerHTML = "Likes";
+        document.getElementById('ordernew').innerHTML =  "Newest first";
         document.getElementById('orderold').innerHTML = "Show All";
         document.getElementById('orderold').onclick = getAllArticles4;
     }
@@ -233,9 +236,8 @@ function getArticlesOld(){
 }
 
 function getAllArticles4(){
+    document.getElementById('sub-header').innerHTML = "Have a look at our articles";
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
-    document.getElementById('orderlikes').innerHTML = "Likes";
-    document.getElementById('ordernew').innerHTML = "Newest first";
     document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderold').onclick = getArticlesOld;
     $('#options').css("visibility","hidden");
