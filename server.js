@@ -219,7 +219,7 @@ app.get('/MyArticles', function (req, res) {
 
 //Most Liked Articles
 app.get('/LikedArticles', function (req, res) {
-    pool.query("SELECT article.id, article.title, article.content, article.author_id, B.likes FROM article, (SELECT article_id, count(user_id) as likes FROM article_likes GROUP BY article_id) B WHERE article.id = B.article_id ORDER BY B.likes", function(err, result){
+    pool.query("SELECT article.id, article.title, article.content, article.author_id, B.likes FROM article, (SELECT article_id, count(user_id) as likes FROM article_likes GROUP BY article_id) B WHERE article.id = B.article_id ORDER BY B.likes DESC", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else{
