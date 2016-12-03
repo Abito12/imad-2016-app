@@ -230,7 +230,7 @@ function getArticlesOld(){
 
 function getAllArticles4(){
     document.getElementById('optionsbar').innerHTML = "Sort articles by";
-    document.getElementById('orderold').innerHTML = "Likes";
+    document.getElementById('orderold').innerHTML = "Oldest first";
     document.getElementById('orderold').onclick = getArticlesOld;
     $('#options').css("visibility","hidden");
     getAllArticles();
