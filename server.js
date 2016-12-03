@@ -373,7 +373,7 @@ app.get('/comments/:articleID', function(req, res){
 app.get('/check-like/:articleID', function(req, res){
     var user_id = req.session.auth.userId;
     var article_id = req.params.articleID;
-    pool.query("SELECT * FROM article_likes WHERE article_likes.user_id = user_id AND article_likes.article_id = " + article_id, function(err, result){
+    pool.query("SELECT * FROM article_likes WHERE article_likes.user_id = $1 AND article_likes.article_id = $2",[user_id, article_id], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else if(result.rows.length === 0){
