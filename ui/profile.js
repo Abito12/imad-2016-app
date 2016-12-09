@@ -10,3 +10,6 @@ function getUsername(){
     });
 }
 
+$(document).ready(function(){
+    getUsername();
+});
