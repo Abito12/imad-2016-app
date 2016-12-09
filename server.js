@@ -102,7 +102,7 @@ app.get('/profile', function (req, res) {
        if(req.session && req.session.auth && req.session.auth.userId){
         res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
    } else{
-     res.sendFile(path.join(__dirname, 'ui', 'profile.html'));
+     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
    }
 });
 app.get('/about', function (req, res) {
