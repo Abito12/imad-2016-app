@@ -5,7 +5,7 @@ function getUsername(){
             var userDetails = JSON.parse(result);
             console.log(userDetails);
             var name = userDetails[0].username;
-            $('#username').val(name); 
+            $('#username').val(name);
         }
     });
 }
