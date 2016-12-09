@@ -4,8 +4,8 @@ function getUsername(){
         success: function(result){
             var userDetails = JSON.parse(result);
             console.log(userDetails);
-            var name = userDetails[0].username;
-            $('#username').val(name);
+            var name = userDetails[0].username.toUpperCase();
+            $('#main-heading').val(name+ "'s Profile");
         }
     });
 }
