@@ -10,8 +10,8 @@ function getUsername(){
             var bio = userDetails[0].bio;
             name = name[0].toUpperCase() + name.slice(1);
             $('#main-heading').html(name+ "'s Profile");
-            $('#userinfo').html(job);
-            $('#useremail').html(email);
+            $('#userinfo').val(job);
+            $('#useremail').val(email);
             $('#userbio').html(bio);
         }
     });
@@ -29,6 +29,7 @@ $(document).ready(function(){
           }
           else {
               alert('Profile Updated');
+              window.location.href='http://abito12.imad.hasura-app.io/articles';
           }
       }
   };
