@@ -187,7 +187,7 @@ app.get('/logout', function(req, res){
 app.get('/check-login', function(req, res){
     if(req.session && req.session.auth && req.session.auth.userId){
         var user_id = req.session.auth.userId;
-        pool.query('SELECT username FROM user_info WHERE id =' + user_id, function(err, result){
+        pool.query('SELECT username, profession, email, bio FROM user_info WHERE id =' + user_id, function(err, result){
             if(err){
                 res.status(500).send(err.toString());
             }else{
