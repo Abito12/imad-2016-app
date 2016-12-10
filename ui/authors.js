@@ -4,7 +4,7 @@ function getAuthors(){
     success: function(result){
         $('#mainbox').html("<h1>Article Authors</h1>");
         var allAuthors = JSON.parse(result);
-        var countrows = Math.ciel(allAuthors.length/3);
+        var countrows = Math.ceil(allAuthors.length/3);
         for(var i=0; i < countrows; i++){
             var  rows = `<div  class="row">`;
             var fourcolumns = "";
