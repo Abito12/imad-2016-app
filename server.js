@@ -35,6 +35,14 @@ app.get('/', function (req, res) {
    }
 });
 
+app.get('/authors', function (req, res) {
+     if(req.session && req.session.auth && req.session.auth.userId){
+        res.sendFile(path.join(__dirname, 'ui', 'authors.html'));
+   } else{
+     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+   }
+});
+
 
 //Articles Section
 app.get('/articles', function (req, res) {
@@ -58,6 +66,10 @@ app.get('/wish.css', function (req, res) {
 app.get('/newarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'newarticle.js'));
 });
+app.get('/authors.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'authors.css'));
+});
+
 
 app.get('/contact.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'contact.css'));
