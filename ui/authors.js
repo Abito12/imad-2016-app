@@ -12,7 +12,9 @@ function getAuthors(){
             var fourcolumns = "";
             for(var j = 0; j < 3; j++){
                 console.log('second');
-                author = allAuthors[i * 3 + j];
+                var k = i*3+j;
+                console.log(k);
+                author = allAuthors[k];
                 fourcolumns += `<div class="four columns">
                     <div class="teaser">
                     <h3>${author.username}</h3>
