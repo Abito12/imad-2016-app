@@ -23,7 +23,6 @@ $(document).ready(function(){
           }
           else {
               alert('Profile Updated');
-              window.location.href='http://abito12.imad.hasura-app.io/articles';
           }
       }
   };
