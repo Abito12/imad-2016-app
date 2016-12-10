@@ -5,8 +5,14 @@ function getUsername(){
             var userDetails = JSON.parse(result);
             console.log(userDetails);
             var name = userDetails[0].username;
+            var email = userDetails[0].email;
+            var job = userDetails[0].profession;
+            var bio = userDetails[0].bio;
             name = name[0].toUpperCase() + name.slice(1);
             $('#main-heading').html(name+ "'s Profile");
+            $('#userinfo').html(job);
+            $('#useremail').html(email);
+            $('#userbio').html(bio);
         }
     });
 }
