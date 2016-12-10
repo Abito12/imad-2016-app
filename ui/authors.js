@@ -25,3 +25,7 @@ function getAuthors(){
     }
 });
 }
+
+$(document).ready(function(){
+    getAuthors();
+});
