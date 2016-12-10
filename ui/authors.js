@@ -2,7 +2,7 @@ function getAuthors(){
     $.ajax({
     url: "/allAuthors",
     success: function(result){
-        $('#mainbox').html("");
+        $('#mainbox').html("<h1>Article Authors</h1>");
         var allAuthors = JSON.parse(result);
         var countrows = Math.ciel(allAuthors.length/3);
         for(var i=0; i < countrows; i++){
