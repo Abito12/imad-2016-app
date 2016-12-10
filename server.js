@@ -506,6 +506,7 @@ app.post('/savearticle', function(req, res){
     }
 });
 
+//Recieve a message from the user
 app.post('/send-message', function(req, res){
     var name =req.body.name;
     var email = req.body.email;
@@ -520,6 +521,20 @@ app.post('/send-message', function(req, res){
     });
 });
 
+//Update User Information
+app.post('/update-user', function(req, res){
+    var info =req.body.info;
+    var email = req.body.email;
+    var bio = req.body.bio;
+    var user_id = req.session.auth.userId;
+    pool.query('UPDATE "user_info" SET profession = $1, email = $2, bio = $3 WHERE id = $4', [info, email, bio, user_id], function(err, result){
+            if(err){
+                res.status(500).send(err.toString());
+            } else {
+                res.send('Profile Updated');
+            }
+    });
+});
 
 function createArticleTemplate2(data){
     var title = data.title;
