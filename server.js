@@ -522,7 +522,7 @@ app.post('/send-message', function(req, res){
 });
 
 //Update User Information
-app.post('/update-user', function(req, res){
+app.post('/update-profile', function(req, res){
     var info =req.body.info;
     var email = req.body.email;
     var bio = req.body.bio;
