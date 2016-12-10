@@ -14,6 +14,7 @@ function getAuthors(){
                 console.log('second');
                 var k = i*3+j;
                 console.log(k);
+                if(k<allAuthors.length){
                 author = allAuthors[k];
                 fourcolumns += `<div class="four columns">
                     <div class="teaser">
@@ -23,6 +24,7 @@ function getAuthors(){
                     <h6><a href = "#">Show Articles</a></h6>
                     </div>
                     </div>`;
+                }
             }
             rows = rows + fourcolumns + `</div>`;
             $('#mainbox').append(rows);
