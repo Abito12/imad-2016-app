@@ -83,6 +83,10 @@ app.get('/profile.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'profile.js'));
 });
 
+app.get('/authors.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'authors.js'));
+});
+
 
 app.get('/editArticle/editarticle.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'editarticle.js'));
