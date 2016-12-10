@@ -211,6 +211,18 @@ app.get('/check-login', function(req, res){
    }
 });
 
+//Author Info
+app.get('/allAuthors', function (req, res) {
+    
+    pool.query("SELECT user_info.username, user_info.profession, user_info.bio FROM user_info, article WHERE user_info.id = article.author_id", function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+    });
+});
+
 
 //Articles Main Page
 
@@ -223,7 +235,6 @@ app.get('/allArticles', function (req, res) {
             res.send(JSON.stringify(result.rows));
         }
     });
-      
 });
 
 //User Specific Articles
