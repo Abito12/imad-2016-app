@@ -55,7 +55,4 @@ function capitalize(name){
 
 $(document).ready(function(){
     getAuthors();
-    $('.user-links').onclick = function(){
-        console.log($(this).attr("id"));
-    };
 });
