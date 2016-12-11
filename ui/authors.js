@@ -34,7 +34,6 @@ function getSpecificArticles(id){
     url: "/getSpecificArticles/"+id,
     success: function(result){
         var allArticles = JSON.parse(result);
-        $('#mainbox').html("");
         var countrows = Math.ceil(allArticles.length/3);
         for(var i=0; i < countrows; i++){
             var  rows = `<div  class="row">`;
