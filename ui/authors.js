@@ -34,7 +34,7 @@ function getAuthors(){
 
 
 function getUserArticles(value){
-    console.log('value');
+    console.log(value);
 }
 
 
