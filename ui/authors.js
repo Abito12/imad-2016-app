@@ -31,7 +31,7 @@ function getAuthors(){
 
 function getSpecificArticles(id){
     $.ajax({
-    url: "/userArticles/"+id,
+    url: "/getSpecificArticles/"+id,
     success: function(result){
         var allArticles = JSON.parse(result);
         $('#mainbox').html("");
