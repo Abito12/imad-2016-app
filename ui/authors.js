@@ -29,11 +29,11 @@ function getAuthors(){
 });
 }
 
-function getSpecificArticles(id){
+function getSpecificArticles(id, name){
     $.ajax({
     url: "/getSpecificArticles/"+id,
     success: function(result){
-        $('#mainbox').html("");
+        $('#mainbox').html("<h1 id='main-heading'>"+ name + "'s Articles " + "</h6>");
         var allArticles = JSON.parse(result);
         var countrows = Math.ceil(allArticles.length/3);
         for(var i=0; i < countrows; i++){
@@ -55,7 +55,6 @@ function getSpecificArticles(id){
             }
             rows = rows + fourcolumns + `</div>`;
             $('#mainbox').append(rows);
-             $('#main-heading').html(capitalize(name) + "'s Articles");
         }
     }
 });
@@ -65,7 +64,7 @@ function getSpecificArticles(id){
 
 
 function getUserArticles(id, name){
-    getSpecificArticles(id);
+    getSpecificArticles(id, name);
     return false;
 }
 
