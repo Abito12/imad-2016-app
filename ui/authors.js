@@ -29,12 +29,43 @@ function getAuthors(){
 });
 }
 
+function getSpecificArticles(id){
+    $.ajax({
+    url: "/userArticles/"+id,
+    success: function(result){
+        var allArticles = JSON.parse(result);
+        $('#mainbox').html("");
+        var countrows = Math.ceil(allArticles.length/3);
+        for(var i=0; i < countrows; i++){
+            var  rows = `<div  class="row">`;
+            var fourcolumns = "";
+            for(var j = 0; j < 3; j++){
+                var k = i*3+j;
+                if(k<allArticles.length){
+                article = allArticles[k];
+                fourcolumns += `<div class="four columns">
+                    <div class="teaser">
+                    <h3>${capitalize(article.title)}</h3>
+                    <h6><span>${article.date}</span></h6>
+                    <p>${article.content}</p>
+                    <h6><a class="user-links" href = "#">Read Article</a></h6>
+                    </div>
+                    </div>`;
+                }
+            }
+            rows = rows + fourcolumns + `</div>`;
+            $('#mainbox').append(rows);
+        }
+    }
+});
+}
+
 
 
 
 function getUserArticles(id, name){
-    console.log(id);
-    console.log(name);
+    $('#main-heading').html(capitalize(name) + "'s Articles");
+    getSpecificArticles(id);
     return false;
 }
 
