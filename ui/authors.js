@@ -33,6 +33,7 @@ function getSpecificArticles(id){
     $.ajax({
     url: "/getSpecificArticles/"+id,
     success: function(result){
+        $('#mainbox').html("");
         var allArticles = JSON.parse(result);
         var countrows = Math.ceil(allArticles.length/3);
         for(var i=0; i < countrows; i++){
