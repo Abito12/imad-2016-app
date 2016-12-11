@@ -2,7 +2,7 @@ function getAuthors(){
     $.ajax({
     url: "/allAuthors",
     success: function(result){
-        $('#mainbox').append("<h1>Article Authors</h1>");
+        $('#mainbox').append("<h1 id='main-heading'>Article Authors</h1>");
         var allAuthors = JSON.parse(result);
         var countrows = Math.ceil(allAuthors.length/3);
         for(var i=0; i < countrows; i++){
@@ -17,7 +17,7 @@ function getAuthors(){
                     <h3>${capitalize(author.username)}</h3>
                     <h6><span>${author.profession}</span></h6>
                     <p>${author.bio}</p>
-                    <h6><a class="user-links" href = "#" onclick = "return getUserArticles(${author.id})">Show Articles</a></h6>
+                    <h6><a class="user-links" href = "#" onclick = "return getUserArticles(${author.id}, ${author.username})">Show Articles</a></h6>
                     </div>
                     </div>`;
                 }
@@ -32,8 +32,9 @@ function getAuthors(){
 
 
 
-function getUserArticles(value){
-    console.log(value);
+function getUserArticles(id, username){
+    $('#main-heading').html(capitalize(username) +"'s Articles");
+    console.log(id + username);
     return false;
 }
 
