@@ -193,21 +193,27 @@ textarea.form-control:focus {
 }
 
     </style>
+      <script type="text/javascript">
+      function lettersOnly(input){
+      var regex = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
+    input.value = input.value.replace(regex, " ");
+    }
+  </script>
 </head>
 
 <body>
             <div class="form">
             <h3 id= "main-heading"></h3>
             <div class="form-group">
-              <input type="type" class="form-control" value="" placeholder="Profession" id="userinfo" />
+              <input type="type" class="form-control" value="" placeholder="Profession" id="userinfo" onkeyup="lettersOnly(this)"/>
               <label class="input-field-icon icon-email" for="login-email"></label>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" value="" placeholder="Email" id="useremail" />
+              <input type="email" class="form-control" value="" placeholder="Email" id="useremail" onkeyup="lettersOnly(this)"/>
               <label class="input-field-icon icon-email" for="login-email"></label>
             </div>
             <div class="form-group">
-              <textarea class="form-control" value="" placeholder="About Me" id="userbio" rows="1"></textarea>
+              <textarea class="form-control" value="" placeholder="About Me" id="userbio" rows="1" onkeyup="lettersOnly(this)"></textarea>
             </div>
 
             <button id="contact-send" class="btn btn-primary btn-lg btn-block">Save</button>
