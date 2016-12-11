@@ -64,8 +64,8 @@ function getSpecificArticles(id){
 
 
 function getUserArticles(id, name){
-    $('#main-heading').html(capitalize(name) + "'s Articles");
     getSpecificArticles(id);
+    $('#main-heading').html(capitalize(name) + "'s Articles");
     return false;
 }
 
