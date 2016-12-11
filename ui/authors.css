@@ -71,6 +71,8 @@ a:hover {
 a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: inline-block;
+	float:right;
+	margin-right:3vw;
 	width: 12vw;
 	margin-top:3vh;
 	padding: 14px 15px;
