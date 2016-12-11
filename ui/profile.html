@@ -193,12 +193,7 @@ textarea.form-control:focus {
 }
 
     </style>
-      <script type="text/javascript">
-      function lettersOnly(input){
-      var regex = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
-    input.value = input.value.replace(regex, " ");
-    }
-  </script>
+
 </head>
 
 <body>
@@ -219,6 +214,12 @@ textarea.form-control:focus {
             <button id="contact-send" class="btn btn-primary btn-lg btn-block">Save</button>
             <button id="contact-send2" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='http://abito12.imad.hasura-app.io/articles'">Home</button>
           </div>
+                <script type="text/javascript">
+      function lettersOnly(input){
+      var regex = /[^a-z-^0-9,!@#^&*()-_+=/.,?%#\n]/gi;
+    input.value = input.value.replace(regex, " ");
+    }
+  </script>
   </body>
 </html>
 
