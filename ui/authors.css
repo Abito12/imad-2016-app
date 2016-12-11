@@ -73,9 +73,9 @@ a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: inline-block;
 	margin-right:3vw;
-	width: 12vw;
+	width: 7vw;
 	margin-top:3vh;
-	padding: 14px 15px;
+	padding: 12px 12px;
 	color: #fff;
 	font-size:14px;
 	font-weight: bold;
@@ -115,7 +115,7 @@ a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: inline-block;
 	margin-top:3vh;
-	padding: 14px 15px;
+	padding: 12px 12px;
 	color: #fff;
 	font-size:14px;
 	border-radius: 0;
@@ -136,7 +136,7 @@ a.animated-button:link, a.animated-button:visited {
 a.animated-button.thar-three {
 	color: #fff;
 	cursor: pointer;
-	display: block;
+	display: inline-block;
 	position: relative;
 	border: 2px solid rgba(255,255,255,0.8);
 	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
