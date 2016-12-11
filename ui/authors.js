@@ -14,7 +14,7 @@ function getAuthors(){
                 author = allAuthors[k];
                 fourcolumns += `<div class="four columns">
                     <div class="teaser">
-                    <h3>${author.username}</h3>
+                    <h3>${capitalize(author.username)}</h3>
                     <h6><span>${author.profession}</span></h6>
                     <p>${author.bio}</p>
                     <h6><a href = "#">Show Articles</a></h6>
@@ -27,6 +27,11 @@ function getAuthors(){
         }
     }
 });
+}
+
+function capitalize(name){
+    name = name[0].toUpperCase() + name.slice(1);
+    return name;
 }
 
 $(document).ready(function(){
