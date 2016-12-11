@@ -55,6 +55,7 @@ function getSpecificArticles(id){
             }
             rows = rows + fourcolumns + `</div>`;
             $('#mainbox').append(rows);
+             $('#main-heading').html(capitalize(name) + "'s Articles");
         }
     }
 });
@@ -65,7 +66,6 @@ function getSpecificArticles(id){
 
 function getUserArticles(id, name){
     getSpecificArticles(id);
-    $('#main-heading').html(capitalize(name) + "'s Articles");
     return false;
 }
 
