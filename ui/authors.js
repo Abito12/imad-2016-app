@@ -17,7 +17,7 @@ function getAuthors(){
                     <h3>${capitalize(author.username)}</h3>
                     <h6><span>${author.profession}</span></h6>
                     <p>${author.bio}</p>
-                    <h6><a class="user-links" href = "#" onclick = "return getUserArticles(${author.id}, "${author.username}")">Show Articles</a></h6>
+                    <h6><a class="user-links" href = "#" onclick = "return getUserArticles(${author.id})">Show Articles</a></h6>
                     </div>
                     </div>`;
                 }
@@ -32,8 +32,8 @@ function getAuthors(){
 
 
 
-function getUserArticles(id, username){
-    console.log(id + username);
+function getUserArticles(id){
+    console.log(id);
     return false;
 }
 
