@@ -33,11 +33,6 @@ function getAuthors(){
 
 
 
-function getUserArticles(value){
-    console.log(value);
-}
-
-
 
 
 
@@ -56,5 +51,7 @@ function capitalize(name){
 
 $(document).ready(function(){
     getAuthors();
-    $('.user-links').onclick = getUserArticles($(this).attr("id"));
+    $('.user-links').onclick = function(){
+        console.log($(this).attr("id"));
+    };
 });
