@@ -393,6 +393,20 @@ app.get('/articles/:articleID', function(req, res){
     });
 });
 
+//Get specific articles
+app.get('/getSpecificArticles/:userID', function(req, res){
+    var user_id = req.params.userID;
+    pool.query("SELECT * FROM article WHERE article.author_id=$1",[user_id], function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        } else if(result.rows.length === 0){
+            res.status(404).send('No likes');
+        } else{
+            res.send(JSON.stringify(result.rows))
+        }
+    });
+});
+
 app.get('/comments/:articleID', function(req, res){
     
     pool.query("SELECT article_comments.date, article_comments.body, user_info.username FROM article_comments,user_info WHERE article_comments.user_id = user_info.id AND article_comments.article_id = " + req.params.articleID, function(err, result){
