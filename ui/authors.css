@@ -75,7 +75,7 @@ a.animated-button:link, a.animated-button:visited {
 	margin-right:3vw;
 	width: 7vw;
 	margin-top:3vh;
-	padding: 12px 12px;
+	padding: 10px 15px;
 	color: #fff;
 	font-size:14px;
 	font-weight: bold;
@@ -115,7 +115,7 @@ a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: inline-block;
 	margin-top:3vh;
-	padding: 12px 12px;
+	padding: 10px 15px;
 	color: #fff;
 	font-size:14px;
 	border-radius: 0;
