@@ -33,7 +33,6 @@ function getAuthors(){
 
 
 function getUserArticles(id, username){
-    $('#main-heading').html(capitalize(username) +"'s Articles");
     console.log(id + username);
     return false;
 }
