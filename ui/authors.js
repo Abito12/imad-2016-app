@@ -47,8 +47,8 @@ function getSpecificArticles(id, name){
                     <div class="teaser">
                     <h3>${capitalize(article.title)}</h3>
                     <h6><span>${article.date}</span></h6>
-                    <p>${article.content.slice(0,15)}</p>
-                    <h6><a class="user-links" href = "#">Read Article</a></h6>
+                    <p>${article.content.slice(0,25)}</p>
+                    <h6><a class="user-links" href = "http://abito12.imad.hasura-app.io/articles/${article.id}">Read Article</a></h6>
                     </div>
                     </div>`;
                 }
