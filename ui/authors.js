@@ -34,6 +34,7 @@ function getSpecificArticles(id, name){
     url: "/getSpecificArticles/"+id,
     success: function(result){
         $('#mainbox').html("<h1 id='main-heading'>"+ capitalize(name) + "'s Articles " + "</h6>");
+        $('#nav-bar').append(`<a href="http://abito12.imad.hasura-app.io/authors" class="btn btn-sm animated-button thar-three">Back</a>`);
         var allArticles = JSON.parse(result);
         var countrows = Math.ceil(allArticles.length/3);
         for(var i=0; i < countrows; i++){
@@ -55,7 +56,6 @@ function getSpecificArticles(id, name){
             }
             rows = rows + fourcolumns + `</div>`;
             $('#mainbox').append(rows);
-            $('#nav-bar').append(`<a href="http://abito12.imad.hasura-app.io/authors" class="btn btn-sm animated-button thar-three">Back</a>`)
         }
     }
 });
