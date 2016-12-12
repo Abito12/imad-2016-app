@@ -101,12 +101,6 @@ function getMyArticles(){
             $('#articleBox').append(Box);
             
         }
-        $('#options').css("visibility","hidden");
-        var resetbtn = document.getElementById('optionsbar');
-        resetbtn.innerHTML = "Show All";
-        resetbtn.onclick = reset();
-        
-        
     }
 });
 }
@@ -252,16 +246,7 @@ function getAllArticles4(){
     document.getElementById('orderold').onclick = getArticlesOld;
     $('#options').css("visibility","hidden");
     document.getElementById('orderlikes').onclick = getArticlesByLike;
-    document.getElementById('orderlikes').onclick = getArticlesNew;
-    getAllArticles();
-    noclicks += 1;
-}
-
-
-function reset(){
-    document.getElementById('sub-header').innerHTML = "Have a look at our articles";
-    document.getElementById('optionsbar').innerHTML = "Sort articles by";
-    $('#options').css("visibility","hidden");
+    document.getElementById('ordernew').onclick = getArticlesNew;
     getAllArticles();
     noclicks += 1;
 }
