@@ -34,9 +34,7 @@ function getUsername(){
         url: "/check-login",
         success: function(result){
             var userDetails = JSON.parse(result);
-            console.log(userDetails);
             var name = userDetails[0].username;
-            console.log(name);
             var firstLetter = name[0];
             $('#user-image').html(firstLetter);
             $('#displayname').html(name); 
@@ -168,7 +166,6 @@ function getArticlesNew(){
         $('#sub-header').html("The most recent articles");
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
-        console.log(myArticles);
         for(var i = 0;i < myArticles.length; i++){
             var article = myArticles[i];
             var Box = `<div class="col-md-6 item">
