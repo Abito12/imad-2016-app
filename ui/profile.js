@@ -14,7 +14,7 @@ function getUsername(){
                 $('#userinfo').val("");
             else
                 $('#userinfo').val(job);
-            if(email==="Not available")
+            if(email ==="Not Available")
                 $('#useremail').val("");
             else
                 $('#useremail').val(email);
@@ -46,8 +46,17 @@ $(document).ready(function(){
   var info = document.getElementById('userinfo').value;
   var email = document.getElementById('useremail').value;
   var bio = document.getElementById('userbio').value;
-  if(info.length ===0 || email.length === 0 || bio.length ===0){
-      alert('Please fill out all the fields');
+  if(info.length ===0 && email.length === 0 && bio.length ===0){
+      alert('Fill atleast a field');
+  }
+  if(info.trim().length===0){
+      info = "Not Available";
+  }
+    if(email.trim().length===0){
+      email = "Not Available";
+  }
+    if(bio.trim().length===0){
+      bio = "Not Available";
   }
   else{
   request.open('POST', 'http://abito12.imad.hasura-app.io/update-profile', true);
