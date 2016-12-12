@@ -567,6 +567,11 @@ app.post('/update-profile', function(req, res){
     var info =req.body.info;
     var email = req.body.email;
     var bio = req.body.bio;
+    var reg = /[^a-z-^0-9,#!@#$%&*()*._+=/]/gi;
+    var string1 = info.replace(reg, " ");
+    var string2 = email.replace(reg, " ");
+    var string3 = bio.replace(reg, " ");
+    if(info.length === string1.length && email.length ===string2 && bio.length ===string3.length){
     var user_id = req.session.auth.userId;
     pool.query('UPDATE "user_info" SET profession = $1, email = $2, bio = $3 WHERE id = $4', [info, email, bio, user_id], function(err, result){
             if(err){
@@ -575,6 +580,7 @@ app.post('/update-profile', function(req, res){
                 res.send('Profile Updated');
             }
     });
+    }
 });
 
 function createArticleTemplate2(data){
