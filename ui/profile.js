@@ -50,6 +50,7 @@ $(document).ready(function(){
   if(info.length ===0 && email.length === 0 && bio.length ===0){
       alert('Fill atleast a field');
   }
+  else{
   if(info.trim().length===0){
       info = "Not Available";
   }
@@ -59,11 +60,9 @@ $(document).ready(function(){
     if(bio.trim().length===0){
       bio = "Not Available";
   }
-  else{
   request.open('POST', 'http://abito12.imad.hasura-app.io/update-profile', true);
   request.setRequestHeader('Content-Type', 'application/json');
   request.send(JSON.stringify({info:info, email:email, bio: bio}));
-  }
-
+}
 };
 });
