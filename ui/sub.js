@@ -239,7 +239,7 @@ function getArticlesOld(){
         document.getElementById('ordernew').innerHTML =  "Newest first";
         document.getElementById('orderold').innerHTML = "Show All";
         document.getElementById('orderold').onclick = getAllArticles4;
-        document.getElementById('orderlikes').onclick = getArticlesByLikes;
+        document.getElementById('orderlikes').onclick = getArticlesByLike;
         document.getElementById('ordernew').onclick = getArticlesNew;
     }
 });
