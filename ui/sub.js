@@ -141,6 +141,8 @@ function getArticlesByLike(){
         document.getElementById('orderold').innerHTML = "Oldest first";
         document.getElementById('orderlikes').innerHTML = "Show All";
         document.getElementById('orderlikes').onclick = getAllArticles2;
+        document.getElementById('ordernew').onclick = getArticlesNew;
+        document.getElementById('orderold').onclick = getArticlesOld;
     }
 });
 }
@@ -186,8 +188,10 @@ function getArticlesNew(){
         document.getElementById('optionsbar').innerHTML = "Newest First";
         document.getElementById('ordernew').innerHTML = "Show All";
         document.getElementById('orderlikes').innerHTML = "Likes";
-        document.getElementById('orderold').innerHTML = "Oldest first"
+        document.getElementById('orderold').innerHTML = "Oldest first";
         document.getElementById('ordernew').onclick = getAllArticles3;
+        document.getElementById('orderlikes').onclick = getArticlesByLike;
+        document.getElementById('orderold').onclick = getArticlesOld;
     }
 });
 }
@@ -235,6 +239,8 @@ function getArticlesOld(){
         document.getElementById('ordernew').innerHTML =  "Newest first";
         document.getElementById('orderold').innerHTML = "Show All";
         document.getElementById('orderold').onclick = getAllArticles4;
+        document.getElementById('orderlikes').onclick = getArticlesByLikes;
+        document.getElementById('ordernew').onclick = getArticlesNew;
     }
 });
 }
