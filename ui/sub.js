@@ -101,6 +101,10 @@ function getMyArticles(){
             $('#articleBox').append(Box);
             
         }
+        $('#options').css("visibility","hidden");
+        document.getElementById('optionsbar').innerHTML = "Show All";
+        document.getElementById('optionsbar').onclick = getAllArticles();
+        
     }
 });
 }
