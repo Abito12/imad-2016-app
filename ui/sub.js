@@ -102,8 +102,10 @@ function getMyArticles(){
             
         }
         $('#options').css("visibility","hidden");
-        document.getElementById('optionsbar').innerHTML = "Show All";
-        document.getElementById('optionsbar').onclick = getAllArticles();
+        var resetbtn = document.getElementById('optionsbar');
+        resetbtn.innerHTML = "Show All";
+        resetbtn.onclick = reset();
+        
         
     }
 });
@@ -250,10 +252,14 @@ function getAllArticles4(){
     document.getElementById('orderold').onclick = getArticlesOld;
     $('#options').css("visibility","hidden");
     document.getElementById('orderlikes').onclick = getArticlesByLike;
-    document.getElementById('orderlikes').onclick = getArticlesNew;
+    document.getElementById('ordernew').onclick = getArticlesNew;
     getAllArticles();
     noclicks += 1;
 }
+
+
+
+
 
 $(document).ready(function(){
     getAllArticles();
