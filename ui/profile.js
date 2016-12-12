@@ -10,9 +10,18 @@ function getUsername(){
             var bio = userDetails[0].bio;
             name = name[0].toUpperCase() + name.slice(1);
             $('#main-heading').html(name+ "'s Profile");
-            $('#userinfo').val(job);
-            $('#useremail').val(email);
-            $('#userbio').html(bio);
+            if(job ==="Not Available")
+                $('#userinfo').val("");
+            else
+                $('#userinfo').val(job);
+            if(email==="Not available")
+                $('#useremail').val("");
+            else
+                $('#useremail').val(email);
+            if(bio ==="Not Available")
+                $('#userbio').val("");
+            else
+                $('#userbio').val(bio);
         }
     });
 }
