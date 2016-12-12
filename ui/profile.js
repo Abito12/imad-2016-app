@@ -30,6 +30,7 @@ $(document).ready(function(){
     getUsername();
     var submit = document.getElementById('contact-send');
     submit.onclick = function(){
+        console.log('Update');
     var request = new XMLHttpRequest();
      request.onreadystatechange = function(){
       if(request.readyState === XMLHttpRequest.DONE){
