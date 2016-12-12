@@ -217,7 +217,6 @@ function getArticlesOld(){
         $('#sub-header').html("The most aged articles");
         $('#articleBox').html("");
         var myArticles = JSON.parse(result);
-        console.log(myArticles);
         for(var i = 0;i < myArticles.length; i++){
             var article = myArticles[i];
             var Box = `<div class="col-md-6 item">
@@ -271,7 +270,6 @@ $(document).ready(function(){
     var optionsbar = document.getElementById('optionsbar');
     optionsbar.onclick =  function(){
         noclicks += 1;
-        console.log(noclicks);
             if(noclicks % 2 ===0){
     $('#options').css("visibility","hidden");
     }
