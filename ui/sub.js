@@ -252,13 +252,19 @@ function getAllArticles4(){
     document.getElementById('orderold').onclick = getArticlesOld;
     $('#options').css("visibility","hidden");
     document.getElementById('orderlikes').onclick = getArticlesByLike;
-    document.getElementById('ordernew').onclick = getArticlesNew;
+    document.getElementById('orderlikes').onclick = getArticlesNew;
     getAllArticles();
     noclicks += 1;
 }
 
 
-
+function reset(){
+    document.getElementById('sub-header').innerHTML = "Have a look at our articles";
+    document.getElementById('optionsbar').innerHTML = "Sort articles by";
+    $('#options').css("visibility","hidden");
+    getAllArticles();
+    noclicks += 1;
+}
 
 
 $(document).ready(function(){
